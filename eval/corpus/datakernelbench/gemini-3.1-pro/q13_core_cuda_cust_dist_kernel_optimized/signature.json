@@ -1,0 +1,30 @@
+[
+  {
+    "name": "c_custkey",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_customers",
+    "indexes_into": "order_counts"
+  },
+  {
+    "name": "order_counts",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "num_customers + 1",
+    "indexes_into": null
+  },
+  {
+    "name": "count_frequencies",
+    "kind": "inout",
+    "dtype": "int64",
+    "length": "n_orders + 1",
+    "indexes_into": null
+  },
+  {
+    "name": "n_customers",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of customer",
+    "indexes_into": null
+  }
+]

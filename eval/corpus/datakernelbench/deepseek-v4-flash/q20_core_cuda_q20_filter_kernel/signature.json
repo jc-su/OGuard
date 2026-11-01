@@ -1,0 +1,51 @@
+[
+  {
+    "name": "ps_suppkey",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_ps",
+    "indexes_into": null
+  },
+  {
+    "name": "ps_availqty",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_ps",
+    "indexes_into": null
+  },
+  {
+    "name": "sum_qty",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "num_groups",
+    "indexes_into": null
+  },
+  {
+    "name": "ps_group",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_ps",
+    "indexes_into": "sum_qty"
+  },
+  {
+    "name": "n_ps",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "filtered partsupp rows",
+    "indexes_into": null
+  },
+  {
+    "name": "qualifying_suppkeys",
+    "kind": "output",
+    "dtype": "int64",
+    "length": "n_ps",
+    "indexes_into": null
+  },
+  {
+    "name": "n_qualifying",
+    "kind": "inout",
+    "dtype": "int64",
+    "length": "1",
+    "indexes_into": null
+  }
+]

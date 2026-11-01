@@ -1,0 +1,1 @@
+Single launch without scratch memory: each program sums all earlier blocks of `lengths` (int32, wraps like `offsets`) to get its base, then scans its own block. Work grows as n^2 / BLOCK; fine at 1e6 rows, not a linear-time scan.

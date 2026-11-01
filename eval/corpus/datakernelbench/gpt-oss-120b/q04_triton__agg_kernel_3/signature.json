@@ -1,0 +1,58 @@
+[
+  {
+    "name": "o_orderkey_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "o_orderdate_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "o_priority_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": "out_counts_ptr"
+  },
+  {
+    "name": "date_lo",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "o_orderdate lower bound (inclusive), days since epoch",
+    "indexes_into": null
+  },
+  {
+    "name": "date_hi",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "o_orderdate upper bound (exclusive), days since epoch",
+    "indexes_into": null
+  },
+  {
+    "name": "bitmap_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "bitmap_size",
+    "indexes_into": null
+  },
+  {
+    "name": "out_counts_ptr",
+    "kind": "inout",
+    "dtype": "int64",
+    "length": "num_priorities",
+    "indexes_into": null
+  },
+  {
+    "name": "n_elements",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "rows of orders",
+    "indexes_into": null
+  }
+]

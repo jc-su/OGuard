@@ -1,0 +1,44 @@
+[
+  {
+    "name": "extendedprice_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "discount_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "supplycost_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "quantity_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "out_ptr",
+    "kind": "output",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "n_elements",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "rows of extendedprice_ptr",
+    "indexes_into": null
+  }
+]

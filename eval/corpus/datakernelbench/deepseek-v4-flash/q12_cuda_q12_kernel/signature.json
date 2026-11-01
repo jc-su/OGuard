@@ -1,0 +1,86 @@
+[
+  {
+    "name": "shipmode_code_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "priority_high_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "l_commitdate_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "l_receiptdate_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "l_shipdate_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "receipt_lo_days",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "l_receiptdate lower bound in days (8766 for 1994-01-01)",
+    "indexes_into": null
+  },
+  {
+    "name": "receipt_hi_days",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "l_receiptdate upper bound in days (9131 for 1995-01-01)",
+    "indexes_into": null
+  },
+  {
+    "name": "high0_out_ptr",
+    "kind": "inout",
+    "dtype": "int64",
+    "length": "1",
+    "indexes_into": null
+  },
+  {
+    "name": "high1_out_ptr",
+    "kind": "inout",
+    "dtype": "int64",
+    "length": "1",
+    "indexes_into": null
+  },
+  {
+    "name": "low0_out_ptr",
+    "kind": "inout",
+    "dtype": "int64",
+    "length": "1",
+    "indexes_into": null
+  },
+  {
+    "name": "low1_out_ptr",
+    "kind": "inout",
+    "dtype": "int64",
+    "length": "1",
+    "indexes_into": null
+  },
+  {
+    "name": "n_elements",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of the joined frame",
+    "indexes_into": null
+  }
+]

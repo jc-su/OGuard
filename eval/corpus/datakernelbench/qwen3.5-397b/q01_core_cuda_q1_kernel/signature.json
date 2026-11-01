@@ -1,0 +1,72 @@
+[
+  {
+    "name": "rf",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "ls",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "qty",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "price",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "disc",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "tax",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "shipdate",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "shipdate_hi",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "inclusive upper bound of l_shipdate in epoch days",
+    "indexes_into": null
+  },
+  {
+    "name": "accum",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "6144",
+    "indexes_into": null
+  },
+  {
+    "name": "n",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of lineitem (qty.numel())",
+    "indexes_into": null
+  }
+]

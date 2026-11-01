@@ -1,0 +1,30 @@
+[
+  {
+    "name": "o_custkey",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_orders",
+    "indexes_into": null
+  },
+  {
+    "name": "has_order",
+    "kind": "output",
+    "dtype": "uint8",
+    "length": "key_space",
+    "indexes_into": null
+  },
+  {
+    "name": "n_orders",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "distinct customer keys of orders",
+    "indexes_into": null
+  },
+  {
+    "name": "key_space",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "largest customer key plus one",
+    "indexes_into": null
+  }
+]

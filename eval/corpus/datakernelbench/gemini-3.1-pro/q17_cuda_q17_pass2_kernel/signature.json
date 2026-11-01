@@ -1,0 +1,65 @@
+[
+  {
+    "name": "l_partkey",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_lineitems",
+    "indexes_into": null
+  },
+  {
+    "name": "l_quantity",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_lineitems",
+    "indexes_into": null
+  },
+  {
+    "name": "l_extendedprice",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_lineitems",
+    "indexes_into": null
+  },
+  {
+    "name": "part_map",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "max_partkey + 1",
+    "indexes_into": null
+  },
+  {
+    "name": "max_partkey",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "largest filtered p_partkey",
+    "indexes_into": null
+  },
+  {
+    "name": "sum_qty",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "num_parts",
+    "indexes_into": null
+  },
+  {
+    "name": "cnt_qty",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "num_parts",
+    "indexes_into": null
+  },
+  {
+    "name": "out_total",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "1",
+    "indexes_into": null
+  },
+  {
+    "name": "n_lineitems",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of lineitem",
+    "indexes_into": null
+  }
+]

@@ -1,0 +1,51 @@
+[
+  {
+    "name": "custkey",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n",
+    "indexes_into": "revenue_dense"
+  },
+  {
+    "name": "extendedprice",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "discount",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "revenue_dense",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "dense_size",
+    "indexes_into": null
+  },
+  {
+    "name": "seen",
+    "kind": "output",
+    "dtype": "uint8",
+    "length": "dense_size",
+    "indexes_into": null
+  },
+  {
+    "name": "n",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of the joined lineitem",
+    "indexes_into": null
+  },
+  {
+    "name": "dense_size",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "largest customer key plus one",
+    "indexes_into": null
+  }
+]

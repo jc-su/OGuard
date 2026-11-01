@@ -1,0 +1,40 @@
+model	task	toolchain	features
+fable	merge_sorted	triton	KS RD BS
+fable	rolling_sum	numba	MM
+fable	rolling_sum	nvcc	MM
+fable	sorted_contains	numba	BS
+fable	sorted_contains	nvcc	BS
+fable	sorted_contains	triton	BL
+fable	starts_with	triton	FL
+fable	string_contains	numba	LR SZ DL
+fable	string_contains	nvcc	LR SZ DL
+fable	string_contains	triton	FL LR DL SZ
+haiku	merge_sorted	numba	MC FL
+haiku	merge_sorted	nvcc	MC FL
+haiku	min_max	nvcc	DS
+haiku	rolling_sum	nvcc	LR
+haiku	sorted_contains	numba	BS
+haiku	sorted_contains	nvcc	BS
+haiku	string_contains	numba	LR SZ DL
+haiku	string_contains	nvcc	LR SZ DL
+opus	merge_sorted	triton	KS PL RD BM
+opus	rolling_sum	numba	CD
+opus	rolling_sum	nvcc	LR
+opus	rolling_sum	triton	PL RD
+opus	segmented_sum	numba	SH BI
+opus	segmented_sum	triton	RD
+opus	sorted_contains	numba	BS
+opus	sorted_contains	nvcc	BS
+opus	sorted_contains	triton	BS
+opus	string_contains	numba	SQ LA LR SZ DL
+opus	string_contains	nvcc	SQ LA LR SZ DL
+opus	string_contains	triton	PL LR SZ DL FL
+opus	string_length	triton	RD
+sonnet	merge_sorted	numba	BS
+sonnet	merge_sorted	nvcc	BS
+sonnet	rolling_sum	numba	DS
+sonnet	rolling_sum	nvcc	DS
+sonnet	sorted_contains	numba	BS
+sonnet	sorted_contains	nvcc	BS
+sonnet	string_contains	numba	DS LR SZ DL
+sonnet	string_contains	nvcc	DS

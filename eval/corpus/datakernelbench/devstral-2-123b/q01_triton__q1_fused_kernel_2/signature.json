@@ -1,0 +1,121 @@
+[
+  {
+    "name": "rf_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "ls_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "qty_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "price_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "disc_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "tax_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "ship_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "ship_hi",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "shipdate upper bound in days since 1970-01-01 (inclusive), from the parameter shipdate_hi",
+    "indexes_into": null
+  },
+  {
+    "name": "n_elements",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "rows of qty_ptr",
+    "indexes_into": null
+  },
+  {
+    "name": "sum_qty_ptr",
+    "kind": "output",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "sum_base_price_ptr",
+    "kind": "output",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "sum_disc_price_ptr",
+    "kind": "output",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "sum_charge_ptr",
+    "kind": "output",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "avg_qty_ptr",
+    "kind": "output",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "avg_price_ptr",
+    "kind": "output",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "avg_disc_ptr",
+    "kind": "output",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "count_ptr",
+    "kind": "output",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  }
+]

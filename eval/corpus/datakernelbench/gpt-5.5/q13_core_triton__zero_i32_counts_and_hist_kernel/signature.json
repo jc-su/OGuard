@@ -1,0 +1,23 @@
+[
+  {
+    "name": "counts_ptr",
+    "kind": "output",
+    "dtype": "int32",
+    "length": "counts_n",
+    "indexes_into": null
+  },
+  {
+    "name": "hist_ptr",
+    "kind": "output",
+    "dtype": "int32",
+    "length": "64",
+    "indexes_into": null
+  },
+  {
+    "name": "counts_n",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "largest customer key plus one",
+    "indexes_into": null
+  }
+]

@@ -1,0 +1,121 @@
+[
+  {
+    "name": "returnflag",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "linestatus",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "quantity",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "extendedprice",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "discount",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "tax",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "shipdate_days",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "shipdate_hi_days",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "epoch day of the ship date bound, inclusive",
+    "indexes_into": null
+  },
+  {
+    "name": "n_ls",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "[1, 6]",
+    "indexes_into": null
+  },
+  {
+    "name": "n_groups",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "n_rf * n_ls, rows of each output",
+    "indexes_into": null
+  },
+  {
+    "name": "n",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of lineitem",
+    "indexes_into": null
+  },
+  {
+    "name": "out_qty",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "n_groups",
+    "indexes_into": null
+  },
+  {
+    "name": "out_price",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "n_groups",
+    "indexes_into": null
+  },
+  {
+    "name": "out_disc_price",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "n_groups",
+    "indexes_into": null
+  },
+  {
+    "name": "out_charge",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "n_groups",
+    "indexes_into": null
+  },
+  {
+    "name": "out_disc",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "n_groups",
+    "indexes_into": null
+  },
+  {
+    "name": "out_count",
+    "kind": "inout",
+    "dtype": "int64",
+    "length": "n_groups",
+    "indexes_into": null
+  }
+]

@@ -1,0 +1,72 @@
+[
+  {
+    "name": "l_suppkey",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "total_rows",
+    "indexes_into": null
+  },
+  {
+    "name": "l_extendedprice",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "total_rows",
+    "indexes_into": null
+  },
+  {
+    "name": "l_discount",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "total_rows",
+    "indexes_into": null
+  },
+  {
+    "name": "l_shipdate_days",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "total_rows",
+    "indexes_into": null
+  },
+  {
+    "name": "revenue_accum",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "n_sup",
+    "indexes_into": null
+  },
+  {
+    "name": "present_accum",
+    "kind": "inout",
+    "dtype": "int32",
+    "length": "n_sup",
+    "indexes_into": null
+  },
+  {
+    "name": "date_lo",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "shipdate lower bound in days since 1970-01-01 (inclusive), from the parameter shipdate_lo",
+    "indexes_into": null
+  },
+  {
+    "name": "date_hi",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "shipdate upper bound in days since 1970-01-01 (exclusive), from the parameter shipdate_hi",
+    "indexes_into": null
+  },
+  {
+    "name": "n_sup",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of revenue_accum",
+    "indexes_into": null
+  },
+  {
+    "name": "total_rows",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of l_suppkey",
+    "indexes_into": null
+  }
+]

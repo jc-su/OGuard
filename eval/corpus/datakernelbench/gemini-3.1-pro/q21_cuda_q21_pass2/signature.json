@@ -1,0 +1,44 @@
+[
+  {
+    "name": "counts",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "num_orders_f",
+    "indexes_into": null
+  },
+  {
+    "name": "lineitems",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "16 * num_orders_f",
+    "indexes_into": null
+  },
+  {
+    "name": "supp_map",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "max_suppkey + 1",
+    "indexes_into": null
+  },
+  {
+    "name": "out_counts",
+    "kind": "inout",
+    "dtype": "int32",
+    "length": "num_supp_n",
+    "indexes_into": null
+  },
+  {
+    "name": "num_orders_f",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "count of F orders",
+    "indexes_into": null
+  },
+  {
+    "name": "max_suppkey",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "largest key of the nation's suppliers",
+    "indexes_into": null
+  }
+]

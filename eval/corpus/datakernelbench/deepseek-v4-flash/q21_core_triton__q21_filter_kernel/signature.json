@@ -1,0 +1,72 @@
+[
+  {
+    "name": "l1_orderkey_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_l1",
+    "indexes_into": null
+  },
+  {
+    "name": "l1_late_ptr",
+    "kind": "input",
+    "dtype": "int8",
+    "length": "n_l1",
+    "indexes_into": null
+  },
+  {
+    "name": "supp_ids_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_l1",
+    "indexes_into": null
+  },
+  {
+    "name": "lo_orderkeys_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_lo",
+    "indexes_into": null
+  },
+  {
+    "name": "lo_distinct_supp_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_lo",
+    "indexes_into": null
+  },
+  {
+    "name": "lo_late_distinct_supp_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_lo",
+    "indexes_into": null
+  },
+  {
+    "name": "out_valid_ptr",
+    "kind": "output",
+    "dtype": "int64",
+    "length": "n_l1",
+    "indexes_into": null
+  },
+  {
+    "name": "out_count_ptr",
+    "kind": "output",
+    "dtype": "int64",
+    "length": "n_l1",
+    "indexes_into": null
+  },
+  {
+    "name": "n_l1",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "rows of l1",
+    "indexes_into": null
+  },
+  {
+    "name": "n_lo",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "orders of agg",
+    "indexes_into": null
+  }
+]

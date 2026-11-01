@@ -1,0 +1,51 @@
+[
+  {
+    "name": "keys",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "values",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "unique_keys",
+    "kind": "output",
+    "dtype": "int64",
+    "length": "max_unique",
+    "indexes_into": null
+  },
+  {
+    "name": "out_values",
+    "kind": "output",
+    "dtype": "float64",
+    "length": "max_unique",
+    "indexes_into": null
+  },
+  {
+    "name": "unique_count",
+    "kind": "inout",
+    "dtype": "uint64",
+    "length": "1",
+    "indexes_into": null
+  },
+  {
+    "name": "max_unique",
+    "kind": "scalar",
+    "dtype": "uint64",
+    "length": "rows of unique_keys",
+    "indexes_into": null
+  },
+  {
+    "name": "n",
+    "kind": "scalar",
+    "dtype": "uint64",
+    "length": "rows of keys",
+    "indexes_into": null
+  }
+]

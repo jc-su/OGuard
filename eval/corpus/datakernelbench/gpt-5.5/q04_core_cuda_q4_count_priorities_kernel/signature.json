@@ -1,0 +1,72 @@
+[
+  {
+    "name": "o_orderkey",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_orders",
+    "indexes_into": "has_late_lineitem"
+  },
+  {
+    "name": "o_orderdate_days",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_orders",
+    "indexes_into": null
+  },
+  {
+    "name": "o_orderpriority_codes",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_orders",
+    "indexes_into": "counts"
+  },
+  {
+    "name": "has_late_lineitem",
+    "kind": "input",
+    "dtype": "uint8",
+    "length": "max_key + 1",
+    "indexes_into": null
+  },
+  {
+    "name": "counts",
+    "kind": "inout",
+    "dtype": "int64",
+    "length": "num_priorities",
+    "indexes_into": null
+  },
+  {
+    "name": "n_orders",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of orders",
+    "indexes_into": null
+  },
+  {
+    "name": "max_key",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "largest order key of orders and lineitem",
+    "indexes_into": null
+  },
+  {
+    "name": "date_lo_days",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "epoch day of the lower order date, inclusive",
+    "indexes_into": null
+  },
+  {
+    "name": "date_hi_days",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "epoch day of the upper order date, exclusive",
+    "indexes_into": null
+  },
+  {
+    "name": "num_priorities",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "number of order priority codes, 5 at scale factor 10",
+    "indexes_into": null
+  }
+]

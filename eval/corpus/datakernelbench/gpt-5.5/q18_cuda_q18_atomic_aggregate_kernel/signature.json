@@ -1,0 +1,37 @@
+[
+  {
+    "name": "keys",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n",
+    "indexes_into": "sums"
+  },
+  {
+    "name": "qty",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "sums",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "sums_n",
+    "indexes_into": null
+  },
+  {
+    "name": "n",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of lineitem",
+    "indexes_into": null
+  },
+  {
+    "name": "sums_n",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "largest l_orderkey plus 1",
+    "indexes_into": null
+  }
+]

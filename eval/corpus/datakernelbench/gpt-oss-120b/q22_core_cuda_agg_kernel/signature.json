@@ -1,0 +1,72 @@
+[
+  {
+    "name": "custkey",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "acctbal",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "cntrycode",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "mask",
+    "kind": "input",
+    "dtype": "bool",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "orders",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_orders",
+    "indexes_into": null
+  },
+  {
+    "name": "n_orders",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "distinct o_custkey values",
+    "indexes_into": null
+  },
+  {
+    "name": "avg",
+    "kind": "scalar",
+    "dtype": "float64",
+    "length": "average positive balance of the target codes",
+    "indexes_into": null
+  },
+  {
+    "name": "out_cnt",
+    "kind": "inout",
+    "dtype": "uint64",
+    "length": "100",
+    "indexes_into": null
+  },
+  {
+    "name": "out_sum",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "100",
+    "indexes_into": null
+  },
+  {
+    "name": "n",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of customer",
+    "indexes_into": null
+  }
+]

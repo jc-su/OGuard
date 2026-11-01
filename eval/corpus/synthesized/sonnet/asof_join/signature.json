@@ -1,0 +1,8 @@
+[
+  {"name": "left", "kind": "input", "dtype": "int64", "length": "n", "indexes_into": null},
+  {"name": "right", "kind": "input", "dtype": "int64", "length": "r", "indexes_into": null},
+  {"name": "out", "kind": "output", "dtype": "int32", "length": "n", "indexes_into": "right"},
+  {"name": "n", "kind": "scalar", "dtype": "int64", "length": "[0, 1073741824]", "indexes_into": null},
+  {"name": "r", "kind": "scalar", "dtype": "int64", "length": "[0, 1073741824]", "indexes_into": null},
+  {"name": "tolerance", "kind": "scalar", "dtype": "int64", "length": "[0, 4611686018427387904]", "indexes_into": null}
+]

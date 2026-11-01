@@ -1,0 +1,44 @@
+[
+  {
+    "name": "acctbal_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "cntrycode_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "in_mask_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "avg_out_ptr",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "1",
+    "indexes_into": null
+  },
+  {
+    "name": "count_out_ptr",
+    "kind": "inout",
+    "dtype": "int64",
+    "length": "1",
+    "indexes_into": null
+  },
+  {
+    "name": "n_elements",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "rows of customer",
+    "indexes_into": null
+  }
+]

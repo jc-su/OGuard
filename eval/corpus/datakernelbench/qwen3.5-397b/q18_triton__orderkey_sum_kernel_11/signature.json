@@ -1,0 +1,37 @@
+[
+  {
+    "name": "quantity_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "inverse_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_elements",
+    "indexes_into": "sum_ptr"
+  },
+  {
+    "name": "sum_ptr",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "n_unique",
+    "indexes_into": null
+  },
+  {
+    "name": "n_elements",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "rows of lineitem (l_orderkey.numel())",
+    "indexes_into": null
+  },
+  {
+    "name": "n_unique",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "distinct l_orderkey values",
+    "indexes_into": null
+  }
+]

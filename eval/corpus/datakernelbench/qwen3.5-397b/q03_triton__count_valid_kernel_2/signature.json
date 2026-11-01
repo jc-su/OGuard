@@ -1,0 +1,44 @@
+[
+  {
+    "name": "sd_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "od_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "block_counts_ptr",
+    "kind": "output",
+    "dtype": "int32",
+    "length": "(n_elements + 4095) / 4096",
+    "indexes_into": null
+  },
+  {
+    "name": "sd_lo",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "exclusive lower bound of l_shipdate in epoch days",
+    "indexes_into": null
+  },
+  {
+    "name": "od_hi",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "exclusive upper bound of o_orderdate in epoch days",
+    "indexes_into": null
+  },
+  {
+    "name": "n_elements",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "rows of the joined table (lk.numel())",
+    "indexes_into": null
+  }
+]

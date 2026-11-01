@@ -1,0 +1,65 @@
+[
+  {
+    "name": "probe_keys",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "m",
+    "indexes_into": null
+  },
+  {
+    "name": "table_keys",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "capacity",
+    "indexes_into": null
+  },
+  {
+    "name": "table_rows",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "capacity",
+    "indexes_into": "build side keys (hash_build's keys)"
+  },
+  {
+    "name": "out_build",
+    "kind": "output",
+    "dtype": "int32",
+    "length": "out_cap",
+    "indexes_into": "build side keys (hash_build's keys)"
+  },
+  {
+    "name": "out_probe",
+    "kind": "output",
+    "dtype": "int32",
+    "length": "out_cap",
+    "indexes_into": "probe_keys"
+  },
+  {
+    "name": "out_count",
+    "kind": "output",
+    "dtype": "int32",
+    "length": "1",
+    "indexes_into": null
+  },
+  {
+    "name": "capacity",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "power of two, capacity of table_keys/table_rows",
+    "indexes_into": null
+  },
+  {
+    "name": "m",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of probe_keys",
+    "indexes_into": null
+  },
+  {
+    "name": "out_cap",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "capacity of out_build/out_probe",
+    "indexes_into": null
+  }
+]

@@ -1,0 +1,100 @@
+[
+  {
+    "name": "l_quantity",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "l_extendedprice",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "l_discount",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "p_brand_id",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "p_container_grp",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "p_size",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "brand12_id",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "the brand code 12",
+    "indexes_into": null
+  },
+  {
+    "name": "brand23_id",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "the brand code 23",
+    "indexes_into": null
+  },
+  {
+    "name": "brand34_id",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "the brand code 34",
+    "indexes_into": null
+  },
+  {
+    "name": "sm_grp",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "the container group 1",
+    "indexes_into": null
+  },
+  {
+    "name": "md_grp",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "the container group 2",
+    "indexes_into": null
+  },
+  {
+    "name": "lg_grp",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "the container group 3",
+    "indexes_into": null
+  },
+  {
+    "name": "out_ptr",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "1",
+    "indexes_into": null
+  },
+  {
+    "name": "n_elements",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of the joined frame",
+    "indexes_into": null
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "name": "seen",
+    "kind": "input",
+    "dtype": "uint8",
+    "length": "dense_size",
+    "indexes_into": null
+  },
+  {
+    "name": "prefix",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "dense_size",
+    "indexes_into": null
+  },
+  {
+    "name": "revenue_dense",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "dense_size",
+    "indexes_into": null
+  },
+  {
+    "name": "keys_out",
+    "kind": "output",
+    "dtype": "int64",
+    "length": "unique_count",
+    "indexes_into": null
+  },
+  {
+    "name": "revenue_out",
+    "kind": "output",
+    "dtype": "float64",
+    "length": "unique_count",
+    "indexes_into": null
+  },
+  {
+    "name": "dense_size",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "largest customer key plus one",
+    "indexes_into": null
+  }
+]

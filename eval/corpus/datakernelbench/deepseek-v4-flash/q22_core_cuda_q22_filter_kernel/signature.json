@@ -1,0 +1,79 @@
+[
+  {
+    "name": "custkey_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "acctbal_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "cntrycode_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "in_cntrycode_mask_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "sorted_okeys_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_okeys",
+    "indexes_into": null
+  },
+  {
+    "name": "n_okeys",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "distinct order customers",
+    "indexes_into": null
+  },
+  {
+    "name": "avg_val",
+    "kind": "scalar",
+    "dtype": "float64",
+    "length": "the average balance",
+    "indexes_into": null
+  },
+  {
+    "name": "out_cntrycodes",
+    "kind": "output",
+    "dtype": "int32",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "out_acctbals",
+    "kind": "output",
+    "dtype": "float64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "out_count",
+    "kind": "inout",
+    "dtype": "int32",
+    "length": "1",
+    "indexes_into": null
+  },
+  {
+    "name": "n",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of customer",
+    "indexes_into": null
+  }
+]

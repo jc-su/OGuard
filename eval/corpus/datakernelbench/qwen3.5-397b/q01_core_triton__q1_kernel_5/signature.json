@@ -1,0 +1,72 @@
+[
+  {
+    "name": "rf_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "ls_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "qty_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "price_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "disc_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "tax_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "shipdate_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "shipdate_hi",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "inclusive upper bound of l_shipdate in epoch days",
+    "indexes_into": null
+  },
+  {
+    "name": "acc_ptr",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "393216",
+    "indexes_into": null
+  },
+  {
+    "name": "n_elements",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "rows of lineitem (l_quantity.numel())",
+    "indexes_into": null
+  }
+]

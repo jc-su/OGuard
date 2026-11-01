@@ -1,0 +1,65 @@
+[
+  {
+    "name": "l_extendedprice",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "l_discount",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "l_shipdate_days",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "p_type_is_promo",
+    "kind": "input",
+    "dtype": "bool",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "shipdate_lo_days",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "days since 1970-01-01 that the plan computes from its `shipdate_lo` parameter; any int32 value",
+    "indexes_into": null
+  },
+  {
+    "name": "shipdate_hi_days",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "days since 1970-01-01 that the plan computes from its `shipdate_hi` parameter; any int32 value",
+    "indexes_into": null
+  },
+  {
+    "name": "total_revenue",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "1",
+    "indexes_into": null
+  },
+  {
+    "name": "promo_revenue",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "1",
+    "indexes_into": null
+  },
+  {
+    "name": "n_elements",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of the joined frame",
+    "indexes_into": null
+  }
+]

@@ -1,0 +1,9 @@
+[
+  {
+    "name": "dummy_ptr",
+    "kind": "output",
+    "dtype": "float64",
+    "length": "1",
+    "indexes_into": null
+  }
+]

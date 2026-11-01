@@ -1,0 +1,44 @@
+[
+  {
+    "name": "a_offsets",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n + 1",
+    "indexes_into": "a_chars"
+  },
+  {
+    "name": "a_chars",
+    "kind": "input",
+    "dtype": "uint8",
+    "length": "a_offsets[n]",
+    "indexes_into": null
+  },
+  {
+    "name": "b_offsets",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n + 1",
+    "indexes_into": "b_chars"
+  },
+  {
+    "name": "b_chars",
+    "kind": "input",
+    "dtype": "uint8",
+    "length": "b_offsets[n]",
+    "indexes_into": null
+  },
+  {
+    "name": "match",
+    "kind": "output",
+    "dtype": "int8",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "n",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of each string column",
+    "indexes_into": null
+  }
+]

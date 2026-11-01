@@ -1,0 +1,51 @@
+[
+  {
+    "name": "idx",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "l",
+    "kind": "input",
+    "dtype": "uint8",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "s",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n",
+    "indexes_into": "c"
+  },
+  {
+    "name": "d",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_agg",
+    "indexes_into": null
+  },
+  {
+    "name": "ld",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_agg",
+    "indexes_into": null
+  },
+  {
+    "name": "c",
+    "kind": "inout",
+    "dtype": "int64",
+    "length": "num_suppliers",
+    "indexes_into": null
+  },
+  {
+    "name": "n",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of l1",
+    "indexes_into": null
+  }
+]

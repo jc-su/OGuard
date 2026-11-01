@@ -1,0 +1,7 @@
+[
+  {"name": "keys", "kind": "input", "dtype": "uint32", "length": "n", "indexes_into": null},
+  {"name": "cursors", "kind": "inout", "dtype": "int32", "length": "256", "indexes_into": "out"},
+  {"name": "out", "kind": "output", "dtype": "int32", "length": "n", "indexes_into": "keys"},
+  {"name": "n", "kind": "scalar", "dtype": "int64", "length": "[0, 2147483647]", "indexes_into": null},
+  {"name": "shift", "kind": "scalar", "dtype": "int64", "length": "[0, 24]", "indexes_into": null}
+]

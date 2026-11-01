@@ -1,0 +1,51 @@
+[
+  {
+    "name": "group_ids",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_elements",
+    "indexes_into": "counts"
+  },
+  {
+    "name": "supp_ids",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "n_elements",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of the joined partsupp",
+    "indexes_into": null
+  },
+  {
+    "name": "num_groups",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "number of (brand, type, size) groups",
+    "indexes_into": null
+  },
+  {
+    "name": "table",
+    "kind": "inout",
+    "dtype": "uint64",
+    "length": "table_capacity",
+    "indexes_into": null
+  },
+  {
+    "name": "table_capacity",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "hash table capacity, a power of two of at least 16",
+    "indexes_into": null
+  },
+  {
+    "name": "counts",
+    "kind": "inout",
+    "dtype": "int64",
+    "length": "num_groups",
+    "indexes_into": null
+  }
+]

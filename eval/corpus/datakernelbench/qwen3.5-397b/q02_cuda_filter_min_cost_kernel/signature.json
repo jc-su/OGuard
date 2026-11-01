@@ -1,0 +1,37 @@
+[
+  {
+    "name": "supplycost_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "min_supplycost_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "keep_indices",
+    "kind": "output",
+    "dtype": "int64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "keep_count",
+    "kind": "inout",
+    "dtype": "int64",
+    "length": "1",
+    "indexes_into": null
+  },
+  {
+    "name": "n_elements",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of the candidate table (ps_supplycost.shape[0])",
+    "indexes_into": null
+  }
+]

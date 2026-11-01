@@ -1,0 +1,30 @@
+[
+  {
+    "name": "revenue_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "pos_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_elements",
+    "indexes_into": "out_ptr"
+  },
+  {
+    "name": "out_ptr",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "num_suppliers",
+    "indexes_into": null
+  },
+  {
+    "name": "n_elements",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "rows kept by the filter",
+    "indexes_into": null
+  }
+]

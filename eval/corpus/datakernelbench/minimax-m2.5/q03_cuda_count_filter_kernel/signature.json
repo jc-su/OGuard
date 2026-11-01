@@ -1,0 +1,44 @@
+[
+  {
+    "name": "l_shipdate_days",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "o_orderdate_days",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "shipdate_lo_days",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "days since 1970-01-01 that the plan computes from its `shipdate_lo` parameter; any int32 value",
+    "indexes_into": null
+  },
+  {
+    "name": "orderdate_hi_days",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "days since 1970-01-01 that the plan computes from its `orderdate_hi` parameter; any int32 value",
+    "indexes_into": null
+  },
+  {
+    "name": "out_count",
+    "kind": "inout",
+    "dtype": "uint64",
+    "length": "1",
+    "indexes_into": null
+  },
+  {
+    "name": "n_elements",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of the joined customer, orders, and lineitem frame",
+    "indexes_into": null
+  }
+]

@@ -1,0 +1,65 @@
+[
+  {
+    "name": "supp_code",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "cust_code",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "shipdate_days",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "price",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "discount",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "date_lo",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "l_shipdate lower bound (inclusive), days since epoch",
+    "indexes_into": null
+  },
+  {
+    "name": "date_hi",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "l_shipdate upper bound (inclusive), days since epoch",
+    "indexes_into": null
+  },
+  {
+    "name": "out_rev",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "8",
+    "indexes_into": null
+  },
+  {
+    "name": "n",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of the joined table",
+    "indexes_into": null
+  }
+]

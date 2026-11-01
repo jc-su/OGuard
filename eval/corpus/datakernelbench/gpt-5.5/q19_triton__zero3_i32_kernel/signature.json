@@ -1,0 +1,30 @@
+[
+  {
+    "name": "a_ptr",
+    "kind": "output",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "b_ptr",
+    "kind": "output",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "c_ptr",
+    "kind": "output",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "n_elements",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "map_size = max(p_partkey) + 1, the length of each map",
+    "indexes_into": null
+  }
+]

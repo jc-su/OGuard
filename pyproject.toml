@@ -1,0 +1,65 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "opgate"
+version = "0.0.1"
+description = "Untrusted GPU operators in a shared analytics engine, isolated by proof before the first launch"
+requires-python = ">=3.12"
+license = { text = "Apache-2.0" }
+readme = "README.md"
+dependencies = [
+    "torch>=2.11",
+    "numpy>=1.26",
+    "numba-cuda[cu13]==0.30.4",
+    "numba<0.65",
+    "triton==3.8.0",
+    "cuda-bindings==13.4.3",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.4",
+    "ty",
+]
+cudf = [
+    "cudf-cu13>=26.8.1,<26.9",
+    "dask-cuda[cu13]>=26.8,<26.9",
+    "dask-cudf-cu13>=26.8,<26.9",
+]
+
+[tool.setuptools]
+packages = [
+    "opgate", "opgate.binding", "opgate.catalog", "opgate.executor", "opgate.frontends",
+    "opgate.gate", "opgate.hosts", "opgate.hosts.service", "opgate_formal",
+]
+
+[tool.setuptools.package-dir]
+opgate_formal = "formal"
+
+[tool.setuptools.package-data]
+opgate_formal = ["*.v", "Makefile"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-v --tb=short --strict-markers --import-mode=importlib"
+markers = [
+    "gpu: tests requiring a CUDA-capable GPU",
+    "slow: tests taking more than a few seconds",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+# Recorded operators and archived experiment inputs are research data.
+extend-exclude = ["eval/corpus/synthesized", "eval/corpus/datakernelbench", "eval/records"]
+
+[tool.ty.src]
+exclude = ["eval/corpus/synthesized", "eval/corpus/datakernelbench", "eval/records"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+ignore = ["E501"]

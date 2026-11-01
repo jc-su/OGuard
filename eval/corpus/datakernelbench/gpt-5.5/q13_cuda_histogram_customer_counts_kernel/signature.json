@@ -1,0 +1,44 @@
+[
+  {
+    "name": "c_custkey",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_customers",
+    "indexes_into": null
+  },
+  {
+    "name": "counts",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "counts_len",
+    "indexes_into": null
+  },
+  {
+    "name": "n_customers",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of customer",
+    "indexes_into": null
+  },
+  {
+    "name": "counts_len",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "largest c_custkey plus one",
+    "indexes_into": null
+  },
+  {
+    "name": "hist",
+    "kind": "inout",
+    "dtype": "int64",
+    "length": "hist_len",
+    "indexes_into": null
+  },
+  {
+    "name": "hist_len",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "largest order count of a customer plus one",
+    "indexes_into": null
+  }
+]

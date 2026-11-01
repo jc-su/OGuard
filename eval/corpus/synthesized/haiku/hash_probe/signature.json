@@ -1,0 +1,58 @@
+[
+  {
+    "name": "probe_keys",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "m",
+    "indexes_into": null
+  },
+  {
+    "name": "m",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "[0, inf)",
+    "indexes_into": null
+  },
+  {
+    "name": "table_keys",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "capacity",
+    "indexes_into": null
+  },
+  {
+    "name": "table_rows",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "capacity",
+    "indexes_into": null
+  },
+  {
+    "name": "capacity",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "power of 2",
+    "indexes_into": null
+  },
+  {
+    "name": "out_build",
+    "kind": "output",
+    "dtype": "int32",
+    "length": "out_cap",
+    "indexes_into": null
+  },
+  {
+    "name": "out_probe",
+    "kind": "output",
+    "dtype": "int32",
+    "length": "out_cap",
+    "indexes_into": null
+  },
+  {
+    "name": "out_count",
+    "kind": "output",
+    "dtype": "int32",
+    "length": "1",
+    "indexes_into": null
+  }
+]

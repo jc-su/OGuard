@@ -1,0 +1,44 @@
+[
+  {
+    "name": "part_keys_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_parts",
+    "indexes_into": "map_ptr"
+  },
+  {
+    "name": "map_ptr",
+    "kind": "output",
+    "dtype": "int32",
+    "length": "map_size",
+    "indexes_into": null
+  },
+  {
+    "name": "sum_qty_ptr",
+    "kind": "output",
+    "dtype": "float64",
+    "length": "n_parts",
+    "indexes_into": null
+  },
+  {
+    "name": "cnt_qty_ptr",
+    "kind": "output",
+    "dtype": "float64",
+    "length": "n_parts",
+    "indexes_into": null
+  },
+  {
+    "name": "n_parts",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "rows of the filtered part",
+    "indexes_into": null
+  },
+  {
+    "name": "map_size",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "largest filtered part key plus one",
+    "indexes_into": null
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "name": "volume_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "is_brazil_ptr",
+    "kind": "input",
+    "dtype": "bool",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "inv_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "brazil_ptr",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "num_groups",
+    "indexes_into": null
+  },
+  {
+    "name": "total_ptr",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "num_groups",
+    "indexes_into": null
+  },
+  {
+    "name": "n_elements",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "rows of the joined table (volume.numel())",
+    "indexes_into": null
+  }
+]

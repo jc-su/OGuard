@@ -1,0 +1,7 @@
+[
+  {"name": "values", "kind": "input", "dtype": "int64", "length": "n", "indexes_into": null},
+  {"name": "run_ends", "kind": "output", "dtype": "int32", "length": "n", "indexes_into": null},
+  {"name": "run_values", "kind": "output", "dtype": "int64", "length": "n", "indexes_into": null},
+  {"name": "count", "kind": "output", "dtype": "int32", "length": "1", "indexes_into": null},
+  {"name": "n", "kind": "scalar", "dtype": "int64", "length": "[0, 2^30]", "indexes_into": null}
+]

@@ -1,0 +1,65 @@
+[
+  {
+    "name": "l_partkey",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_lineitems",
+    "indexes_into": null
+  },
+  {
+    "name": "l_quantity",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_lineitems",
+    "indexes_into": null
+  },
+  {
+    "name": "l_extendedprice",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_lineitems",
+    "indexes_into": null
+  },
+  {
+    "name": "part_keys",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_parts",
+    "indexes_into": null
+  },
+  {
+    "name": "sum_qty",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_parts",
+    "indexes_into": null
+  },
+  {
+    "name": "count_qty",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_parts",
+    "indexes_into": null
+  },
+  {
+    "name": "revenue",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "1",
+    "indexes_into": null
+  },
+  {
+    "name": "n_lineitems",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of lineitem",
+    "indexes_into": null
+  },
+  {
+    "name": "n_parts",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "filtered parts",
+    "indexes_into": null
+  }
+]

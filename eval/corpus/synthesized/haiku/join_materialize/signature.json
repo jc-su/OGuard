@@ -1,0 +1,9 @@
+[
+  {"name": "build", "kind": "input", "dtype": "int64", "length": "b", "indexes_into": null},
+  {"name": "probe", "kind": "input", "dtype": "int64", "length": "p", "indexes_into": null},
+  {"name": "offsets", "kind": "input", "dtype": "int32", "length": "p + 1", "indexes_into": null},
+  {"name": "out_build", "kind": "output", "dtype": "int32", "length": "offsets[p]", "indexes_into": "build"},
+  {"name": "out_probe", "kind": "output", "dtype": "int32", "length": "offsets[p]", "indexes_into": "probe"},
+  {"name": "b", "kind": "scalar", "dtype": "int64", "length": "[0, 2^30]", "indexes_into": null},
+  {"name": "p", "kind": "scalar", "dtype": "int64", "length": "[0, 2^30]", "indexes_into": null}
+]

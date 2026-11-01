@@ -1,0 +1,37 @@
+[
+  {
+    "name": "flags",
+    "kind": "input",
+    "dtype": "int8",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "offsets",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n",
+    "indexes_into": "out"
+  },
+  {
+    "name": "out",
+    "kind": "output",
+    "dtype": "int32",
+    "length": "total",
+    "indexes_into": "flags"
+  },
+  {
+    "name": "n",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of flags",
+    "indexes_into": null
+  },
+  {
+    "name": "total",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "sum of flags, rows of out",
+    "indexes_into": null
+  }
+]

@@ -1,0 +1,58 @@
+[
+  {
+    "name": "year_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_rows",
+    "indexes_into": null
+  },
+  {
+    "name": "volume_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_rows",
+    "indexes_into": null
+  },
+  {
+    "name": "is_brazil_ptr",
+    "kind": "input",
+    "dtype": "bool",
+    "length": "n_rows",
+    "indexes_into": null
+  },
+  {
+    "name": "min_year",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "the least order year; any int32 value",
+    "indexes_into": null
+  },
+  {
+    "name": "num_groups",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "the distinct order years",
+    "indexes_into": null
+  },
+  {
+    "name": "sum_brazil_ptr",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "num_groups",
+    "indexes_into": null
+  },
+  {
+    "name": "sum_total_ptr",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "num_groups",
+    "indexes_into": null
+  },
+  {
+    "name": "n_rows",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "rows of the joined frame",
+    "indexes_into": null
+  }
+]

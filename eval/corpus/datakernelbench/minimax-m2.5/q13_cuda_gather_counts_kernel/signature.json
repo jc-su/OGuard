@@ -1,0 +1,30 @@
+[
+  {
+    "name": "custkeys",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_customers",
+    "indexes_into": "histogram"
+  },
+  {
+    "name": "histogram",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "num_customers + 1",
+    "indexes_into": null
+  },
+  {
+    "name": "counts",
+    "kind": "output",
+    "dtype": "int64",
+    "length": "n_customers",
+    "indexes_into": null
+  },
+  {
+    "name": "n_customers",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of customer",
+    "indexes_into": null
+  }
+]

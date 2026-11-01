@@ -1,0 +1,58 @@
+[
+  {
+    "name": "shipdate_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "price_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "disc_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "supp_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "totals_ptr",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "n_suppliers + 1",
+    "indexes_into": null
+  },
+  {
+    "name": "date_lo",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "inclusive lower bound of l_shipdate in epoch days",
+    "indexes_into": null
+  },
+  {
+    "name": "date_hi",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "exclusive upper bound of l_shipdate in epoch days",
+    "indexes_into": null
+  },
+  {
+    "name": "n_elements",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "rows of lineitem (l_suppkey_t.numel())",
+    "indexes_into": null
+  }
+]

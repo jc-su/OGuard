@@ -1,0 +1,65 @@
+[
+  {
+    "name": "extprice",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "N",
+    "indexes_into": null
+  },
+  {
+    "name": "discount",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "N",
+    "indexes_into": null
+  },
+  {
+    "name": "shipdate",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "N",
+    "indexes_into": null
+  },
+  {
+    "name": "promo",
+    "kind": "input",
+    "dtype": "uint8",
+    "length": "N",
+    "indexes_into": null
+  },
+  {
+    "name": "date_lo",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "l_shipdate lower bound (inclusive), days since epoch",
+    "indexes_into": null
+  },
+  {
+    "name": "date_hi",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "l_shipdate upper bound (exclusive), days since epoch",
+    "indexes_into": null
+  },
+  {
+    "name": "out_total",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "1",
+    "indexes_into": null
+  },
+  {
+    "name": "out_promo",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "1",
+    "indexes_into": null
+  },
+  {
+    "name": "N",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of the joined table",
+    "indexes_into": null
+  }
+]

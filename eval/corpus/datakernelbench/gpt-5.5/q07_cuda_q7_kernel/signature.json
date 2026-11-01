@@ -1,0 +1,72 @@
+[
+  {
+    "name": "supp_code",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "cust_code",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "shipdate_days",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "price",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "discount",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "date_lo",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "epoch day of 1995-01-01, inclusive lower ship date",
+    "indexes_into": null
+  },
+  {
+    "name": "date_hi",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "epoch day of 1996-12-31, inclusive upper ship date",
+    "indexes_into": null
+  },
+  {
+    "name": "base_year",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "[1995, 1995]",
+    "indexes_into": null
+  },
+  {
+    "name": "out",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "8",
+    "indexes_into": null
+  },
+  {
+    "name": "n",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of the joined lineitem",
+    "indexes_into": null
+  }
+]

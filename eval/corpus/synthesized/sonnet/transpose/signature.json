@@ -1,0 +1,30 @@
+[
+  {
+    "name": "source",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "rows * cols",
+    "indexes_into": null
+  },
+  {
+    "name": "out",
+    "kind": "output",
+    "dtype": "int32",
+    "length": "rows * cols",
+    "indexes_into": null
+  },
+  {
+    "name": "rows",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "[0, 2147483647]",
+    "indexes_into": null
+  },
+  {
+    "name": "cols",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "[0, 2147483647]",
+    "indexes_into": null
+  }
+]

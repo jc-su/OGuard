@@ -1,0 +1,79 @@
+[
+  {
+    "name": "c_custkey",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n",
+    "indexes_into": "has_order"
+  },
+  {
+    "name": "c_acctbal",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "cntrycode",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "in_mask",
+    "kind": "input",
+    "dtype": "bool",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "has_order",
+    "kind": "input",
+    "dtype": "uint8",
+    "length": "key_space",
+    "indexes_into": null
+  },
+  {
+    "name": "avg_sum",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "1",
+    "indexes_into": null
+  },
+  {
+    "name": "avg_count",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "1",
+    "indexes_into": null
+  },
+  {
+    "name": "key_space",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "largest customer key plus one",
+    "indexes_into": null
+  },
+  {
+    "name": "global_counts",
+    "kind": "inout",
+    "dtype": "int64",
+    "length": "100",
+    "indexes_into": null
+  },
+  {
+    "name": "global_sums",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "100",
+    "indexes_into": null
+  },
+  {
+    "name": "n",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of customer",
+    "indexes_into": null
+  }
+]

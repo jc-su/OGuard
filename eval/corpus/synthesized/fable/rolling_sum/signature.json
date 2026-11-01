@@ -1,0 +1,6 @@
+[
+  {"name": "values", "kind": "input", "dtype": "float64", "length": "n", "indexes_into": null},
+  {"name": "out", "kind": "output", "dtype": "float64", "length": "n", "indexes_into": null},
+  {"name": "n", "kind": "scalar", "dtype": "int64", "length": "rows of values", "indexes_into": null},
+  {"name": "window", "kind": "scalar", "dtype": "int64", "length": "[1, 1024]", "indexes_into": null}
+]

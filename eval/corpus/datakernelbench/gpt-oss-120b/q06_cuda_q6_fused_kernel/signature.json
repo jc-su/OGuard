@@ -1,0 +1,79 @@
+[
+  {
+    "name": "price",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "N",
+    "indexes_into": null
+  },
+  {
+    "name": "discount",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "N",
+    "indexes_into": null
+  },
+  {
+    "name": "quantity",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "N",
+    "indexes_into": null
+  },
+  {
+    "name": "shipdate",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "N",
+    "indexes_into": null
+  },
+  {
+    "name": "date_lo",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "l_shipdate lower bound (inclusive), days since epoch",
+    "indexes_into": null
+  },
+  {
+    "name": "date_hi",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "l_shipdate upper bound (exclusive), days since epoch",
+    "indexes_into": null
+  },
+  {
+    "name": "disc_lo",
+    "kind": "scalar",
+    "dtype": "float64",
+    "length": "l_discount lower bound (inclusive)",
+    "indexes_into": null
+  },
+  {
+    "name": "disc_hi",
+    "kind": "scalar",
+    "dtype": "float64",
+    "length": "l_discount upper bound (inclusive)",
+    "indexes_into": null
+  },
+  {
+    "name": "qty_hi",
+    "kind": "scalar",
+    "dtype": "float64",
+    "length": "l_quantity upper bound (exclusive)",
+    "indexes_into": null
+  },
+  {
+    "name": "out",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "1",
+    "indexes_into": null
+  },
+  {
+    "name": "N",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of lineitem",
+    "indexes_into": null
+  }
+]

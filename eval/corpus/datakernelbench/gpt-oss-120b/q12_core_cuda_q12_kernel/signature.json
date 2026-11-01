@@ -1,0 +1,72 @@
+[
+  {
+    "name": "shipmode_code",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": "high_counts"
+  },
+  {
+    "name": "priority_high",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "commitdate",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "receiptdate",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "shipdate",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "receipt_lo",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "l_receiptdate lower bound (inclusive), days since epoch",
+    "indexes_into": null
+  },
+  {
+    "name": "receipt_hi",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "l_receiptdate upper bound (exclusive), days since epoch",
+    "indexes_into": null
+  },
+  {
+    "name": "high_counts",
+    "kind": "inout",
+    "dtype": "uint64",
+    "length": "2",
+    "indexes_into": null
+  },
+  {
+    "name": "low_counts",
+    "kind": "inout",
+    "dtype": "uint64",
+    "length": "2",
+    "indexes_into": null
+  },
+  {
+    "name": "n_elements",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of the joined table",
+    "indexes_into": null
+  }
+]

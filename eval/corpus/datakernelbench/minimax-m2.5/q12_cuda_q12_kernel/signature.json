@@ -1,0 +1,65 @@
+[
+  {
+    "name": "l_commitdate",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "l_receiptdate",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "l_shipdate",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "l_shipmode",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "o_orderpriority_high",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "receipt_lo_days",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "days since 1970-01-01 that the plan computes from its `receipt_lo` parameter; any int32 value",
+    "indexes_into": null
+  },
+  {
+    "name": "receipt_hi_days",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "days since 1970-01-01 that the plan computes from its `receipt_hi` parameter; any int32 value",
+    "indexes_into": null
+  },
+  {
+    "name": "out",
+    "kind": "inout",
+    "dtype": "int32",
+    "length": "4",
+    "indexes_into": null
+  },
+  {
+    "name": "n_elements",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of the joined frame",
+    "indexes_into": null
+  }
+]

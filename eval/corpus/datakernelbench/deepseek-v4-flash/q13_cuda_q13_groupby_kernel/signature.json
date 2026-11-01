@@ -1,0 +1,23 @@
+[
+  {
+    "name": "c_count_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_elements",
+    "indexes_into": "custdist_out_ptr"
+  },
+  {
+    "name": "custdist_out_ptr",
+    "kind": "inout",
+    "dtype": "int64",
+    "length": "max_count + 1",
+    "indexes_into": null
+  },
+  {
+    "name": "n_elements",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of customer",
+    "indexes_into": null
+  }
+]

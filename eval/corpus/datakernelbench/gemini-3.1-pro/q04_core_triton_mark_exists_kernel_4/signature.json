@@ -1,0 +1,37 @@
+[
+  {
+    "name": "l_okey_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_elements",
+    "indexes_into": "exists_map_ptr"
+  },
+  {
+    "name": "l_commit_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "l_receipt_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "exists_map_ptr",
+    "kind": "inout",
+    "dtype": "int32",
+    "length": "max_key + 1",
+    "indexes_into": null
+  },
+  {
+    "name": "n_elements",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "rows of lineitem",
+    "indexes_into": null
+  }
+]

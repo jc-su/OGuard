@@ -1,0 +1,65 @@
+[
+  {
+    "name": "p",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "d",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "sd",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "pm",
+    "kind": "input",
+    "dtype": "uint8",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "lo",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "days since 1970-01-01 that the plan computes from its `shipdate_lo` parameter; any int32 value",
+    "indexes_into": null
+  },
+  {
+    "name": "hi",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "days since 1970-01-01 that the plan computes from its `shipdate_hi` parameter; any int32 value",
+    "indexes_into": null
+  },
+  {
+    "name": "tot",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "1",
+    "indexes_into": null
+  },
+  {
+    "name": "pr",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "1",
+    "indexes_into": null
+  },
+  {
+    "name": "n",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of the lineitem-part join",
+    "indexes_into": null
+  }
+]

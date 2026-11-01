@@ -1,0 +1,100 @@
+[
+  {
+    "name": "lk_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "price_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "discount_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "l_ship_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "o_date_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "sp_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "shipdate_lo",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "l_shipdate lower bound (exclusive), days since epoch",
+    "indexes_into": null
+  },
+  {
+    "name": "orderdate_hi",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "o_orderdate upper bound (exclusive), days since epoch",
+    "indexes_into": null
+  },
+  {
+    "name": "out_lk_ptr",
+    "kind": "output",
+    "dtype": "int64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "out_rev_ptr",
+    "kind": "output",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "out_od_ptr",
+    "kind": "output",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "out_sp_ptr",
+    "kind": "output",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "cnt_ptr",
+    "kind": "inout",
+    "dtype": "int64",
+    "length": "1",
+    "indexes_into": null
+  },
+  {
+    "name": "n_elements",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "rows of the joined table",
+    "indexes_into": null
+  }
+]

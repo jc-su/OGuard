@@ -1,0 +1,23 @@
+[
+  {
+    "name": "totals_ptr",
+    "kind": "output",
+    "dtype": "float64",
+    "length": "100000",
+    "indexes_into": null
+  },
+  {
+    "name": "present_ptr",
+    "kind": "output",
+    "dtype": "uint8",
+    "length": "100000",
+    "indexes_into": null
+  },
+  {
+    "name": "count_ptr",
+    "kind": "output",
+    "dtype": "int32",
+    "length": "1",
+    "indexes_into": null
+  }
+]

@@ -1,0 +1,30 @@
+[
+  {
+    "name": "ps_availqty_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "sum_qty_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "out_mask_ptr",
+    "kind": "output",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "n_elements",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "rows of the filtered partsupp (len(ps_availqty))",
+    "indexes_into": null
+  }
+]

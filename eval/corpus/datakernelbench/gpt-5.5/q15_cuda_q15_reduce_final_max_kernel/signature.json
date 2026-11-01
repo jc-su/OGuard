@@ -1,0 +1,23 @@
+[
+  {
+    "name": "block_max",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_blocks",
+    "indexes_into": null
+  },
+  {
+    "name": "max_out",
+    "kind": "output",
+    "dtype": "float64",
+    "length": "1",
+    "indexes_into": null
+  },
+  {
+    "name": "n_blocks",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "entries of block_max, at most 4096",
+    "indexes_into": null
+  }
+]

@@ -1,0 +1,51 @@
+[
+  {
+    "name": "custkey_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "price_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "discount_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "revenue_ptr",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "key_range",
+    "indexes_into": null
+  },
+  {
+    "name": "flag_ptr",
+    "kind": "output",
+    "dtype": "int8",
+    "length": "key_range",
+    "indexes_into": null
+  },
+  {
+    "name": "key_min",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "smallest customer key of the joined rows",
+    "indexes_into": null
+  },
+  {
+    "name": "n_elements",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "rows of the joined lineitem",
+    "indexes_into": null
+  }
+]

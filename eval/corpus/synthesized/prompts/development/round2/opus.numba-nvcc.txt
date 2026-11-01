@@ -1,0 +1,112 @@
+The Python environment is /opgate/.venv/bin/python, which
+has numba-cuda 0.30.4 (numba 0.64: `from numba import cuda`), Triton 3.8.0
+with PyTorch 2.14, numpy, and cupy. nvcc is $HOME/miniconda3/bin/nvcc
+(CUDA 13.0). Use GPU 1 only: prefix every command that uses the GPU with
+`CUDA_VISIBLE_DEVICES=1`. A file named `numba.py` or `triton.py` in the
+working directory shadows its package: run Python tests from the model's
+directory, not a task directory, or with `python -P`, and load a task's
+source by path with importlib.
+
+Revise each of these kernels:
+
+You wrote the numba kernel /opgate/eval/corpus/synthesized/opus/filter_select/repair1/numba.py for the task `filter_select` of
+/opgate/eval/corpus/synthesized/TASKS.md. A static checker of GPU memory accesses refused it
+with this reason:
+
+    _ZN25corpus_opus_filter_select6kernelB3v11B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIdLi1E1A7mutable7alignedEd5ArrayIiLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedEx: the stored value is not proved to be one element in the index range: st.u32 [%rd34+0], %rd8
+
+The checker accepts a kernel only if it can prove that every memory access
+stays inside its buffer for every input that meets the task's contract,
+whatever the output buffers hold on entry, and for any grid. Revise the
+kernel so that the checker can prove it, keeping the task's semantics and
+the arguments that your signature.json states. Write the revision as /opgate/eval/corpus/synthesized/opus/filter_select/repair2/numba.py,
+test it on GPU 1 (`CUDA_VISIBLE_DEVICES=1`) against the reference as you
+tested the first kernel, and do not change any other file. Read only
+TASKS.md and your own files of this task.
+
+---
+
+You wrote the nvcc kernel /opgate/eval/corpus/synthesized/opus/filter_select/repair1/kernel.cu for the task `filter_select` of
+/opgate/eval/corpus/synthesized/TASKS.md. A static checker of GPU memory accesses refused it
+with this reason:
+
+    kernel: the stored value is not proved to be one element in the index range: st.global.u32 [%rd24+0], %rd6
+
+The checker accepts a kernel only if it can prove that every memory access
+stays inside its buffer for every input that meets the task's contract,
+whatever the output buffers hold on entry, and for any grid. Revise the
+kernel so that the checker can prove it, keeping the task's semantics and
+the arguments that your signature.json states. Write the revision as /opgate/eval/corpus/synthesized/opus/filter_select/repair2/kernel.cu,
+test it on GPU 1 (`CUDA_VISIBLE_DEVICES=1`) against the reference as you
+tested the first kernel, and do not change any other file. Read only
+TASKS.md and your own files of this task.
+
+---
+
+You wrote the numba kernel /opgate/eval/corpus/synthesized/opus/hash_probe/repair1/numba.py for the task `hash_probe` of
+/opgate/eval/corpus/synthesized/TASKS.md. A static checker of GPU memory accesses refused it
+with this reason:
+
+    _ZN22corpus_opus_hash_probe6kernelB3v12B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIxLi1E1A7mutable7alignedE5ArrayIxLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedEx5ArrayIiLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedExx: the stored value is not proved to be one element in the index range: st.u32 [%rd73+0], %rd8
+
+The checker accepts a kernel only if it can prove that every memory access
+stays inside its buffer for every input that meets the task's contract,
+whatever the output buffers hold on entry, and for any grid. Revise the
+kernel so that the checker can prove it, keeping the task's semantics and
+the arguments that your signature.json states. Write the revision as /opgate/eval/corpus/synthesized/opus/hash_probe/repair2/numba.py,
+test it on GPU 1 (`CUDA_VISIBLE_DEVICES=1`) against the reference as you
+tested the first kernel, and do not change any other file. Read only
+TASKS.md and your own files of this task.
+
+---
+
+You wrote the nvcc kernel /opgate/eval/corpus/synthesized/opus/hash_probe/repair1/kernel.cu for the task `hash_probe` of
+/opgate/eval/corpus/synthesized/TASKS.md. A static checker of GPU memory accesses refused it
+with this reason:
+
+    kernel: the stored value is not proved to be one element in the index range: st.global.u32 [%rd57+0], %rd12
+
+The checker accepts a kernel only if it can prove that every memory access
+stays inside its buffer for every input that meets the task's contract,
+whatever the output buffers hold on entry, and for any grid. Revise the
+kernel so that the checker can prove it, keeping the task's semantics and
+the arguments that your signature.json states. Write the revision as /opgate/eval/corpus/synthesized/opus/hash_probe/repair2/kernel.cu,
+test it on GPU 1 (`CUDA_VISIBLE_DEVICES=1`) against the reference as you
+tested the first kernel, and do not change any other file. Read only
+TASKS.md and your own files of this task.
+
+---
+
+You wrote the numba kernel /opgate/eval/corpus/synthesized/opus/segmented_sum/repair1/numba.py for the task `segmented_sum` of
+/opgate/eval/corpus/synthesized/TASKS.md. A static checker of GPU memory accesses refused it
+with this reason:
+
+    _ZN25corpus_opus_segmented_sum6kernelB3v16B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIiLi1E1A7mutable7alignedE5ArrayIdLi1E1A7mutable7alignedE5ArrayIdLi1E1A7mutable7alignedEx: the access is not proved inside its buffer, a shared variable, or a local variable: ld.s32 %rd243, [%rd178+0]
+
+The checker accepts a kernel only if it can prove that every memory access
+stays inside its buffer for every input that meets the task's contract,
+whatever the output buffers hold on entry, and for any grid. Revise the
+kernel so that the checker can prove it, keeping the task's semantics and
+the arguments that your signature.json states. Write the revision as /opgate/eval/corpus/synthesized/opus/segmented_sum/repair2/numba.py,
+test it on GPU 1 (`CUDA_VISIBLE_DEVICES=1`) against the reference as you
+tested the first kernel, and do not change any other file. Read only
+TASKS.md and your own files of this task.
+
+---
+
+You wrote the nvcc kernel /opgate/eval/corpus/synthesized/opus/segmented_sum/repair1/kernel.cu for the task `segmented_sum` of
+/opgate/eval/corpus/synthesized/TASKS.md. A static checker of GPU memory accesses refused it
+with this reason:
+
+    kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.nc.f64 %fd64, [%rd112+0]
+
+The checker accepts a kernel only if it can prove that every memory access
+stays inside its buffer for every input that meets the task's contract,
+whatever the output buffers hold on entry, and for any grid. Revise the
+kernel so that the checker can prove it, keeping the task's semantics and
+the arguments that your signature.json states. Write the revision as /opgate/eval/corpus/synthesized/opus/segmented_sum/repair2/kernel.cu,
+test it on GPU 1 (`CUDA_VISIBLE_DEVICES=1`) against the reference as you
+tested the first kernel, and do not change any other file. Read only
+TASKS.md and your own files of this task.
+
+When done, reply with the revisions you wrote and whether each passed its test.

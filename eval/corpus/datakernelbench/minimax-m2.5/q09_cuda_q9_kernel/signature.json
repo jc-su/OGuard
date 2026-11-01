@@ -1,0 +1,79 @@
+[
+  {
+    "name": "price",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "discount",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "supplycost",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "quantity",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "nation_key",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "year",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "out",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "25 * year_range",
+    "indexes_into": null
+  },
+  {
+    "name": "n",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of the joined frame",
+    "indexes_into": null
+  },
+  {
+    "name": "num_nations",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "[25, 25]",
+    "indexes_into": null
+  },
+  {
+    "name": "year_min",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "the least year of year",
+    "indexes_into": null
+  },
+  {
+    "name": "year_range",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "year_max - year_min + 1",
+    "indexes_into": null
+  }
+]

@@ -1,0 +1,9 @@
+[
+  {
+    "name": "out_ptr",
+    "kind": "output",
+    "dtype": "int64",
+    "length": "100",
+    "indexes_into": null
+  }
+]

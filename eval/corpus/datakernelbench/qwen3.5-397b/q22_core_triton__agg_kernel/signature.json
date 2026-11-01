@@ -1,0 +1,79 @@
+[
+  {
+    "name": "custkey_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "acctbal_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "cntrycode_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "in_mask_ptr",
+    "kind": "input",
+    "dtype": "bool",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "orders_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_orders",
+    "indexes_into": null
+  },
+  {
+    "name": "n_orders",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "distinct o_custkey values (sorted_okeys.numel())",
+    "indexes_into": null
+  },
+  {
+    "name": "avg_val",
+    "kind": "scalar",
+    "dtype": "float64",
+    "length": "average balance of the selected customers",
+    "indexes_into": null
+  },
+  {
+    "name": "code_map_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "100",
+    "indexes_into": null
+  },
+  {
+    "name": "group_counts_ptr",
+    "kind": "inout",
+    "dtype": "int64",
+    "length": "7",
+    "indexes_into": null
+  },
+  {
+    "name": "group_sums_ptr",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "7",
+    "indexes_into": null
+  },
+  {
+    "name": "n_elements",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "rows of customer (c_custkey.numel())",
+    "indexes_into": null
+  }
+]

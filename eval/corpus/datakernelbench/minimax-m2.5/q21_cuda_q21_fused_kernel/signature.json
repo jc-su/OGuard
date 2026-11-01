@@ -1,0 +1,65 @@
+[
+  {
+    "name": "l_orderkeys",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_l1",
+    "indexes_into": null
+  },
+  {
+    "name": "l_late",
+    "kind": "input",
+    "dtype": "int8",
+    "length": "n_l1",
+    "indexes_into": null
+  },
+  {
+    "name": "supp_ids",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_l1",
+    "indexes_into": "out_counts"
+  },
+  {
+    "name": "lo_orderkeys",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_orders",
+    "indexes_into": null
+  },
+  {
+    "name": "lo_distinct_supp",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_orders",
+    "indexes_into": null
+  },
+  {
+    "name": "lo_late_distinct_supp",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_orders",
+    "indexes_into": null
+  },
+  {
+    "name": "n_l1",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of l1",
+    "indexes_into": null
+  },
+  {
+    "name": "n_orders",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of agg",
+    "indexes_into": null
+  },
+  {
+    "name": "out_counts",
+    "kind": "inout",
+    "dtype": "uint64",
+    "length": "num_suppliers",
+    "indexes_into": null
+  }
+]

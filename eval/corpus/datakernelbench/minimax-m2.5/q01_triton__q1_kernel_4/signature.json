@@ -1,0 +1,107 @@
+[
+  {
+    "name": "rf_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "ls_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "qty_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "price_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "discount_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "tax_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "shipdate_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "shipdate_hi",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "days since 1970-01-01 that the plan computes from its `shipdate_hi` parameter; any int32 value",
+    "indexes_into": null
+  },
+  {
+    "name": "sum_qty_ptr",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "65536",
+    "indexes_into": null
+  },
+  {
+    "name": "sum_base_price_ptr",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "65536",
+    "indexes_into": null
+  },
+  {
+    "name": "sum_disc_price_ptr",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "65536",
+    "indexes_into": null
+  },
+  {
+    "name": "sum_charge_ptr",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "65536",
+    "indexes_into": null
+  },
+  {
+    "name": "sum_disc_ptr",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "65536",
+    "indexes_into": null
+  },
+  {
+    "name": "count_ptr",
+    "kind": "inout",
+    "dtype": "int64",
+    "length": "65536",
+    "indexes_into": null
+  },
+  {
+    "name": "n_elements",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "rows of lineitem",
+    "indexes_into": null
+  }
+]

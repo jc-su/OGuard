@@ -1,0 +1,72 @@
+[
+  {
+    "name": "l_suppkey_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "l_extendedprice_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "l_discount_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "l_shipdate_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "rev_by_suppkey_ptr",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "max_s + 1",
+    "indexes_into": null
+  },
+  {
+    "name": "counts_by_suppkey_ptr",
+    "kind": "inout",
+    "dtype": "int32",
+    "length": "max_s + 1",
+    "indexes_into": null
+  },
+  {
+    "name": "date_lo",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "l_shipdate lower bound (inclusive), days",
+    "indexes_into": null
+  },
+  {
+    "name": "date_hi",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "l_shipdate upper bound (exclusive), days",
+    "indexes_into": null
+  },
+  {
+    "name": "max_s",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "the largest s_suppkey, the length of the outputs less 1",
+    "indexes_into": null
+  },
+  {
+    "name": "n_elements",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "rows of lineitem",
+    "indexes_into": null
+  }
+]

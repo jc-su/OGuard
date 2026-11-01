@@ -1,0 +1,51 @@
+[
+  {
+    "name": "s_suppkey",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_suppliers",
+    "indexes_into": "supplier_keep"
+  },
+  {
+    "name": "s_nationkey",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_suppliers",
+    "indexes_into": null
+  },
+  {
+    "name": "nation_keys",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_nation_keys",
+    "indexes_into": null
+  },
+  {
+    "name": "n_suppliers",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of supplier",
+    "indexes_into": null
+  },
+  {
+    "name": "n_nation_keys",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "nation keys named nation_name",
+    "indexes_into": null
+  },
+  {
+    "name": "supplier_keep",
+    "kind": "output",
+    "dtype": "uint8",
+    "length": "supplier_keep_len",
+    "indexes_into": null
+  },
+  {
+    "name": "supplier_keep_len",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "max_suppkey + 1",
+    "indexes_into": null
+  }
+]

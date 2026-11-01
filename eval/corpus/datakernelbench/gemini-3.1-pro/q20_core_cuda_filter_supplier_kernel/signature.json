@@ -1,0 +1,51 @@
+[
+  {
+    "name": "s_suppkey",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "N_s",
+    "indexes_into": null
+  },
+  {
+    "name": "s_row_idx",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "N_s",
+    "indexes_into": null
+  },
+  {
+    "name": "supp_hash_set",
+    "kind": "input",
+    "dtype": "uint64",
+    "length": "H_s",
+    "indexes_into": null
+  },
+  {
+    "name": "out_idx",
+    "kind": "output",
+    "dtype": "int64",
+    "length": "N_s",
+    "indexes_into": null
+  },
+  {
+    "name": "out_count",
+    "kind": "inout",
+    "dtype": "int32",
+    "length": "1",
+    "indexes_into": null
+  },
+  {
+    "name": "H_s",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "slots of supp_hash_set, a power of two of at least 1024",
+    "indexes_into": null
+  },
+  {
+    "name": "N_s",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of the nation's suppliers",
+    "indexes_into": null
+  }
+]

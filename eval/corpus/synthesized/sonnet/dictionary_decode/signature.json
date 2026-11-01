@@ -1,0 +1,37 @@
+[
+  {
+    "name": "codes",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n",
+    "indexes_into": "dictionary"
+  },
+  {
+    "name": "dictionary",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "d",
+    "indexes_into": null
+  },
+  {
+    "name": "out",
+    "kind": "output",
+    "dtype": "float64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "n",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "[0, 2^31)",
+    "indexes_into": null
+  },
+  {
+    "name": "d",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "[0, 2^31)",
+    "indexes_into": null
+  }
+]

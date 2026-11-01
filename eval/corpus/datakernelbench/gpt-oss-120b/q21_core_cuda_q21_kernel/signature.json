@@ -1,0 +1,65 @@
+[
+  {
+    "name": "l1_orderkey",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "l1_late",
+    "kind": "input",
+    "dtype": "uint8",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "supp_ids",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n",
+    "indexes_into": "counts"
+  },
+  {
+    "name": "lo_orderkeys",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "lo_n",
+    "indexes_into": null
+  },
+  {
+    "name": "lo_distinct_supp",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "lo_n",
+    "indexes_into": null
+  },
+  {
+    "name": "lo_late_distinct_supp",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "lo_n",
+    "indexes_into": null
+  },
+  {
+    "name": "counts",
+    "kind": "inout",
+    "dtype": "uint64",
+    "length": "num_suppliers",
+    "indexes_into": null
+  },
+  {
+    "name": "n",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of l1",
+    "indexes_into": null
+  },
+  {
+    "name": "lo_n",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "orders of the aggregated table",
+    "indexes_into": null
+  }
+]

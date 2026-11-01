@@ -1,0 +1,51 @@
+[
+  {
+    "name": "dense_values_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "dense_len",
+    "indexes_into": null
+  },
+  {
+    "name": "present_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "dense_len",
+    "indexes_into": null
+  },
+  {
+    "name": "dense_len",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "largest part key plus one",
+    "indexes_into": null
+  },
+  {
+    "name": "threshold",
+    "kind": "scalar",
+    "dtype": "float64",
+    "length": "total value times the threshold fraction",
+    "indexes_into": null
+  },
+  {
+    "name": "out_keys_ptr",
+    "kind": "output",
+    "dtype": "int64",
+    "length": "out_count",
+    "indexes_into": null
+  },
+  {
+    "name": "out_values_ptr",
+    "kind": "output",
+    "dtype": "float64",
+    "length": "out_count",
+    "indexes_into": null
+  },
+  {
+    "name": "write_ptr",
+    "kind": "inout",
+    "dtype": "uint64",
+    "length": "1",
+    "indexes_into": null
+  }
+]

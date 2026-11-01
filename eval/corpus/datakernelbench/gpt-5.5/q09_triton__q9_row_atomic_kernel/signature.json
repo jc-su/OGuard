@@ -1,0 +1,79 @@
+[
+  {
+    "name": "extendedprice_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "discount_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "supplycost_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "quantity_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "nationkey_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "year_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "sum_out_ptr",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "25 * n_years",
+    "indexes_into": null
+  },
+  {
+    "name": "cnt_out_ptr",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "25 * n_years",
+    "indexes_into": null
+  },
+  {
+    "name": "n_elements",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "rows of the joined lineitem, partsupp, supplier, orders frame",
+    "indexes_into": null
+  },
+  {
+    "name": "min_year",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "least o_year of the joined rows",
+    "indexes_into": null
+  },
+  {
+    "name": "n_years",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "max_year - min_year + 1, above 16 on this branch",
+    "indexes_into": null
+  }
+]

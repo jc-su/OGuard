@@ -1,0 +1,11 @@
+[
+  {"name": "probe_keys", "kind": "input", "dtype": "int64", "length": "m", "indexes_into": null},
+  {"name": "table_keys", "kind": "input", "dtype": "int64", "length": "capacity", "indexes_into": null},
+  {"name": "table_rows", "kind": "input", "dtype": "int32", "length": "capacity", "indexes_into": null},
+  {"name": "capacity", "kind": "scalar", "dtype": "int64", "length": "power of two in [1, 2^62], with at least one empty slot in table_keys", "indexes_into": null},
+  {"name": "out_build", "kind": "output", "dtype": "int32", "length": "out_cap", "indexes_into": null},
+  {"name": "out_probe", "kind": "output", "dtype": "int32", "length": "out_cap", "indexes_into": "probe_keys"},
+  {"name": "out_count", "kind": "inout", "dtype": "int32", "length": "1", "indexes_into": null},
+  {"name": "m", "kind": "scalar", "dtype": "int64", "length": "[0, 2^31 - 1]", "indexes_into": null},
+  {"name": "out_cap", "kind": "scalar", "dtype": "int64", "length": "[0, 2^31 - 1]", "indexes_into": null}
+]

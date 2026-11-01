@@ -1,0 +1,7 @@
+[
+  {"name": "offsets", "kind": "input", "dtype": "int32", "length": "n + 1", "indexes_into": "chars"},
+  {"name": "chars", "kind": "input", "dtype": "uint8", "length": "offsets[n]", "indexes_into": null},
+  {"name": "out", "kind": "output", "dtype": "int64", "length": "n", "indexes_into": null},
+  {"name": "valid", "kind": "output", "dtype": "uint8", "length": "(n + 7) / 8", "indexes_into": null},
+  {"name": "n", "kind": "scalar", "dtype": "int64", "length": "[0, 1073741824]", "indexes_into": null}
+]

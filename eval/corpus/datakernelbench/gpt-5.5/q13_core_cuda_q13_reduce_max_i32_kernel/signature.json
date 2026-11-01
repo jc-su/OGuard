@@ -1,0 +1,23 @@
+[
+  {
+    "name": "inp",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "n",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "entries of the current reduction level",
+    "indexes_into": null
+  },
+  {
+    "name": "out",
+    "kind": "output",
+    "dtype": "int32",
+    "length": "(n + 255) / 256",
+    "indexes_into": null
+  }
+]

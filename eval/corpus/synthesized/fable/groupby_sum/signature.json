@@ -1,0 +1,8 @@
+[
+  {"name": "group", "kind": "input", "dtype": "int32", "length": "n", "indexes_into": null},
+  {"name": "value", "kind": "input", "dtype": "float64", "length": "n", "indexes_into": null},
+  {"name": "table_keys", "kind": "inout", "dtype": "int32", "length": "capacity", "indexes_into": null},
+  {"name": "table_sums", "kind": "inout", "dtype": "float64", "length": "capacity", "indexes_into": null},
+  {"name": "capacity", "kind": "scalar", "dtype": "int64", "length": "slots of table_keys, a power of two, at least 2 times the number of groups", "indexes_into": null},
+  {"name": "n", "kind": "scalar", "dtype": "int64", "length": "rows of group", "indexes_into": null}
+]

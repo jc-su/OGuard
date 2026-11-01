@@ -1,0 +1,58 @@
+[
+  {
+    "name": "ps_partkey_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_elements",
+    "indexes_into": "group_values_ptr"
+  },
+  {
+    "name": "ps_suppkey_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "ps_supplycost_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "ps_availqty_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "supplier_mask_ptr",
+    "kind": "input",
+    "dtype": "int8",
+    "length": "100001",
+    "indexes_into": null
+  },
+  {
+    "name": "group_values_ptr",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "n_groups",
+    "indexes_into": null
+  },
+  {
+    "name": "total_ptr",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "1",
+    "indexes_into": null
+  },
+  {
+    "name": "n_elements",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "rows of partsupp",
+    "indexes_into": null
+  }
+]

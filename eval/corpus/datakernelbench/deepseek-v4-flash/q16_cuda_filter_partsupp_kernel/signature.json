@@ -1,0 +1,58 @@
+[
+  {
+    "name": "ps_partkey",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "ps_suppkey",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "is_bad_supplier",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "max_supp_key",
+    "indexes_into": null
+  },
+  {
+    "name": "out_partkey",
+    "kind": "output",
+    "dtype": "int64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "out_suppkey",
+    "kind": "output",
+    "dtype": "int64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "out_count",
+    "kind": "inout",
+    "dtype": "int64",
+    "length": "1",
+    "indexes_into": null
+  },
+  {
+    "name": "n",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of partsupp",
+    "indexes_into": null
+  },
+  {
+    "name": "max_supp_key",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "largest s_suppkey plus one",
+    "indexes_into": null
+  }
+]

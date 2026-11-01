@@ -1,0 +1,65 @@
+[
+  {
+    "name": "l_suppkey",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "l_extendedprice",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "l_discount",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "l_shipdate",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "date_lo",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "l_shipdate lower bound (inclusive), days since epoch",
+    "indexes_into": null
+  },
+  {
+    "name": "date_hi",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "l_shipdate upper bound (exclusive), days since epoch",
+    "indexes_into": null
+  },
+  {
+    "name": "supp_key_to_idx",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_sup + 1",
+    "indexes_into": null
+  },
+  {
+    "name": "supplier_totals",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "n_sup",
+    "indexes_into": null
+  },
+  {
+    "name": "n",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of lineitem",
+    "indexes_into": null
+  }
+]

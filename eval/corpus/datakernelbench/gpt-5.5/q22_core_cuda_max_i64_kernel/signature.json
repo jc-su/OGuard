@@ -1,0 +1,23 @@
+[
+  {
+    "name": "data",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "block_max",
+    "kind": "output",
+    "dtype": "int64",
+    "length": "(n + 255) / 256",
+    "indexes_into": null
+  },
+  {
+    "name": "n",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of customer",
+    "indexes_into": null
+  }
+]

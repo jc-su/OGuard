@@ -1,0 +1,65 @@
+[
+  {
+    "name": "o_orderkey_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "o_orderdate_days_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "o_orderpriority_codes_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "flags_ptr",
+    "kind": "input",
+    "dtype": "uint8",
+    "length": "flag_n",
+    "indexes_into": null
+  },
+  {
+    "name": "counts_ptr",
+    "kind": "inout",
+    "dtype": "int64",
+    "length": "5",
+    "indexes_into": null
+  },
+  {
+    "name": "n_elements",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "rows of orders",
+    "indexes_into": null
+  },
+  {
+    "name": "date_lo_days",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "epoch day of the lower order date, inclusive",
+    "indexes_into": null
+  },
+  {
+    "name": "date_hi_days",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "epoch day of the upper order date, exclusive",
+    "indexes_into": null
+  },
+  {
+    "name": "flag_n",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "largest lineitem order key plus one",
+    "indexes_into": null
+  }
+]

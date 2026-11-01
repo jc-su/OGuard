@@ -1,0 +1,58 @@
+[
+  {
+    "name": "o_orderkey_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_orders",
+    "indexes_into": "order_flag_ptr"
+  },
+  {
+    "name": "o_orderdate_days_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_orders",
+    "indexes_into": null
+  },
+  {
+    "name": "o_shippriority_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_orders",
+    "indexes_into": null
+  },
+  {
+    "name": "order_flag_ptr",
+    "kind": "output",
+    "dtype": "uint8",
+    "length": "capacity",
+    "indexes_into": null
+  },
+  {
+    "name": "orderdate_table_ptr",
+    "kind": "output",
+    "dtype": "int32",
+    "length": "capacity",
+    "indexes_into": null
+  },
+  {
+    "name": "shippriority_table_ptr",
+    "kind": "output",
+    "dtype": "int32",
+    "length": "capacity",
+    "indexes_into": null
+  },
+  {
+    "name": "n_orders",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "rows of the eligible orders",
+    "indexes_into": null
+  },
+  {
+    "name": "capacity",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "max(eligible o_orderkey) + 1",
+    "indexes_into": null
+  }
+]

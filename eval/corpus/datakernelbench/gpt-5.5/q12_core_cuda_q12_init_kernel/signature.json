@@ -1,0 +1,23 @@
+[
+  {
+    "name": "group_ids",
+    "kind": "output",
+    "dtype": "int64",
+    "length": "2",
+    "indexes_into": null
+  },
+  {
+    "name": "high_counts",
+    "kind": "output",
+    "dtype": "int64",
+    "length": "2",
+    "indexes_into": null
+  },
+  {
+    "name": "low_counts",
+    "kind": "output",
+    "dtype": "int64",
+    "length": "2",
+    "indexes_into": null
+  }
+]

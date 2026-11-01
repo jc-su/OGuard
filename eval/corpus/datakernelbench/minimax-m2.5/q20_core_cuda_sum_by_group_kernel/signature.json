@@ -1,0 +1,30 @@
+[
+  {
+    "name": "group_ids",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "N",
+    "indexes_into": "output"
+  },
+  {
+    "name": "quantities",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "N",
+    "indexes_into": null
+  },
+  {
+    "name": "output",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "num_groups",
+    "indexes_into": null
+  },
+  {
+    "name": "N",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of the filtered lineitem",
+    "indexes_into": null
+  }
+]

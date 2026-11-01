@@ -1,0 +1,58 @@
+[
+  {
+    "name": "ps_partkey_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_rows",
+    "indexes_into": null
+  },
+  {
+    "name": "ps_suppkey_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_rows",
+    "indexes_into": null
+  },
+  {
+    "name": "part_flags_ptr",
+    "kind": "input",
+    "dtype": "int8",
+    "length": "n_part_flags",
+    "indexes_into": null
+  },
+  {
+    "name": "supp_flags_ptr",
+    "kind": "input",
+    "dtype": "int8",
+    "length": "n_supp_flags",
+    "indexes_into": null
+  },
+  {
+    "name": "out_mask_ptr",
+    "kind": "output",
+    "dtype": "bool",
+    "length": "n_rows",
+    "indexes_into": null
+  },
+  {
+    "name": "n_rows",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "rows of partsupp",
+    "indexes_into": null
+  },
+  {
+    "name": "n_part_flags",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "part_flags.numel()",
+    "indexes_into": null
+  },
+  {
+    "name": "n_supp_flags",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "supp_flags.numel()",
+    "indexes_into": null
+  }
+]

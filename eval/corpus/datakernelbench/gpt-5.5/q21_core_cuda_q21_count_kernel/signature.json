@@ -1,0 +1,72 @@
+[
+  {
+    "name": "l1_orderkey",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_l1",
+    "indexes_into": null
+  },
+  {
+    "name": "l1_late",
+    "kind": "input",
+    "dtype": "bool",
+    "length": "n_l1",
+    "indexes_into": null
+  },
+  {
+    "name": "supp_ids",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_l1",
+    "indexes_into": "counts"
+  },
+  {
+    "name": "lo_orderkeys",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_orders",
+    "indexes_into": null
+  },
+  {
+    "name": "lo_distinct_supp",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_orders",
+    "indexes_into": null
+  },
+  {
+    "name": "lo_late_distinct_supp",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_orders",
+    "indexes_into": null
+  },
+  {
+    "name": "counts",
+    "kind": "inout",
+    "dtype": "int64",
+    "length": "num_suppliers",
+    "indexes_into": null
+  },
+  {
+    "name": "n_l1",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of the supplier-joined lineitem",
+    "indexes_into": null
+  },
+  {
+    "name": "n_orders",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "distinct order keys of the aggregate",
+    "indexes_into": null
+  },
+  {
+    "name": "num_suppliers",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "suppliers of the nation",
+    "indexes_into": null
+  }
+]

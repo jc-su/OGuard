@@ -1,0 +1,37 @@
+[
+  {
+    "name": "supp_keys",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "supp_ids",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "n",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of the suppliers of the nation",
+    "indexes_into": null
+  },
+  {
+    "name": "max_suppkey",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "max(s_suppkey) of supplier",
+    "indexes_into": null
+  },
+  {
+    "name": "supp_map",
+    "kind": "output",
+    "dtype": "int32",
+    "length": "max_suppkey + 1",
+    "indexes_into": null
+  }
+]

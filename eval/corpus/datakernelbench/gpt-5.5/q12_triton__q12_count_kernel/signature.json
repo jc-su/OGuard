@@ -1,0 +1,30 @@
+[
+  {
+    "name": "code_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "high_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "out_ptr",
+    "kind": "inout",
+    "dtype": "int64",
+    "length": "4",
+    "indexes_into": null
+  },
+  {
+    "name": "n_elements",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "rows of the joined lineitem and orders frame",
+    "indexes_into": null
+  }
+]

@@ -1,0 +1,61 @@
+The Python environment is /opgate/.venv/bin/python, which
+has numba-cuda 0.30.4 (numba 0.64: `from numba import cuda`), Triton 3.8.0
+with PyTorch 2.14, numpy, and cupy. nvcc is $HOME/miniconda3/bin/nvcc
+(CUDA 13.0). Use GPU 1 only: prefix every command that uses the GPU with
+`CUDA_VISIBLE_DEVICES=1`. A file named `numba.py` or `triton.py` in the
+working directory shadows its package: run Python tests from the model's
+directory, not a task directory, or with `python -P`, and load a task's
+source by path with importlib.
+
+Revise each of these kernels:
+
+You wrote the triton kernel /opgate/eval/corpus/synthesized/fable/hash_probe/repair1/triton.py for the task `hash_probe` of
+/opgate/eval/corpus/synthesized/TASKS.md. A static checker of GPU memory accesses refused it
+with this reason:
+
+    kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p8 st.global.b32 [%rd29+0], {%r11}
+
+The checker accepts a kernel only if it can prove that every memory access
+stays inside its buffer for every input that meets the task's contract,
+whatever the output buffers hold on entry, and for any grid. Revise the
+kernel so that the checker can prove it, keeping the task's semantics and
+the arguments that your signature.json states. Write the revision as /opgate/eval/corpus/synthesized/fable/hash_probe/repair2/triton.py,
+test it on GPU 1 (`CUDA_VISIBLE_DEVICES=1`) against the reference as you
+tested the first kernel, and do not change any other file. Read only
+TASKS.md and your own files of this task.
+
+---
+
+You wrote the triton kernel /opgate/eval/corpus/synthesized/fable/segmented_sum/repair1/triton.py for the task `segmented_sum` of
+/opgate/eval/corpus/synthesized/TASKS.md. A static checker of GPU memory accesses refused it
+with this reason:
+
+    kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p18 ld.global.b64 {%rd68}, [%rd70+0]
+
+The checker accepts a kernel only if it can prove that every memory access
+stays inside its buffer for every input that meets the task's contract,
+whatever the output buffers hold on entry, and for any grid. Revise the
+kernel so that the checker can prove it, keeping the task's semantics and
+the arguments that your signature.json states. Write the revision as /opgate/eval/corpus/synthesized/fable/segmented_sum/repair2/triton.py,
+test it on GPU 1 (`CUDA_VISIBLE_DEVICES=1`) against the reference as you
+tested the first kernel, and do not change any other file. Read only
+TASKS.md and your own files of this task.
+
+---
+
+You wrote the triton kernel /opgate/eval/corpus/synthesized/fable/string_length/repair1/triton.py for the task `string_length` of
+/opgate/eval/corpus/synthesized/TASKS.md. A static checker of GPU memory accesses refused it
+with this reason:
+
+    kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p124 ld.global.b8 {%rs33}, [%rd164+0]
+
+The checker accepts a kernel only if it can prove that every memory access
+stays inside its buffer for every input that meets the task's contract,
+whatever the output buffers hold on entry, and for any grid. Revise the
+kernel so that the checker can prove it, keeping the task's semantics and
+the arguments that your signature.json states. Write the revision as /opgate/eval/corpus/synthesized/fable/string_length/repair2/triton.py,
+test it on GPU 1 (`CUDA_VISIBLE_DEVICES=1`) against the reference as you
+tested the first kernel, and do not change any other file. Read only
+TASKS.md and your own files of this task.
+
+When done, reply with the revisions you wrote and whether each passed its test.

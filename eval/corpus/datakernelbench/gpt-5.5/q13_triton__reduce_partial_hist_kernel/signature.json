@@ -1,0 +1,16 @@
+[
+  {
+    "name": "partial_hist_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "375040",
+    "indexes_into": null
+  },
+  {
+    "name": "hist_ptr",
+    "kind": "inout",
+    "dtype": "int64",
+    "length": "256",
+    "indexes_into": null
+  }
+]

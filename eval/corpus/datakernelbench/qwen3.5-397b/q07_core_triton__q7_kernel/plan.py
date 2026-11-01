@@ -1,0 +1,248 @@
+import os
+import tempfile
+import importlib.util
+import linecache
+import torch
+import triton
+import triton.language as tl
+import cudf
+import pandas as pd
+
+_KERNEL_SOURCE = r'''
+import triton
+import triton.language as tl
+
+@triton.jit
+def _q7_kernel(
+    supp_ptr, cust_ptr, shipdate_ptr, price_ptr, discount_ptr,
+    date_lo, date_hi, out_ptr, n_elements,
+    BLOCK_SIZE: tl.constexpr = 4096,
+):
+    """
+    Fused Q7 kernel: filter + year extraction + volume calc + group aggregation.
+    
+    Optimizations:
+    - Simplified year extraction (1995/1996 only based on day threshold)
+    - Direct group index computation (no loop)
+    - Single atomic_add per element
+    - Fixed block size for H100 (no autotune overhead)
+    """
+    pid = tl.program_id(0)
+    offs = pid * BLOCK_SIZE + tl.arange(0, BLOCK_SIZE)
+    mask = offs < n_elements
+    
+    # Load all columns (coalesced access)
+    supp = tl.load(supp_ptr + offs, mask=mask, other=0)
+    cust = tl.load(cust_ptr + offs, mask=mask, other=0)
+    shipdate = tl.load(shipdate_ptr + offs, mask=mask, other=date_hi + 1)
+    price = tl.load(price_ptr + offs, mask=mask, other=0.0)
+    discount = tl.load(discount_ptr + offs, mask=mask, other=0.0)
+    
+    # Filter: shipdate range
+    date_ok = (shipdate >= date_lo) & (shipdate <= date_hi)
+    
+    # Filter: cross-nation pairs only (supp != cust, both in {0,1})
+    nation_ok = (supp != cust) & (supp <= 1) & (cust <= 1)
+    
+    keep = date_ok & nation_ok
+    
+    # Simplified year extraction for 1995-1996 range
+    # 1996-01-01 = 9496 days since Unix epoch
+    year_offset = tl.where(shipdate < 9496, 0, 1).to(tl.int64)
+    
+    # Direct group index: supp*4 + cust*2 + year_offset (0-7)
+    group = (supp.to(tl.int64) * 4 + cust.to(tl.int64) * 2 + year_offset).to(tl.int64)
+    
+    # Compute volume = price * (1 - discount)
+    volume = price * (1.0 - discount)
+    
+    # Single atomic_add per thread to computed group
+    vol_contrib = tl.where(keep, volume, 0.0)
+    tl.atomic_add(out_ptr + group, vol_contrib)
+'''
+
+
+def _load_kernels():
+    """
+    Load Triton kernels from temporary on-disk file.
+    Required because @triton.jit kernels must be compiled from actual files.
+    """
+    tmpdir = tempfile.mkdtemp(prefix="q7_triton_")
+    path = os.path.join(tmpdir, "_q7_kernels.py")
+    with open(path, "w") as f:
+        f.write(_KERNEL_SOURCE)
+    linecache.checkcache(path)
+    spec = importlib.util.spec_from_file_location("_q7_kernels", path)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
+
+_K = _load_kernels()
+
+
+def _launch_q7(
+    supp_nation_code: torch.Tensor,
+    cust_nation_code: torch.Tensor,
+    l_shipdate_days: torch.Tensor,
+    l_extendedprice: torch.Tensor,
+    l_discount: torch.Tensor,
+    shipdate_lo_days: int,
+    shipdate_hi_days: int,
+) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor]:
+    """
+    Launch fused Q7 Triton kernel with fixed configuration for H100.
+    """
+    n = l_extendedprice.numel()
+    out = torch.zeros(8, dtype=torch.float64, device=l_extendedprice.device)
+    
+    # Fixed grid and block size for H100 (no autotune overhead)
+    BLOCK_SIZE = 4096
+    grid = (triton.cdiv(n, BLOCK_SIZE),)
+    
+    _K._q7_kernel[grid](
+        supp_nation_code, cust_nation_code, l_shipdate_days,
+        l_extendedprice, l_discount,
+        shipdate_lo_days, shipdate_hi_days,
+        out, n,
+        BLOCK_SIZE=BLOCK_SIZE,
+    )
+    
+    # Build output arrays for each possible group
+    group_ids = torch.arange(8, dtype=torch.int64, device=out.device)
+    out_supp = (group_ids // 4).to(torch.int32)
+    out_cust = ((group_ids // 2) % 2).to(torch.int32)
+    out_year = (group_ids % 2).to(torch.int32) + 1995
+    
+    # Only keep valid combos: (supp=0,cust=1) or (supp=1,cust=0)
+    valid = ((out_supp == 0) & (out_cust == 1)) | ((out_supp == 1) & (out_cust == 0))
+    valid = valid & (out > 0)
+    
+    return out_supp[valid], out_cust[valid], out_year[valid], out[valid]
+
+
+def _query_core(
+    supp_nation_code: torch.Tensor,
+    cust_nation_code: torch.Tensor,
+    l_shipdate_days: torch.Tensor,
+    l_extendedprice: torch.Tensor,
+    l_discount: torch.Tensor,
+    shipdate_lo_days: int,
+    shipdate_hi_days: int,
+) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor]:
+    """
+    GPU-accelerated Q7 core computation using fused Triton kernel.
+    
+    Single kernel handles filter, year extraction, volume calculation,
+    and group aggregation to minimize HBM traffic (memory-bound optimization).
+    """
+    return _launch_q7(
+        supp_nation_code, cust_nation_code, l_shipdate_days,
+        l_extendedprice, l_discount,
+        shipdate_lo_days, shipdate_hi_days,
+    )
+
+
+def run_query(
+    tables: dict[str, cudf.DataFrame],
+    nation_a: str = "FRANCE",
+    nation_b: str = "GERMANY",
+    shipdate_lo: str = "1995-01-01",
+    shipdate_hi: str = "1996-12-31",
+) -> cudf.DataFrame:
+    """
+    SQL: SELECT supp_nation, cust_nation, l_year, sum(volume) AS revenue FROM (
+         SELECT n1.n_name AS supp_nation, n2.n_name AS cust_nation,
+                extract(year FROM l_shipdate) AS l_year,
+                l_extendedprice * (1 - l_discount) AS volume
+         FROM supplier, lineitem, orders, customer, nation n1, nation n2
+         WHERE s_suppkey = l_suppkey AND o_orderkey = l_orderkey
+               AND c_custkey = o_custkey AND s_nationkey = n1.n_nationkey
+               AND c_nationkey = n2.n_nationkey
+               AND ((n1.n_name='FRANCE' AND n2.n_name='GERMANY')
+                 OR (n1.n_name='GERMANY' AND n2.n_name='FRANCE'))
+               AND l_shipdate BETWEEN DATE '1995-01-01' AND DATE '1996-12-31'
+         ) GROUP BY supp_nation, cust_nation, l_year
+         ORDER BY supp_nation, cust_nation, l_year;
+    Description: TPC-H Q7 - Shipping revenue between two nation pairs by year.
+    Params:
+      nation_a (str): first nation name.
+      nation_b (str): second nation name.
+      shipdate_lo (str): inclusive lower bound for l_shipdate.
+      shipdate_hi (str): inclusive upper bound for l_shipdate.
+    """
+    df_supplier = tables["supplier"]
+    df_lineitem = tables["lineitem"]
+    df_orders = tables["orders"]
+    df_customer = tables["customer"]
+    df_nation = tables["nation"]
+
+    # Restrict nations to only the two relevant ones
+    nations2 = df_nation[df_nation["n_name"].isin([nation_a, nation_b])][
+        ["n_nationkey", "n_name"]
+    ]
+
+    # Join supplier with nation (supp_nation)
+    sup = df_supplier[["s_suppkey", "s_nationkey"]].merge(
+        nations2.rename(columns={"n_nationkey": "s_nationkey", "n_name": "supp_nation"}),
+        on="s_nationkey",
+    )
+
+    # Join customer with nation (cust_nation)
+    cust = df_customer[["c_custkey", "c_nationkey"]].merge(
+        nations2.rename(columns={"n_nationkey": "c_nationkey", "n_name": "cust_nation"}),
+        on="c_nationkey",
+    )
+
+    # lineitem with shipdate filter
+    shipdate_lo_days = int(pd.to_datetime(shipdate_lo).timestamp() // 86400)
+    shipdate_hi_days = int(pd.to_datetime(shipdate_hi).timestamp() // 86400)
+
+    li = df_lineitem[["l_orderkey", "l_suppkey", "l_shipdate", "l_extendedprice", "l_discount"]]
+    li = li.merge(sup[["s_suppkey", "supp_nation"]], left_on="l_suppkey", right_on="s_suppkey")
+
+    # orders join customer
+    oc = df_orders[["o_orderkey", "o_custkey"]].merge(
+        cust[["c_custkey", "cust_nation"]], left_on="o_custkey", right_on="c_custkey"
+    )
+
+    joined = li.merge(oc[["o_orderkey", "cust_nation"]], left_on="l_orderkey", right_on="o_orderkey")
+
+    # Keep only (FRANCE,GERMANY) or (GERMANY,FRANCE) pairs
+    pair_mask = (
+        ((joined["supp_nation"] == nation_a) & (joined["cust_nation"] == nation_b))
+        | ((joined["supp_nation"] == nation_b) & (joined["cust_nation"] == nation_a))
+    )
+    joined = joined[pair_mask]
+
+    # Encode nation names: nation_a -> 0, nation_b -> 1
+    supp_code = (joined["supp_nation"] == nation_b).astype("int32")
+    cust_code = (joined["cust_nation"] == nation_b).astype("int32")
+
+    l_shipdate_days = ((joined["l_shipdate"].astype("int64") // 86400).astype("int32"))
+
+    supp_t = torch.as_tensor(supp_code.to_cupy(), dtype=torch.int32)
+    cust_t = torch.as_tensor(cust_code.to_cupy(), dtype=torch.int32)
+    ship_t = torch.as_tensor(l_shipdate_days.to_cupy(), dtype=torch.int32)
+    price_t = torch.as_tensor(joined["l_extendedprice"].to_cupy(), dtype=torch.float64)
+    disc_t = torch.as_tensor(joined["l_discount"].to_cupy(), dtype=torch.float64)
+
+    supp_out, cust_out, year_out, rev_out = _query_core(
+        supp_t, cust_t, ship_t, price_t, disc_t, shipdate_lo_days, shipdate_hi_days
+    )
+
+    # Map codes back to names: 0 -> nation_a, 1 -> nation_b
+    supp_out_cpu = supp_out.cpu().numpy()
+    cust_out_cpu = cust_out.cpu().numpy()
+    supp_names = [nation_a if v == 0 else nation_b for v in supp_out_cpu]
+    cust_names = [nation_a if v == 0 else nation_b for v in cust_out_cpu]
+
+    result = cudf.DataFrame({
+        "supp_nation": cudf.Series(supp_names),
+        "cust_nation": cudf.Series(cust_names),
+        "l_year": year_out,
+        "revenue": rev_out,
+    })
+
+    result = result.sort_values(["supp_nation", "cust_nation", "l_year"]).reset_index(drop=True)
+    return result

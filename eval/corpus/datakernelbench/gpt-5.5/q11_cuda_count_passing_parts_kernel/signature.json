@@ -1,0 +1,37 @@
+[
+  {
+    "name": "part_sums",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "part_sums_len",
+    "indexes_into": null
+  },
+  {
+    "name": "total_sum",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "1",
+    "indexes_into": null
+  },
+  {
+    "name": "threshold_fraction",
+    "kind": "scalar",
+    "dtype": "float64",
+    "length": "HAVING fraction (0.0001 at the default parameters)",
+    "indexes_into": null
+  },
+  {
+    "name": "part_sums_len",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "max_partkey + 1",
+    "indexes_into": null
+  },
+  {
+    "name": "out_count",
+    "kind": "inout",
+    "dtype": "int64",
+    "length": "1",
+    "indexes_into": null
+  }
+]

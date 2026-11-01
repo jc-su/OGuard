@@ -1,0 +1,30 @@
+[
+  {
+    "name": "part_keys",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_parts",
+    "indexes_into": "part_map"
+  },
+  {
+    "name": "part_map",
+    "kind": "output",
+    "dtype": "int32",
+    "length": "map_size",
+    "indexes_into": null
+  },
+  {
+    "name": "n_parts",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of the filtered part keys",
+    "indexes_into": null
+  },
+  {
+    "name": "map_size",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "largest filtered part key plus 1",
+    "indexes_into": null
+  }
+]

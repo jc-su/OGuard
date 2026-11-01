@@ -1,0 +1,16 @@
+[
+  {
+    "name": "agg_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "4",
+    "indexes_into": null
+  },
+  {
+    "name": "out_ptr",
+    "kind": "output",
+    "dtype": "float64",
+    "length": "2",
+    "indexes_into": null
+  }
+]

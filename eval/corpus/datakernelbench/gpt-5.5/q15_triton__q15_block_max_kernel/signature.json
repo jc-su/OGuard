@@ -1,0 +1,23 @@
+[
+  {
+    "name": "totals_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "100000",
+    "indexes_into": null
+  },
+  {
+    "name": "present_ptr",
+    "kind": "input",
+    "dtype": "uint8",
+    "length": "100000",
+    "indexes_into": null
+  },
+  {
+    "name": "block_max_ptr",
+    "kind": "output",
+    "dtype": "float64",
+    "length": "98",
+    "indexes_into": null
+  }
+]

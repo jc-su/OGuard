@@ -1,0 +1,83 @@
+"""string_length: number of UTF-8 code points per string.
+
+A code point starts at every byte that is not a continuation byte
+((byte & 0xC0) != 0x80), so the length is the count of such bytes. The kernel
+picks one of two paths per launch from the average string length:
+
+- short strings (average below WARP_MIN_AVG bytes): a program handles BLOCK_S
+  strings; one round over a [BLOCK_S, BYTES_A] tile reads BYTES_A bytes of
+  every string, and the rounds run up to the longest string of the tile;
+- long strings: programs walk the strings STRINGS_B at a time with a grid
+  stride and a [STRINGS_B, BYTES_B] tile, so each round reads BYTES_B
+  consecutive bytes of a string with coalesced loads.
+
+Both paths accumulate the start flags in the tile and reduce once per string.
+The kernel picks the path from offsets[n]; run picks the grid for that path
+from the length of chars, which the host knows without a device sync. Both
+paths are correct on any grid, so a mismatch only costs speed.
+"""
+
+import triton
+import triton.language as tl
+
+BLOCK_S = 256
+BYTES_A = 4
+STRINGS_B = 64
+BYTES_B = 32
+WARP_MIN_AVG = 64
+NUM_WARPS = 4
+
+TYPES = {"offsets": "*i32", "chars": "*u8", "lengths": "*i32", "n": "i64"}
+CONSTANTS = {
+    "BLOCK_S": BLOCK_S,
+    "BYTES_A": BYTES_A,
+    "STRINGS_B": STRINGS_B,
+    "BYTES_B": BYTES_B,
+    "WARP_MIN_AVG": WARP_MIN_AVG,
+}
+
+
+@triton.jit
+def count_starts(offsets, chars, lengths, s, valid, S: tl.constexpr, BYTES: tl.constexpr):
+    begin = tl.load(offsets + s, mask=valid, other=0)
+    end = tl.load(offsets + s + 1, mask=valid, other=0)
+    lens = end - begin
+    longest = tl.max(lens, axis=0)
+    acc = tl.zeros([S, BYTES], tl.int32)
+    for j0 in range(0, longest, BYTES):
+        j = j0 + tl.arange(0, BYTES)
+        in_string = j[None, :] < lens[:, None]
+        # 0x80 is a continuation byte, so padding is never counted.
+        c = tl.load(chars + (begin[:, None] + j[None, :]), mask=in_string, other=0x80)
+        acc += ((c & 0xC0) != 0x80).to(tl.int32)
+    tl.store(lengths + s, tl.sum(acc, axis=1), mask=valid)
+
+
+@triton.jit
+def kernel(
+    offsets,
+    chars,
+    lengths,
+    n: tl.int64,
+    BLOCK_S: tl.constexpr,
+    BYTES_A: tl.constexpr,
+    STRINGS_B: tl.constexpr,
+    BYTES_B: tl.constexpr,
+    WARP_MIN_AVG: tl.constexpr,
+):
+    pid = tl.program_id(0).to(tl.int64)
+    total = tl.load(offsets + n)
+    if total >= n * WARP_MIN_AVG:
+        stride = tl.num_programs(0).to(tl.int64) * STRINGS_B
+        for s0 in range(pid * STRINGS_B, n, stride):
+            s = s0 + tl.arange(0, STRINGS_B)
+            count_starts(offsets, chars, lengths, s, s < n, STRINGS_B, BYTES_B)
+    else:
+        s = pid * BLOCK_S + tl.arange(0, BLOCK_S)
+        count_starts(offsets, chars, lengths, s, s < n, BLOCK_S, BYTES_A)
+
+
+def run(offsets, chars, lengths, n):
+    wide = chars.numel() >= n * WARP_MIN_AVG
+    grid = (max(1, triton.cdiv(n, STRINGS_B if wide else BLOCK_S)),)
+    kernel[grid](offsets, chars, lengths, n, **CONSTANTS, num_warps=NUM_WARPS)

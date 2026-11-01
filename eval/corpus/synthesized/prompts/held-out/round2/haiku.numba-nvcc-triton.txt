@@ -1,0 +1,282 @@
+The Python environment is /opgate/.venv/bin/python, which
+has numba-cuda 0.30.4 (numba 0.64: `from numba import cuda`), Triton 3.8.0
+with PyTorch 2.14, numpy, and cupy. nvcc is $HOME/miniconda3/bin/nvcc
+(CUDA 13.0). Use GPU 1 only: prefix every command that uses the GPU with
+`CUDA_VISIBLE_DEVICES=1`. A file named `numba.py` or `triton.py` in the
+working directory shadows its package: run Python tests from the model's
+directory, not a task directory, or with `python -P`, and load a task's
+source by path with importlib.
+
+Revise each of these kernels:
+
+You wrote the triton kernel /opgate/eval/corpus/synthesized/haiku/dictionary_decode/repair1/triton.py for the task `dictionary_decode` of
+/opgate/eval/corpus/synthesized/HELDOUT.md. A static checker of GPU memory accesses refused it
+with this reason:
+
+    kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.L1::evict_last.L2::cache_hint.b32 {%r4}, [%rd17+0], %rd9
+
+The checker accepts a kernel only if it can prove that every memory access
+stays inside its buffer for every input that meets the task's contract,
+whatever the output buffers hold on entry, and for any grid. Revise the
+kernel so that the checker can prove it, keeping the task's semantics and
+the arguments that your signature.json states. Write the revision as /opgate/eval/corpus/synthesized/haiku/dictionary_decode/repair2/triton.py,
+test it on GPU 1 (`CUDA_VISIBLE_DEVICES=1`) against the reference as you
+tested the first kernel, and do not change any other file. Read only
+HELDOUT.md and your own files of this task.
+
+---
+
+You wrote the numba kernel /opgate/eval/corpus/synthesized/haiku/merge_sorted/repair1/numba.py for the task `merge_sorted` of
+/opgate/eval/corpus/synthesized/HELDOUT.md. A static checker of GPU memory accesses refused it
+with this reason:
+
+    _ZN25corpus_haiku_merge_sorted6kernelB3v50B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIxLi1E1A7mutable7alignedE5ArrayIxLi1E1A7mutable7alignedE5ArrayIxLi1E1A7mutable7alignedExx: the access is not proved inside its buffer, a shared variable, or a local variable: ld.u64 %rd49, [%rd48+0]
+
+The checker accepts a kernel only if it can prove that every memory access
+stays inside its buffer for every input that meets the task's contract,
+whatever the output buffers hold on entry, and for any grid. Revise the
+kernel so that the checker can prove it, keeping the task's semantics and
+the arguments that your signature.json states. Write the revision as /opgate/eval/corpus/synthesized/haiku/merge_sorted/repair2/numba.py,
+test it on GPU 1 (`CUDA_VISIBLE_DEVICES=1`) against the reference as you
+tested the first kernel, and do not change any other file. Read only
+HELDOUT.md and your own files of this task.
+
+---
+
+You wrote the nvcc kernel /opgate/eval/corpus/synthesized/haiku/merge_sorted/repair1/kernel.cu for the task `merge_sorted` of
+/opgate/eval/corpus/synthesized/HELDOUT.md. A static checker of GPU memory accesses refused it
+with this reason:
+
+    kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.u64 %rd36, [%rd35+0]
+
+The checker accepts a kernel only if it can prove that every memory access
+stays inside its buffer for every input that meets the task's contract,
+whatever the output buffers hold on entry, and for any grid. Revise the
+kernel so that the checker can prove it, keeping the task's semantics and
+the arguments that your signature.json states. Write the revision as /opgate/eval/corpus/synthesized/haiku/merge_sorted/repair2/kernel.cu,
+test it on GPU 1 (`CUDA_VISIBLE_DEVICES=1`) against the reference as you
+tested the first kernel, and do not change any other file. Read only
+HELDOUT.md and your own files of this task.
+
+---
+
+You wrote the nvcc kernel /opgate/eval/corpus/synthesized/haiku/min_max/repair1/kernel.cu for the task `min_max` of
+/opgate/eval/corpus/synthesized/HELDOUT.md. A static checker of GPU memory accesses refused it
+with this reason:
+
+    kernel: the shared memory access is not proved inside a shared variable: st.shared.f64 [%r4+0], %fd14
+
+The checker accepts a kernel only if it can prove that every memory access
+stays inside its buffer for every input that meets the task's contract,
+whatever the output buffers hold on entry, and for any grid. Revise the
+kernel so that the checker can prove it, keeping the task's semantics and
+the arguments that your signature.json states. Write the revision as /opgate/eval/corpus/synthesized/haiku/min_max/repair2/kernel.cu,
+test it on GPU 1 (`CUDA_VISIBLE_DEVICES=1`) against the reference as you
+tested the first kernel, and do not change any other file. Read only
+HELDOUT.md and your own files of this task.
+
+---
+
+You wrote the triton kernel /opgate/eval/corpus/synthesized/haiku/radix_scatter/repair1/triton.py for the task `radix_scatter` of
+/opgate/eval/corpus/synthesized/HELDOUT.md. A static checker of GPU memory accesses refused it
+with this reason:
+
+    the source does not compile: at 26:23:
+
+The checker accepts a kernel only if it can prove that every memory access
+stays inside its buffer for every input that meets the task's contract,
+whatever the output buffers hold on entry, and for any grid. Revise the
+kernel so that the checker can prove it, keeping the task's semantics and
+the arguments that your signature.json states. Write the revision as /opgate/eval/corpus/synthesized/haiku/radix_scatter/repair2/triton.py,
+test it on GPU 1 (`CUDA_VISIBLE_DEVICES=1`) against the reference as you
+tested the first kernel, and do not change any other file. Read only
+HELDOUT.md and your own files of this task.
+
+---
+
+You wrote the nvcc kernel /opgate/eval/corpus/synthesized/haiku/rolling_sum/repair1/kernel.cu for the task `rolling_sum` of
+/opgate/eval/corpus/synthesized/HELDOUT.md. A static checker of GPU memory accesses refused it
+with this reason:
+
+    kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.f64 %fd7, [%rd22+0]
+
+The checker accepts a kernel only if it can prove that every memory access
+stays inside its buffer for every input that meets the task's contract,
+whatever the output buffers hold on entry, and for any grid. Revise the
+kernel so that the checker can prove it, keeping the task's semantics and
+the arguments that your signature.json states. Write the revision as /opgate/eval/corpus/synthesized/haiku/rolling_sum/repair2/kernel.cu,
+test it on GPU 1 (`CUDA_VISIBLE_DEVICES=1`) against the reference as you
+tested the first kernel, and do not change any other file. Read only
+HELDOUT.md and your own files of this task.
+
+---
+
+You wrote the triton kernel /opgate/eval/corpus/synthesized/haiku/rolling_sum/repair1/triton.py for the task `rolling_sum` of
+/opgate/eval/corpus/synthesized/HELDOUT.md. A static checker of GPU memory accesses refused it
+with this reason:
+
+    kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p5 st.global.L1::evict_last.L2::cache_hint.b64 [%rd16+0], {%rd23}, %rd17
+
+The checker accepts a kernel only if it can prove that every memory access
+stays inside its buffer for every input that meets the task's contract,
+whatever the output buffers hold on entry, and for any grid. Revise the
+kernel so that the checker can prove it, keeping the task's semantics and
+the arguments that your signature.json states. Write the revision as /opgate/eval/corpus/synthesized/haiku/rolling_sum/repair2/triton.py,
+test it on GPU 1 (`CUDA_VISIBLE_DEVICES=1`) against the reference as you
+tested the first kernel, and do not change any other file. Read only
+HELDOUT.md and your own files of this task.
+
+---
+
+You wrote the numba kernel /opgate/eval/corpus/synthesized/haiku/run_end_decode/repair1/numba.py for the task `run_end_decode` of
+/opgate/eval/corpus/synthesized/HELDOUT.md. A static checker of GPU memory accesses refused it
+with this reason:
+
+    _ZN27corpus_haiku_run_end_decode6kernelB3v52B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIdLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedE5ArrayIdLi1E1A7mutable7alignedExx: the access is not proved inside its buffer, a shared variable, or a local variable: ld.s32 %rd36, [%rd35+0]
+
+The checker accepts a kernel only if it can prove that every memory access
+stays inside its buffer for every input that meets the task's contract,
+whatever the output buffers hold on entry, and for any grid. Revise the
+kernel so that the checker can prove it, keeping the task's semantics and
+the arguments that your signature.json states. Write the revision as /opgate/eval/corpus/synthesized/haiku/run_end_decode/repair2/numba.py,
+test it on GPU 1 (`CUDA_VISIBLE_DEVICES=1`) against the reference as you
+tested the first kernel, and do not change any other file. Read only
+HELDOUT.md and your own files of this task.
+
+---
+
+You wrote the nvcc kernel /opgate/eval/corpus/synthesized/haiku/run_end_decode/repair1/kernel.cu for the task `run_end_decode` of
+/opgate/eval/corpus/synthesized/HELDOUT.md. A static checker of GPU memory accesses refused it
+with this reason:
+
+    kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.s32 %rd23, [%rd22+0]
+
+The checker accepts a kernel only if it can prove that every memory access
+stays inside its buffer for every input that meets the task's contract,
+whatever the output buffers hold on entry, and for any grid. Revise the
+kernel so that the checker can prove it, keeping the task's semantics and
+the arguments that your signature.json states. Write the revision as /opgate/eval/corpus/synthesized/haiku/run_end_decode/repair2/kernel.cu,
+test it on GPU 1 (`CUDA_VISIBLE_DEVICES=1`) against the reference as you
+tested the first kernel, and do not change any other file. Read only
+HELDOUT.md and your own files of this task.
+
+---
+
+You wrote the numba kernel /opgate/eval/corpus/synthesized/haiku/sorted_contains/repair1/numba.py for the task `sorted_contains` of
+/opgate/eval/corpus/synthesized/HELDOUT.md. A static checker of GPU memory accesses refused it
+with this reason:
+
+    _ZN28corpus_haiku_sorted_contains6kernelB3v54B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIxLi1E1A7mutable7alignedE5ArrayIxLi1E1A7mutable7alignedE5ArrayIaLi1E1A7mutable7alignedExx: the access is not proved inside its buffer, a shared variable, or a local variable: ld.u64 %rd7, [%rd38+0]
+
+The checker accepts a kernel only if it can prove that every memory access
+stays inside its buffer for every input that meets the task's contract,
+whatever the output buffers hold on entry, and for any grid. Revise the
+kernel so that the checker can prove it, keeping the task's semantics and
+the arguments that your signature.json states. Write the revision as /opgate/eval/corpus/synthesized/haiku/sorted_contains/repair2/numba.py,
+test it on GPU 1 (`CUDA_VISIBLE_DEVICES=1`) against the reference as you
+tested the first kernel, and do not change any other file. Read only
+HELDOUT.md and your own files of this task.
+
+---
+
+You wrote the nvcc kernel /opgate/eval/corpus/synthesized/haiku/sorted_contains/repair1/kernel.cu for the task `sorted_contains` of
+/opgate/eval/corpus/synthesized/HELDOUT.md. A static checker of GPU memory accesses refused it
+with this reason:
+
+    kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.u64 %rd8, [%rd24+0]
+
+The checker accepts a kernel only if it can prove that every memory access
+stays inside its buffer for every input that meets the task's contract,
+whatever the output buffers hold on entry, and for any grid. Revise the
+kernel so that the checker can prove it, keeping the task's semantics and
+the arguments that your signature.json states. Write the revision as /opgate/eval/corpus/synthesized/haiku/sorted_contains/repair2/kernel.cu,
+test it on GPU 1 (`CUDA_VISIBLE_DEVICES=1`) against the reference as you
+tested the first kernel, and do not change any other file. Read only
+HELDOUT.md and your own files of this task.
+
+---
+
+You wrote the numba kernel /opgate/eval/corpus/synthesized/haiku/string_contains/repair1/numba.py for the task `string_contains` of
+/opgate/eval/corpus/synthesized/HELDOUT.md. A static checker of GPU memory accesses refused it
+with this reason:
+
+    _ZN28corpus_haiku_string_contains6kernelB3v55B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIiLi1E1A7mutable7alignedE5ArrayIhLi1E1A7mutable7alignedE5ArrayIhLi1E1A7mutable7alignedE5ArrayIaLi1E1A7mutable7alignedExx: the access is not proved inside its buffer, a shared variable, or a local variable: ld.u8 %rs4, [%rd56+0]
+
+The checker accepts a kernel only if it can prove that every memory access
+stays inside its buffer for every input that meets the task's contract,
+whatever the output buffers hold on entry, and for any grid. Revise the
+kernel so that the checker can prove it, keeping the task's semantics and
+the arguments that your signature.json states. Write the revision as /opgate/eval/corpus/synthesized/haiku/string_contains/repair2/numba.py,
+test it on GPU 1 (`CUDA_VISIBLE_DEVICES=1`) against the reference as you
+tested the first kernel, and do not change any other file. Read only
+HELDOUT.md and your own files of this task.
+
+---
+
+You wrote the nvcc kernel /opgate/eval/corpus/synthesized/haiku/string_contains/repair1/kernel.cu for the task `string_contains` of
+/opgate/eval/corpus/synthesized/HELDOUT.md. A static checker of GPU memory accesses refused it
+with this reason:
+
+    kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.u8 %rs4, [%rd20+0]
+
+The checker accepts a kernel only if it can prove that every memory access
+stays inside its buffer for every input that meets the task's contract,
+whatever the output buffers hold on entry, and for any grid. Revise the
+kernel so that the checker can prove it, keeping the task's semantics and
+the arguments that your signature.json states. Write the revision as /opgate/eval/corpus/synthesized/haiku/string_contains/repair2/kernel.cu,
+test it on GPU 1 (`CUDA_VISIBLE_DEVICES=1`) against the reference as you
+tested the first kernel, and do not change any other file. Read only
+HELDOUT.md and your own files of this task.
+
+---
+
+You wrote the triton kernel /opgate/eval/corpus/synthesized/haiku/string_contains/repair1/triton.py for the task `string_contains` of
+/opgate/eval/corpus/synthesized/HELDOUT.md. A static checker of GPU memory accesses refused it
+with this reason:
+
+    kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p19 st.global.L1::evict_last.L2::cache_hint.b8 [%rd26+0], {%rs6}, %rd27
+
+The checker accepts a kernel only if it can prove that every memory access
+stays inside its buffer for every input that meets the task's contract,
+whatever the output buffers hold on entry, and for any grid. Revise the
+kernel so that the checker can prove it, keeping the task's semantics and
+the arguments that your signature.json states. Write the revision as /opgate/eval/corpus/synthesized/haiku/string_contains/repair2/triton.py,
+test it on GPU 1 (`CUDA_VISIBLE_DEVICES=1`) against the reference as you
+tested the first kernel, and do not change any other file. Read only
+HELDOUT.md and your own files of this task.
+
+---
+
+You wrote the nvcc kernel /opgate/eval/corpus/synthesized/haiku/valid_rows/repair1/kernel.cu for the task `valid_rows` of
+/opgate/eval/corpus/synthesized/HELDOUT.md. A static checker of GPU memory accesses refused it
+with this reason:
+
+    kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.u8 %r6, [%rd8+0]
+
+The checker accepts a kernel only if it can prove that every memory access
+stays inside its buffer for every input that meets the task's contract,
+whatever the output buffers hold on entry, and for any grid. Revise the
+kernel so that the checker can prove it, keeping the task's semantics and
+the arguments that your signature.json states. Write the revision as /opgate/eval/corpus/synthesized/haiku/valid_rows/repair2/kernel.cu,
+test it on GPU 1 (`CUDA_VISIBLE_DEVICES=1`) against the reference as you
+tested the first kernel, and do not change any other file. Read only
+HELDOUT.md and your own files of this task.
+
+---
+
+You wrote the triton kernel /opgate/eval/corpus/synthesized/haiku/valid_rows/repair1/triton.py for the task `valid_rows` of
+/opgate/eval/corpus/synthesized/HELDOUT.md. A static checker of GPU memory accesses refused it
+with this reason:
+
+    kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.L1::evict_last.L2::cache_hint.b8 {%rs1}, [%rd9+0], %rd8
+
+The checker accepts a kernel only if it can prove that every memory access
+stays inside its buffer for every input that meets the task's contract,
+whatever the output buffers hold on entry, and for any grid. Revise the
+kernel so that the checker can prove it, keeping the task's semantics and
+the arguments that your signature.json states. Write the revision as /opgate/eval/corpus/synthesized/haiku/valid_rows/repair2/triton.py,
+test it on GPU 1 (`CUDA_VISIBLE_DEVICES=1`) against the reference as you
+tested the first kernel, and do not change any other file. Read only
+HELDOUT.md and your own files of this task.
+
+When done, reply with the revisions you wrote and whether each passed its test.

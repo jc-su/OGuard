@@ -1,0 +1,37 @@
+[
+  {
+    "name": "part_keys",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_parts",
+    "indexes_into": null
+  },
+  {
+    "name": "hash_keys",
+    "kind": "inout",
+    "dtype": "int64",
+    "length": "hash_size",
+    "indexes_into": null
+  },
+  {
+    "name": "hash_vals",
+    "kind": "output",
+    "dtype": "int64",
+    "length": "hash_size",
+    "indexes_into": null
+  },
+  {
+    "name": "n_parts",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of the filtered part",
+    "indexes_into": null
+  },
+  {
+    "name": "hash_size",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "hash table size, a power of two of at least 2",
+    "indexes_into": null
+  }
+]

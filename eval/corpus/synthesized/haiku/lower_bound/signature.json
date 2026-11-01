@@ -1,0 +1,37 @@
+[
+  {
+    "name": "keys",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "sorted",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "s",
+    "indexes_into": null
+  },
+  {
+    "name": "out",
+    "kind": "output",
+    "dtype": "int32",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "n",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "[0, 2000000000]",
+    "indexes_into": null
+  },
+  {
+    "name": "s",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "[0, 2000000000]",
+    "indexes_into": null
+  }
+]

@@ -1,0 +1,72 @@
+[
+  {
+    "name": "l_suppkey",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_lineitems",
+    "indexes_into": null
+  },
+  {
+    "name": "l_price",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_lineitems",
+    "indexes_into": null
+  },
+  {
+    "name": "l_disc",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_lineitems",
+    "indexes_into": null
+  },
+  {
+    "name": "l_shipdate",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_lineitems",
+    "indexes_into": null
+  },
+  {
+    "name": "shipdate_lo",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "inclusive lower bound of l_shipdate in epoch days",
+    "indexes_into": null
+  },
+  {
+    "name": "shipdate_hi",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "exclusive upper bound of l_shipdate in epoch days",
+    "indexes_into": null
+  },
+  {
+    "name": "s_suppkey_sorted",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_suppliers",
+    "indexes_into": null
+  },
+  {
+    "name": "n_suppliers",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "rows of supplier",
+    "indexes_into": null
+  },
+  {
+    "name": "revenue_out",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "n_suppliers",
+    "indexes_into": null
+  },
+  {
+    "name": "n_lineitems",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "rows of lineitem (l_suppkey.numel())",
+    "indexes_into": null
+  }
+]

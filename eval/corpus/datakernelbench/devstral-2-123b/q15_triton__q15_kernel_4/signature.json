@@ -1,0 +1,72 @@
+[
+  {
+    "name": "l_suppkey_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "l_price_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "l_disc_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "l_shipdate_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "suppkey_map_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "max_suppkey",
+    "indexes_into": null
+  },
+  {
+    "name": "shipdate_lo",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "shipdate lower bound in days since 1970-01-01 (inclusive), from the parameter shipdate_lo",
+    "indexes_into": null
+  },
+  {
+    "name": "shipdate_hi",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "shipdate upper bound in days since 1970-01-01 (exclusive), from the parameter shipdate_hi",
+    "indexes_into": null
+  },
+  {
+    "name": "totals_ptr",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "n_supp",
+    "indexes_into": null
+  },
+  {
+    "name": "present_ptr",
+    "kind": "inout",
+    "dtype": "int32",
+    "length": "n_supp",
+    "indexes_into": null
+  },
+  {
+    "name": "n_elements",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "rows of l_price_ptr",
+    "indexes_into": null
+  }
+]

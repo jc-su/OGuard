@@ -1,0 +1,30 @@
+[
+  {
+    "name": "bitmap",
+    "kind": "input",
+    "dtype": "uint32",
+    "length": "(max_supp + 32) / 32 * num_groups",
+    "indexes_into": null
+  },
+  {
+    "name": "counts",
+    "kind": "inout",
+    "dtype": "int64",
+    "length": "num_groups",
+    "indexes_into": null
+  },
+  {
+    "name": "num_groups",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "groups, the length of counts",
+    "indexes_into": null
+  },
+  {
+    "name": "num_words",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "[1, 2147483647]",
+    "indexes_into": null
+  }
+]

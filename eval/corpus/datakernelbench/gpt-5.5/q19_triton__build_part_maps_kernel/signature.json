@@ -1,0 +1,65 @@
+[
+  {
+    "name": "p_partkey_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_parts",
+    "indexes_into": "brand_map_ptr"
+  },
+  {
+    "name": "p_brand_id_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_parts",
+    "indexes_into": null
+  },
+  {
+    "name": "p_container_grp_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_parts",
+    "indexes_into": null
+  },
+  {
+    "name": "p_size_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_parts",
+    "indexes_into": null
+  },
+  {
+    "name": "brand_map_ptr",
+    "kind": "output",
+    "dtype": "int32",
+    "length": "map_size",
+    "indexes_into": null
+  },
+  {
+    "name": "container_map_ptr",
+    "kind": "output",
+    "dtype": "int32",
+    "length": "map_size",
+    "indexes_into": null
+  },
+  {
+    "name": "size_map_ptr",
+    "kind": "output",
+    "dtype": "int32",
+    "length": "map_size",
+    "indexes_into": null
+  },
+  {
+    "name": "map_size",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "max(p_partkey) + 1, the length of each map",
+    "indexes_into": null
+  },
+  {
+    "name": "n_parts",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "rows of part",
+    "indexes_into": null
+  }
+]

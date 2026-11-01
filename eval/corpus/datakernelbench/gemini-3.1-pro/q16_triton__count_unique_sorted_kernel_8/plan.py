@@ -1,0 +1,214 @@
+import os
+import tempfile
+import importlib.util
+import linecache
+import torch
+import triton
+import cudf
+import pandas as pd
+from typing import Tuple
+
+_KERNEL_SOURCE = r'''
+import triton
+import triton.language as tl
+
+@triton.autotune(
+    configs=[
+        triton.Config({"BLOCK_SIZE": bs}, num_warps=w)
+        for bs in [1024, 2048, 4096, 8192]
+        for w in [4, 8]
+    ],
+    key=["num_elements"],
+    reset_to_zero=["counts_ptr"],
+)
+@triton.jit
+def _count_unique_sorted_kernel(
+    sorted_comp_ptr,
+    counts_ptr,
+    multiplier,
+    num_elements,
+    BLOCK_SIZE: tl.constexpr
+):
+    pid = tl.program_id(0)
+    offs = pid * BLOCK_SIZE + tl.arange(0, BLOCK_SIZE)
+    mask = offs < num_elements
+    
+    # Load current element, using -1 as fallback for out-of-bounds lanes
+    curr = tl.load(sorted_comp_ptr + offs, mask=mask, other=-1)
+    
+    # Load previous element to detect boundaries of identical values
+    prev_mask = (offs > 0) & mask
+    prev = tl.load(sorted_comp_ptr + offs - 1, mask=prev_mask, other=-1)
+    
+    # Element is the start of a new unique value if it's the very first element, 
+    # or if it is different from the previous element.
+    is_new = mask & ((offs == 0) | (curr != prev))
+    
+    # Decode group_id from the composite key
+    group_ids = curr // multiplier
+    
+    # Prevent out-of-bounds or negative memory access by safely forcing invalid lanes to 0
+    safe_group_ids = tl.where(is_new, group_ids, 0)
+    
+    # Atomic add 1 to the corresponding group's count where a new unique value is found
+    ones = tl.full(curr.shape, 1, dtype=tl.int64)
+    tl.atomic_add(counts_ptr + safe_group_ids, ones, mask=is_new)
+'''
+
+def _load_kernels():
+    tmpdir = tempfile.mkdtemp(prefix="q16_triton_")
+    path = os.path.join(tmpdir, "_q16_kernels.py")
+    with open(path, "w") as f:
+        f.write(_KERNEL_SOURCE)
+    linecache.checkcache(path)
+    spec = importlib.util.spec_from_file_location("_q16_kernels", path)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
+_K = _load_kernels()
+
+
+def _query_core(
+    group_ids: torch.Tensor,
+    supp_ids: torch.Tensor,
+    num_groups: int,
+) -> torch.Tensor:
+    """
+    Count distinct ps_suppkey per group using a Triton fused count-unique kernel.
+    group_ids: int64 tensor in [0, num_groups)
+    supp_ids: int64 tensor of ps_suppkey values (already filtered).
+    
+    Why it's faster:
+    Instead of using PyTorch's torch.unique (which allocates intermediate buffers and performs 
+    multiple memory passes) followed by a scatter_add, we combine group_id and supp_id into a 
+    single 64-bit composite key, sort it in PyTorch (fast Thrust sort), and launch a single 
+    Triton kernel that scans adjacent elements and atomically adds to the group counts. 
+    This significantly reduces memory bandwidth (HBM writes/reads).
+    """
+    if group_ids.numel() == 0:
+        return torch.zeros(num_groups, dtype=torch.int64, device=group_ids.device)
+
+    # Multiplier ensures group_id and supp_id don't overlap. 
+    max_supp = supp_ids.max().item()
+    multiplier = int(max_supp + 1)
+    
+    # Build a 64-bit composite key (fits easily since group_ids * multiplier < 2^63-1)
+    comp_keys = group_ids * multiplier + supp_ids
+    
+    # Sort composite keys
+    sorted_comp_keys = torch.sort(comp_keys)[0]
+    
+    num_elements = sorted_comp_keys.numel()
+    counts = torch.zeros(num_groups, dtype=torch.int64, device=group_ids.device)
+    
+    grid = lambda meta: (triton.cdiv(num_elements, meta["BLOCK_SIZE"]),)
+    
+    # Launch fused Triton kernel
+    _K._count_unique_sorted_kernel[grid](
+        sorted_comp_keys,
+        counts,
+        multiplier,
+        num_elements
+    )
+    
+    return counts
+
+
+def run_query(
+    tables: dict[str, cudf.DataFrame],
+    excluded_brand: str = "Brand#45",
+    excluded_type_prefix: str = "MEDIUM POLISHED",
+    sizes: tuple[int, ...] = (49, 14, 23, 45, 19, 3, 36, 9),
+    bad_supplier_comment_pattern: str = "%Customer%Complaints%",
+) -> cudf.DataFrame:
+    """
+    SQL:
+        SELECT p_brand, p_type, p_size, count(DISTINCT ps_suppkey) AS supplier_cnt
+        FROM partsupp, part
+        WHERE p_partkey = ps_partkey
+          AND p_brand <> 'Brand#45'
+          AND p_type NOT LIKE 'MEDIUM POLISHED%'
+          AND p_size IN (49, 14, 23, 45, 19, 3, 36, 9)
+          AND ps_suppkey NOT IN (
+              SELECT s_suppkey FROM supplier WHERE s_comment LIKE '%Customer%Complaints%')
+        GROUP BY p_brand, p_type, p_size
+        ORDER BY supplier_cnt DESC, p_brand, p_type, p_size;
+        
+    Description: 
+        TPC-H Q16 — count distinct suppliers per (brand, type, size) with filters on 
+        part attributes and excluding suppliers whose comment matches a complaint pattern.
+        Strings/Joins are processed natively in cuDF. 
+        The distinct reduction phase is offloaded to a fused Triton kernel, reducing 
+        excessive memory passes generated by eager Torch unique operations.
+        
+    Params:
+        excluded_brand (str): brand to exclude.
+        excluded_type_prefix (str): type prefix to exclude (LIKE 'prefix%').
+        sizes (tuple[int, ...]): allowed p_size values.
+        bad_supplier_comment_pattern (str): SQL LIKE pattern for supplier comments to exclude.
+    """
+    df_part = tables["part"]
+    df_partsupp = tables["partsupp"]
+    df_supplier = tables["supplier"]
+
+    # --- Filter part table ---
+    part_filtered = df_part[
+        (df_part["p_brand"] != excluded_brand)
+        & (~df_part["p_type"].str.startswith(excluded_type_prefix))
+        & (df_part["p_size"].isin(list(sizes)))
+    ][["p_partkey", "p_brand", "p_type", "p_size"]]
+
+    # --- Bad suppliers (subquery) ---
+    bad_suppliers = df_supplier[
+        df_supplier["s_comment"].str.match(
+            bad_supplier_comment_pattern.replace("%", ".*")
+        )
+    ]["s_suppkey"]
+
+    # --- Filter partsupp: exclude bad suppliers ---
+    ps_filtered = df_partsupp[
+        ~df_partsupp["ps_suppkey"].isin(bad_suppliers)
+    ][["ps_partkey", "ps_suppkey"]]
+
+    # --- Join part ⨝ partsupp ---
+    joined = part_filtered.merge(
+        ps_filtered, left_on="p_partkey", right_on="ps_partkey"
+    )
+
+    if len(joined) == 0:
+        return cudf.DataFrame({
+            "p_brand": cudf.Series([], dtype="object"),
+            "p_type": cudf.Series([], dtype="object"),
+            "p_size": cudf.Series([], dtype="int32"),
+            "supplier_cnt": cudf.Series([], dtype="int64"),
+        })
+
+    # --- Build group keys on host/cuDF side ---
+    group_df = joined[["p_brand", "p_type", "p_size"]].drop_duplicates().reset_index(drop=True)
+    group_df["_gid"] = cudf.Series(range(len(group_df)), dtype="int64")
+
+    joined_with_gid = joined.merge(group_df, on=["p_brand", "p_type", "p_size"])
+
+    num_groups = len(group_df)
+
+    # Tensorize relevant group components to transfer control to Triton core execution
+    group_ids_t = torch.as_tensor(joined_with_gid["_gid"].to_cupy(), dtype=torch.int64)
+    supp_ids_t = torch.as_tensor(joined_with_gid["ps_suppkey"].to_cupy(), dtype=torch.int64)
+
+    counts_t = _query_core(group_ids_t, supp_ids_t, num_groups)
+
+    # --- Assemble result ---
+    result = cudf.DataFrame({
+        "p_brand": group_df["p_brand"],
+        "p_type": group_df["p_type"],
+        "p_size": group_df["p_size"],
+        "supplier_cnt": cudf.Series(counts_t, dtype="int64"),
+    })
+
+    result = result.sort_values(
+        by=["supplier_cnt", "p_brand", "p_type", "p_size"],
+        ascending=[False, True, True, True],
+    ).reset_index(drop=True)
+
+    return result

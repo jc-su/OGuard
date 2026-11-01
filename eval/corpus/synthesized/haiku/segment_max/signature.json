@@ -1,0 +1,30 @@
+[
+  {
+    "name": "offsets",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "g+1",
+    "indexes_into": null
+  },
+  {
+    "name": "values",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "maxes",
+    "kind": "output",
+    "dtype": "int64",
+    "length": "g",
+    "indexes_into": null
+  },
+  {
+    "name": "g",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "[0, 2000000000]",
+    "indexes_into": null
+  }
+]

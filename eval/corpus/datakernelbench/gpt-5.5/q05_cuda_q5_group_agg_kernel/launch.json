@@ -1,0 +1,16 @@
+{
+  "nvcc": {
+    "block": [
+      256,
+      1,
+      1
+    ],
+    "shared": {
+      "constant": 0,
+      "terms": {}
+    },
+    "size_maxima": {
+      "num_nations": 32
+    }
+  }
+}

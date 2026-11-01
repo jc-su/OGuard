@@ -1,0 +1,37 @@
+[
+  {
+    "name": "ps_partkey",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "N_ps",
+    "indexes_into": null
+  },
+  {
+    "name": "ps_suppkey",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "N_ps",
+    "indexes_into": null
+  },
+  {
+    "name": "hash_table",
+    "kind": "inout",
+    "dtype": "int32",
+    "length": "H",
+    "indexes_into": null
+  },
+  {
+    "name": "H",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "slots of hash_table, a power of two of at least 1024",
+    "indexes_into": null
+  },
+  {
+    "name": "N_ps",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of the filtered partsupp",
+    "indexes_into": null
+  }
+]

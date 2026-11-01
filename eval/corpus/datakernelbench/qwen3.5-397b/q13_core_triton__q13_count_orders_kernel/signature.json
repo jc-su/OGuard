@@ -1,0 +1,23 @@
+[
+  {
+    "name": "o_custkey_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_orders",
+    "indexes_into": null
+  },
+  {
+    "name": "order_counts_ptr",
+    "kind": "inout",
+    "dtype": "int64",
+    "length": "num_customers + 1",
+    "indexes_into": null
+  },
+  {
+    "name": "n_orders",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "filtered orders (o_custkey_filtered.numel())",
+    "indexes_into": null
+  }
+]

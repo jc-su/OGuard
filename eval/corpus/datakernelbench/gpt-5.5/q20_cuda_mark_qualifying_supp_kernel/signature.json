@@ -1,0 +1,44 @@
+[
+  {
+    "name": "ps_suppkey",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "nps",
+    "indexes_into": null
+  },
+  {
+    "name": "ps_availqty",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "nps",
+    "indexes_into": null
+  },
+  {
+    "name": "ps_sum_qty",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "nps",
+    "indexes_into": null
+  },
+  {
+    "name": "supp_mask",
+    "kind": "output",
+    "dtype": "uint8",
+    "length": "max_suppkey + 1",
+    "indexes_into": null
+  },
+  {
+    "name": "nps",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of the filtered partsupp",
+    "indexes_into": null
+  },
+  {
+    "name": "max_suppkey",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "max(s_suppkey) of supplier, at least 0",
+    "indexes_into": null
+  }
+]

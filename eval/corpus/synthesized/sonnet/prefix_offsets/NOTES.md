@@ -1,0 +1,1 @@
+Numba and CUDA: only block 0 does work, scanning the column in tiles of 2048 elements with a carried total. The signature has no scratch buffer, so a multi-block scan with decoupled look-back is not possible. Correct for any grid size of at least 1. Offsets wrap in int32 if the total exceeds 2^31 - 1.

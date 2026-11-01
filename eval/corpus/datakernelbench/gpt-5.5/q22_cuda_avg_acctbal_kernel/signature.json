@@ -1,0 +1,44 @@
+[
+  {
+    "name": "c_acctbal",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_customers",
+    "indexes_into": null
+  },
+  {
+    "name": "cntrycode",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_customers",
+    "indexes_into": null
+  },
+  {
+    "name": "codes",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "num_codes",
+    "indexes_into": null
+  },
+  {
+    "name": "num_codes",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "distinct country codes, 1 to 1024",
+    "indexes_into": null
+  },
+  {
+    "name": "avg_stats",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "2",
+    "indexes_into": null
+  },
+  {
+    "name": "n_customers",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of customer",
+    "indexes_into": null
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "name": "flags",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "key_range",
+    "indexes_into": null
+  },
+  {
+    "name": "sums",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "key_range",
+    "indexes_into": null
+  },
+  {
+    "name": "key_range",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "largest positive order key plus one",
+    "indexes_into": null
+  },
+  {
+    "name": "threshold",
+    "kind": "scalar",
+    "dtype": "float64",
+    "length": "quantity threshold",
+    "indexes_into": null
+  },
+  {
+    "name": "unique_counts",
+    "kind": "output",
+    "dtype": "int64",
+    "length": "(key_range + 1023) / 1024",
+    "indexes_into": null
+  },
+  {
+    "name": "big_counts",
+    "kind": "output",
+    "dtype": "int64",
+    "length": "(key_range + 1023) / 1024",
+    "indexes_into": null
+  }
+]

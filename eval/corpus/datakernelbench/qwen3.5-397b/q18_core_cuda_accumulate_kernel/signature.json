@@ -1,0 +1,30 @@
+[
+  {
+    "name": "orderkeys",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "quantities",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "sums",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "num_slots",
+    "indexes_into": null
+  },
+  {
+    "name": "n",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of lineitem (orderkeys.numel())",
+    "indexes_into": null
+  }
+]

@@ -1,0 +1,51 @@
+[
+  {
+    "name": "years",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "prices",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "discounts",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "is_brazil",
+    "kind": "input",
+    "dtype": "bool",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "out_total",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "2",
+    "indexes_into": null
+  },
+  {
+    "name": "out_brazil",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "2",
+    "indexes_into": null
+  },
+  {
+    "name": "n_elements",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of the joined table (years.numel())",
+    "indexes_into": null
+  }
+]

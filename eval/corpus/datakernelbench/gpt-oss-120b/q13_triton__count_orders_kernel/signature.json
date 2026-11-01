@@ -1,0 +1,30 @@
+[
+  {
+    "name": "o_custkey_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "mask_ptr",
+    "kind": "input",
+    "dtype": "uint8",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "out_ptr",
+    "kind": "inout",
+    "dtype": "int32",
+    "length": "num_customers + 1",
+    "indexes_into": null
+  },
+  {
+    "name": "n_elements",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "rows of orders",
+    "indexes_into": null
+  }
+]

@@ -1,0 +1,482 @@
+model	task	toolchain	round	decision	reason	result
+fable	days_to_year	numba	0	accepted		-
+fable	days_to_year	nvcc	0	accepted		-
+fable	days_to_year	triton	0	accepted		-
+fable	dictionary_decode	numba	0	accepted		-
+fable	dictionary_decode	nvcc	0	accepted		-
+fable	dictionary_decode	triton	0	accepted		-
+fable	filter_select	numba	0	refused	_ZN26corpus_fable_filter_select6kernelB2v1B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIdLi1E1A7mutable7alignedEd5ArrayIiLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedEx: the access is not proved inside its buffer, a shared variable, or a local variable: st.u32 [%rd33+0], %rd34	-
+fable	filter_select	numba	1	refused	_ZN26corpus_fable_filter_select6kernelB2v1B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIdLi1E1A7mutable7alignedEd5ArrayIiLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedEx: the stored value is not proved to be one element in the index range: st.u32 [%rd29+0], %rd30	-
+fable	filter_select	numba	2	accepted		correct
+fable	filter_select	nvcc	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: st.global.u32 [%rd20+0], %rd21	-
+fable	filter_select	nvcc	1	refused	kernel: the stored value is not proved to be one element in the index range: st.global.u32 [%rd21+0], %rd22	-
+fable	filter_select	nvcc	2	accepted		correct
+fable	filter_select	triton	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p20 st.global.b32 [%rd48+0], {%r45}	-
+fable	filter_select	triton	1	accepted		correct
+fable	gather	numba	0	accepted		-
+fable	gather	nvcc	0	accepted		-
+fable	gather	triton	0	accepted		-
+fable	groupby_sum	numba	0	accepted		-
+fable	groupby_sum	nvcc	0	accepted		-
+fable	groupby_sum	triton	0	accepted		-
+fable	hash_build	numba	0	accepted		-
+fable	hash_build	nvcc	0	accepted		-
+fable	hash_build	triton	0	accepted		-
+fable	hash_probe	numba	0	refused	_ZN23corpus_fable_hash_probe6kernelB2v9B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIxLi1E1A7mutable7alignedE5ArrayIxLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedEx5ArrayIiLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedExx: the access is not proved inside its buffer, a shared variable, or a local variable: st.u32 [%rd72+0], %r30	-
+fable	hash_probe	numba	1	refused	_ZN23corpus_fable_hash_probe6kernelB2v2B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIxLi1E1A7mutable7alignedE5ArrayIxLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedEx5ArrayIiLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedExx: the stored value is not proved to be one element in the index range: st.u32 [%rd69+0], %r2	-
+fable	hash_probe	numba	2	accepted		correct
+fable	hash_probe	nvcc	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: st.global.u32 [%rd53+0], %r28	-
+fable	hash_probe	nvcc	1	refused	kernel: the stored value is not proved to be one element in the index range: st.global.u32 [%rd54+0], %r3	-
+fable	hash_probe	nvcc	2	accepted		correct
+fable	hash_probe	triton	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p7 st.global.b32 [%rd29+0], {%r11}	-
+fable	hash_probe	triton	1	accepted		correct
+fable	histogram	numba	0	accepted		-
+fable	histogram	nvcc	0	accepted		-
+fable	histogram	triton	0	accepted		-
+fable	merge_sorted	numba	0	refused	_ZN25corpus_fable_merge_sorted6kernelB3v11B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIxLi1E1A7mutable7alignedE5ArrayIxLi1E1A7mutable7alignedE5ArrayIxLi1E1A7mutable7alignedExx: the access is not proved inside its buffer, a shared variable, or a local variable: call.uni {retval0}, _ZN25corpus_fable_merge_sorted10merge_pathB3v12B100cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdSBL3UrBWEdBHRauQC7YhbWaAA_3d_3dE5ArrayIxLi1E1A7mutable7alignedE23Literal_5bint_5d_280_29x5ArrayIxLi1E1A7mutable7alignedE23Literal_5bint_5d_280_29xx, {param0, param1, param2, param3, param4, param5, param6, param7, param8, param9, param10, param11, param12, param13, param14, param15, param16, param17, param18, param19}	-
+fable	merge_sorted	numba	1	refused	_ZN25corpus_fable_merge_sorted6kernelB2v4B104cw51cXTLSUwv1sDUaKthoaNgpqmjgEhasCBDCg1bcEADwxst6m1ByRAiDEllSAKoKQcmgeQT22p1WPiqWylALVUHSgJ5hrWaAA_3d_3dE5ArrayIxLi1E1A7mutable7alignedE5ArrayIxLi1E1A7mutable7alignedE5ArrayIxLi1E1A7mutable7alignedExx: the shared memory access is not proved inside a shared variable: ld.shared.u64 %rd194, [%rd190+0]	-
+fable	merge_sorted	numba	2	refused	_ZN25corpus_fable_merge_sorted6kernelB3v89B104cw51cXTLSUwv1sDUaKthoaNgpqmjgEhasCBDCg1bcEADwxst6m1ByRAiDEllSAKoKQcmgeQT22p1WPiqWylALVUHSgJ5hrWaAA_3d_3dE5ArrayIxLi1E1A7mutable7alignedE5ArrayIxLi1E1A7mutable7alignedE5ArrayIxLi1E1A7mutable7alignedExx: the access is not proved inside its buffer, a shared variable, or a local variable: ld.u64 %rd157, [%rd90+0]	-
+fable	merge_sorted	nvcc	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.nc.u64 %rd57, [%rd56+0]	-
+fable	merge_sorted	nvcc	1	refused	kernel: the shared memory access is not proved inside a shared variable: ld.shared.u64 %rd111, [%r22+0]	-
+fable	merge_sorted	nvcc	2	refused	the check did not finish in 3600 seconds	-
+fable	merge_sorted	triton	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p2 ld.global.b64 {%rd18}, [%rd19+0]	-
+fable	merge_sorted	triton	1	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p2 ld.global.b64 {%rd17}, [%rd18+0]	-
+fable	merge_sorted	triton	2	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p17 ld.global.b64 {%rd97}, [%rd98+0]	-
+fable	min_max	numba	0	accepted		-
+fable	min_max	nvcc	0	accepted		-
+fable	min_max	triton	0	accepted		-
+fable	projection	numba	0	accepted		-
+fable	projection	nvcc	0	accepted		-
+fable	projection	triton	0	accepted		-
+fable	q6_sum	numba	0	accepted		-
+fable	q6_sum	nvcc	0	accepted		-
+fable	q6_sum	triton	0	accepted		-
+fable	radix_scatter	numba	0	refused	_ZN26corpus_fable_radix_scatter6kernelB2v9B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIjLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedExx: the local store is not proved inside a live local variable: st.local.u32 [%rd52+0], %rd47	-
+fable	radix_scatter	numba	1	refused	_ZN26corpus_fable_radix_scatter6kernelB3v20B104cw51cXTLSUwv1sDUaKthoaNgpqmjgEhasCBDCg1bcEADwxst6m1ByRAiDEllSAKoKQcmgeQT22p1WPiqWylALVUHSgJ5hrWaAA_3d_3dE5ArrayIjLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedExx: the access is not proved inside its buffer, a shared variable, or a local variable: st.u32 [%rd175+0], %rd4	-
+fable	radix_scatter	numba	2	accepted		correct
+fable	radix_scatter	nvcc	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.nc.u32 %r13, [%rd41+0]	-
+fable	radix_scatter	nvcc	1	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: st.global.u32 [%rd87+0], %rd3	-
+fable	radix_scatter	nvcc	2	accepted		correct
+fable	radix_scatter	triton	0	refused	kernel: the shared memory access is not proved inside a shared variable: st.shared.v4.b32 [%r67+0], {%r68, %r69, %r70, %r71}	-
+fable	radix_scatter	triton	1	refused	kernel: a shared memory access whose address or width the translation does not model: ldmatrix.sync.aligned.m8n8.x1.shared.b16 {%r24}, [%r1748+0]	-
+fable	radix_scatter	triton	2	accepted		correct
+fable	rolling_sum	numba	0	refused	_ZN24corpus_fable_rolling_sum6kernelB2v8B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIdLi1E1A7mutable7alignedE5ArrayIdLi1E1A7mutable7alignedExx: the access is not proved inside its buffer, a shared variable, or a local variable: ld.f64 %fd15, [%rd41+0]	-
+fable	rolling_sum	numba	1	refused	_ZN24corpus_fable_rolling_sum6kernelB3v37B104cw51cXTLSUwv1sDUaKthoaNgpqmjgEhasCBDCg1bcEADwxst6m1ByRAiDEllSAKoKQcmgeQT22p1WPiqWylALVUHSgJ5hrWaAA_3d_3dE5ArrayIdLi1E1A7mutable7alignedE5ArrayIdLi1E1A7mutable7alignedExx: the access is not proved inside its buffer, a shared variable, or a local variable: ld.f64 %fd25, [%rd42+0]	-
+fable	rolling_sum	numba	2	accepted		correct
+fable	rolling_sum	nvcc	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.nc.f64 %fd15, [%rd19+0]	-
+fable	rolling_sum	nvcc	1	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.nc.f64 %fd25, [%rd5+0]	-
+fable	rolling_sum	nvcc	2	accepted		correct
+fable	rolling_sum	triton	0	accepted		-
+fable	run_end_decode	numba	0	refused	_ZN27corpus_fable_run_end_decode6kernelB2v3B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIdLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedE5ArrayIdLi1E1A7mutable7alignedExx: the access is not proved inside its buffer, a shared variable, or a local variable: call.uni {retval0}, _ZN27corpus_fable_run_end_decode11upper_boundB2v4B100cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdSBL3UrBWEdBHRauQC7YhbWaAA_3d_3dE5ArrayIiLi1E1A7mutable7alignedE23Literal_5bint_5d_280_29xx, {param0, param1, param2, param3, param4, param5, param6, param7, param8, param9, param10}	-
+fable	run_end_decode	numba	1	refused	_ZN27corpus_fable_run_end_decode6kernelB3v43B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIdLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedE5ArrayIdLi1E1A7mutable7alignedExx: the access is not proved inside its buffer, a shared variable, or a local variable: ld.s32 %rd42, [%rd41+0]	-
+fable	run_end_decode	numba	2	accepted		correct
+fable	run_end_decode	nvcc	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.nc.u32 %r3, [%rd34+0]	-
+fable	run_end_decode	nvcc	1	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.nc.u32 %r5, [%rd38+0]	-
+fable	run_end_decode	nvcc	2	accepted		correct
+fable	run_end_decode	triton	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p3 ld.global.b32 {%r19}, [%rd23+0]	-
+fable	run_end_decode	triton	1	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p3 ld.global.b32 {%r19}, [%rd23+0]	-
+fable	run_end_decode	triton	2	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p17 ld.global.b32 {%r17}, [%rd44+0]	-
+fable	scatter_by_offsets	numba	0	refused	_ZN31corpus_fable_scatter_by_offsets6kernelB3v14B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIaLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedExx: the access is not proved inside its buffer, a shared variable, or a local variable: st.u32 [%rd36+0], %rd38	-
+fable	scatter_by_offsets	numba	1	accepted		correct
+fable	scatter_by_offsets	nvcc	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: st.global.u32 [%rd21+0], %rd23	-
+fable	scatter_by_offsets	nvcc	1	accepted		correct
+fable	scatter_by_offsets	triton	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p9 st.global.b32 [%rd17+0], {%r9}	-
+fable	scatter_by_offsets	triton	1	accepted		correct
+fable	segmented_sum	numba	0	accepted		-
+fable	segmented_sum	nvcc	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.nc.f64 %fd11, [%rd33+0]	-
+fable	segmented_sum	nvcc	1	accepted		correct
+fable	segmented_sum	triton	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p14 ld.global.b64 {%rd63}, [%rd65+0]	-
+fable	segmented_sum	triton	1	accepted		correct
+fable	sorted_contains	numba	0	refused	_ZN28corpus_fable_sorted_contains6kernelB3v14B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIxLi1E1A7mutable7alignedE5ArrayIxLi1E1A7mutable7alignedE5ArrayIaLi1E1A7mutable7alignedExx: the access is not proved inside its buffer, a shared variable, or a local variable: ld.u64 %rd35, [%rd34+0]	-
+fable	sorted_contains	numba	1	accepted		correct
+fable	sorted_contains	nvcc	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.nc.u64 %rd25, [%rd24+0]	-
+fable	sorted_contains	nvcc	1	accepted		correct
+fable	sorted_contains	triton	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p5 ld.global.b64 {%rd16}, [%rd17+0]	-
+fable	sorted_contains	triton	1	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p5 ld.global.b64 {%rd16}, [%rd17+0]	-
+fable	sorted_contains	triton	2	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p7 ld.global.b64 {%rd22}, [%rd23+0]	-
+fable	starts_with	numba	0	refused	_ZN24corpus_fable_starts_with6kernelB3v16B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIiLi1E1A7mutable7alignedE5ArrayIhLi1E1A7mutable7alignedE5ArrayIhLi1E1A7mutable7alignedE5ArrayIaLi1E1A7mutable7alignedExx: the access is not proved inside its buffer, a shared variable, or a local variable: ld.u8 %rs1, [%rd44+0]	-
+fable	starts_with	numba	1	accepted		correct
+fable	starts_with	nvcc	0	accepted		-
+fable	starts_with	triton	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p9 ld.global.b8 {%rs12}, [%rd46+0]	-
+fable	starts_with	triton	1	accepted		correct
+fable	string_contains	numba	0	refused	_ZN28corpus_fable_string_contains6kernelB2v6B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIiLi1E1A7mutable7alignedE5ArrayIhLi1E1A7mutable7alignedE5ArrayIhLi1E1A7mutable7alignedE5ArrayIaLi1E1A7mutable7alignedExx: the access is not proved inside its buffer, a shared variable, or a local variable: ld.u8 %rs10, [%rd49+0]	-
+fable	string_contains	numba	1	refused	_ZN28corpus_fable_string_contains6kernelB3v47B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIiLi1E1A7mutable7alignedE5ArrayIhLi1E1A7mutable7alignedE5ArrayIhLi1E1A7mutable7alignedE5ArrayIaLi1E1A7mutable7alignedExx: the access is not proved inside its buffer, a shared variable, or a local variable: ld.u8 %rs6, [%rd57+0]	-
+fable	string_contains	numba	2	accepted		correct
+fable	string_contains	nvcc	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.nc.u8 %rs11, [%rd10+0]	-
+fable	string_contains	nvcc	1	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.nc.u8 %rs6, [%rd36+0]	-
+fable	string_contains	nvcc	2	accepted		correct
+fable	string_contains	triton	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p17 ld.global.b8 {%rs1}, [%rd52+0]	-
+fable	string_contains	triton	1	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.b8 {%rs5}, [%rd60+0]	-
+fable	string_contains	triton	2	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p21 ld.global.b8 {%rs1}, [%rd60+0]	-
+fable	string_length	numba	0	accepted		-
+fable	string_length	nvcc	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.nc.u8 %rs1, [%rd33+0]	-
+fable	string_length	nvcc	1	accepted		correct
+fable	string_length	triton	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p60 ld.global.b8 {%rs33}, [%rd139+0]	-
+fable	string_length	triton	1	accepted		correct
+fable	valid_rows	numba	0	refused	_ZN23corpus_fable_valid_rows6kernelB2v1B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIhLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedEx: the access is not proved inside its buffer, a shared variable, or a local variable: ld.u8 %rd25, [%rd24+0]	-
+fable	valid_rows	numba	1	refused	_ZN23corpus_fable_valid_rows6kernelB3v48B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIhLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedEx: the access is not proved inside its buffer, a shared variable, or a local variable: ld.u8 %rd29, [%rd28+0]	-
+fable	valid_rows	numba	2	refused	_ZN23corpus_fable_valid_rows6kernelB4v105B104cw51cXTLSUwv1sDUaKthoaNgpqmjgEhasCBDCg1bcEADwxst6m1ByRAiDEllSAKoKQcmgeQT22p1WPiqWylALVUHSgJ5hrWaAA_3d_3dE5ArrayIhLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedEx: the access is not proved inside its buffer, a shared variable, or a local variable: ld.s8 %rs1, [%rd34+0]	-
+fable	valid_rows	nvcc	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.nc.u8 %rs4, [%rd10+0]	-
+fable	valid_rows	nvcc	1	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.nc.u8 %rs5, [%rd13+0]	-
+fable	valid_rows	nvcc	2	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.nc.u8 %rs1, [%rd28+0]	-
+fable	valid_rows	triton	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p1 ld.global.b8 {%rs1}, [%rd1+0]	-
+fable	valid_rows	triton	1	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p1 ld.global.b8 {%rs1}, [%rd1+0]	-
+fable	valid_rows	triton	2	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p1 ld.global.b8 {%rs1}, [%rd1+0]	-
+haiku	days_to_year	numba	0	accepted		-
+haiku	days_to_year	nvcc	0	accepted		-
+haiku	dictionary_decode	numba	0	accepted		-
+haiku	dictionary_decode	nvcc	0	accepted		-
+haiku	dictionary_decode	triton	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.L1::evict_last.L2::cache_hint.b32 {%r4}, [%rd12+0], %rd7	-
+haiku	dictionary_decode	triton	1	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.L1::evict_last.L2::cache_hint.b32 {%r4}, [%rd17+0], %rd9	-
+haiku	dictionary_decode	triton	2	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.L1::evict_last.L2::cache_hint.b32 {%r4}, [%rd17+0], %rd8	-
+haiku	filter_select	numba	0	refused	_ZN26corpus_haiku_filter_select6kernelB3v18B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIdLi1E1A7mutable7alignedExd5ArrayIiLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedE: the access is not proved inside its buffer, a shared variable, or a local variable: st.u32 [%rd22+0], %rd1	-
+haiku	filter_select	numba	1	accepted		correct
+haiku	filter_select	nvcc	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: st.global.u32 [%rd12+0], %r1	-
+haiku	filter_select	nvcc	1	accepted		correct
+haiku	gather	numba	0	accepted		-
+haiku	gather	nvcc	0	accepted		-
+haiku	groupby_sum	numba	0	accepted		-
+haiku	groupby_sum	nvcc	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.u32 %r1, [%rd19+0]	-
+haiku	groupby_sum	nvcc	1	invalid	the arguments (('group', 'int32'), ('value', 'float64'), ('n', None), ('capacity', None), ('table_keys', 'int32'), ('table_sums', 'float64')) are not the task's (('group', 'int32'), ('value', 'float64'), ('capacity', None), ('table_keys', 'int32'), ('table_sums', 'float64'))	-
+haiku	groupby_sum	nvcc	2	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.u32 %r1, [%rd19+0]	-
+haiku	hash_build	numba	0	accepted		-
+haiku	hash_build	nvcc	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.u64 %rd3, [%rd21+0]	-
+haiku	hash_build	nvcc	1	invalid	the arguments (('keys', 'int64'), ('n', None), ('capacity', None), ('table_keys', 'int64'), ('table_rows', 'int32')) are not the task's (('keys', 'int64'), ('capacity', None), ('table_keys', 'int64'), ('table_rows', 'int32'))	-
+haiku	hash_build	nvcc	2	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.u64 %rd3, [%rd21+0]	-
+haiku	hash_probe	numba	0	refused	_ZN23corpus_haiku_hash_probe6kernelB3v22B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIxLi1E1A7mutable7alignedEx5ArrayIxLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedEx5ArrayIiLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedE: the access is not proved inside its buffer, a shared variable, or a local variable: st.u32 [%rd61+0], %r6	-
+haiku	hash_probe	numba	1	invalid	the arguments (('probe_keys', 'int64'), ('m', None), ('table_keys', 'int64'), ('table_rows', 'int32'), ('capacity', None), ('out_cap', None), ('out_build', 'int32'), ('out_probe', 'int32'), ('out_count', 'int32')) are not the task's (('probe_keys', 'int64'), ('m', None), ('table_keys', 'int64'), ('table_rows', 'int32'), ('capacity', None), ('out_build', 'int32'), ('out_probe', 'int32'), ('out_count', 'int32'))	-
+haiku	hash_probe	numba	2	accepted		correct
+haiku	hash_probe	nvcc	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: st.global.u32 [%rd34+0], %r6	-
+haiku	hash_probe	nvcc	1	invalid	the arguments (('probe_keys', 'int64'), ('m', None), ('table_keys', 'int64'), ('table_rows', 'int32'), ('capacity', None), ('out_build', 'int32'), ('out_probe', 'int32'), ('out_count', 'int32'), ('out_cap', None)) are not the task's (('probe_keys', 'int64'), ('m', None), ('table_keys', 'int64'), ('table_rows', 'int32'), ('capacity', None), ('out_build', 'int32'), ('out_probe', 'int32'), ('out_count', 'int32'))	-
+haiku	hash_probe	nvcc	2	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: st.global.u32 [%rd34+0], %r6	-
+haiku	histogram	numba	0	accepted		-
+haiku	histogram	nvcc	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.u32 %r8, [%rd6+0]	-
+haiku	histogram	nvcc	1	invalid	the arguments (('keys', 'uint32'), ('n', None), ('shift', None), ('counts', 'int32')) are not the task's (('keys', 'uint32'), ('shift', None), ('counts', 'int32'))	-
+haiku	histogram	nvcc	2	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.u32 %r8, [%rd6+0]	-
+haiku	merge_sorted	numba	0	refused	_ZN25corpus_haiku_merge_sorted6kernelB2v9B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIxLi1E1A7mutable7alignedE5ArrayIxLi1E1A7mutable7alignedE5ArrayIxLi1E1A7mutable7alignedExx: the access is not proved inside its buffer, a shared variable, or a local variable: ld.u64 %rd49, [%rd48+0]	-
+haiku	merge_sorted	numba	1	refused	_ZN25corpus_haiku_merge_sorted6kernelB3v50B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIxLi1E1A7mutable7alignedE5ArrayIxLi1E1A7mutable7alignedE5ArrayIxLi1E1A7mutable7alignedExx: the access is not proved inside its buffer, a shared variable, or a local variable: ld.u64 %rd50, [%rd49+0]	-
+haiku	merge_sorted	numba	2	refused	_ZN25corpus_haiku_merge_sorted6kernelB4v115B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIxLi1E1A7mutable7alignedE5ArrayIxLi1E1A7mutable7alignedE5ArrayIxLi1E1A7mutable7alignedExx: the access is not proved inside its buffer, a shared variable, or a local variable: ld.u64 %rd50, [%rd49+0]	-
+haiku	merge_sorted	nvcc	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.u64 %rd35, [%rd34+0]	-
+haiku	merge_sorted	nvcc	1	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.u64 %rd36, [%rd35+0]	-
+haiku	merge_sorted	nvcc	2	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.u64 %rd36, [%rd35+0]	-
+haiku	min_max	numba	0	accepted		-
+haiku	min_max	nvcc	0	refused	kernel: the shared memory access is not proved inside a shared variable: st.shared.f64 [%r4+0], %fd14	-
+haiku	min_max	nvcc	1	refused	kernel: the shared memory access is not proved inside a shared variable: st.shared.f64 [%r4+0], %fd14	-
+haiku	min_max	nvcc	2	refused	kernel: the shared memory access is not proved inside a shared variable: st.shared.f64 [%r4+0], %fd14	-
+haiku	projection	numba	0	accepted		-
+haiku	projection	nvcc	0	accepted		-
+haiku	q6_sum	numba	0	accepted		-
+haiku	q6_sum	nvcc	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.u32 %r9, [%rd9+0]	-
+haiku	q6_sum	nvcc	1	invalid	the arguments (('shipdate', 'int32'), ('discount', 'float64'), ('quantity', 'float64'), ('price', 'float64'), ('n', None), ('date_lo', None), ('date_hi', None), ('disc_lo', None), ('disc_hi', None), ('qty_max', None), ('result', 'float64')) are not the task's (('shipdate', 'int32'), ('discount', 'float64'), ('quantity', 'float64'), ('price', 'float64'), ('date_lo', None), ('date_hi', None), ('disc_lo', None), ('disc_hi', None), ('qty_max', None), ('result', 'float64'))	-
+haiku	q6_sum	nvcc	2	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.u32 %r9, [%rd9+0]	-
+haiku	radix_scatter	numba	0	refused	_ZN26corpus_haiku_radix_scatter6kernelB2v7B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIjLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedExx: the access is not proved inside its buffer, a shared variable, or a local variable: st.u32 [%rd28+0], %rd1	-
+haiku	radix_scatter	numba	1	accepted		correct
+haiku	radix_scatter	nvcc	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: st.global.u32 [%rd15+0], %r1	-
+haiku	radix_scatter	nvcc	1	accepted		correct
+haiku	radix_scatter	triton	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.b32 {%r4}, [%rd17+0]	-
+haiku	radix_scatter	triton	1	invalid	the source does not compile: at 26:23:	-
+haiku	radix_scatter	triton	2	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.b32 {%r4}, [%rd21+0]	-
+haiku	rolling_sum	numba	0	accepted		-
+haiku	rolling_sum	nvcc	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.f64 %fd6, [%rd20+0]	-
+haiku	rolling_sum	nvcc	1	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.f64 %fd7, [%rd22+0]	-
+haiku	rolling_sum	nvcc	2	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.f64 %fd7, [%rd22+0]	-
+haiku	rolling_sum	triton	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p4 st.global.L1::evict_last.L2::cache_hint.b64 [%rd16+0], {%rd23}, %rd17	-
+haiku	rolling_sum	triton	1	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p5 st.global.L1::evict_last.L2::cache_hint.b64 [%rd16+0], {%rd23}, %rd17	-
+haiku	rolling_sum	triton	2	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p10 st.global.L1::evict_last.L2::cache_hint.b64 [%rd18+0], {%rd26}, %rd19	-
+haiku	run_end_decode	numba	0	refused	_ZN27corpus_haiku_run_end_decode6kernelB2v3B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIdLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedE5ArrayIdLi1E1A7mutable7alignedExx: the access is not proved inside its buffer, a shared variable, or a local variable: ld.s32 %rd36, [%rd35+0]	-
+haiku	run_end_decode	numba	1	refused	_ZN27corpus_haiku_run_end_decode6kernelB3v52B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIdLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedE5ArrayIdLi1E1A7mutable7alignedExx: the access is not proved inside its buffer, a shared variable, or a local variable: ld.s32 %rd36, [%rd35+0]	-
+haiku	run_end_decode	numba	2	accepted		correct
+haiku	run_end_decode	nvcc	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.s32 %rd22, [%rd21+0]	-
+haiku	run_end_decode	nvcc	1	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.s32 %rd23, [%rd22+0]	-
+haiku	run_end_decode	nvcc	2	accepted		correct
+haiku	scatter_by_offsets	numba	0	refused	_ZN31corpus_haiku_scatter_by_offsets6kernelB3v26B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIaLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedExx5ArrayIiLi1E1A7mutable7alignedE: the access is not proved inside its buffer, a shared variable, or a local variable: st.u32 [%rd29+0], %rd1	-
+haiku	scatter_by_offsets	numba	1	accepted		correct
+haiku	scatter_by_offsets	nvcc	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: st.global.u32 [%rd13+0], %r1	-
+haiku	scatter_by_offsets	nvcc	1	accepted		correct
+haiku	segmented_sum	numba	0	accepted		-
+haiku	segmented_sum	nvcc	0	accepted		-
+haiku	sorted_contains	numba	0	refused	_ZN28corpus_haiku_sorted_contains6kernelB3v10B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIxLi1E1A7mutable7alignedE5ArrayIxLi1E1A7mutable7alignedE5ArrayIaLi1E1A7mutable7alignedExx: the access is not proved inside its buffer, a shared variable, or a local variable: ld.u64 %rd6, [%rd39+0]	-
+haiku	sorted_contains	numba	1	refused	_ZN28corpus_haiku_sorted_contains6kernelB3v54B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIxLi1E1A7mutable7alignedE5ArrayIxLi1E1A7mutable7alignedE5ArrayIaLi1E1A7mutable7alignedExx: the access is not proved inside its buffer, a shared variable, or a local variable: ld.u64 %rd7, [%rd38+0]	-
+haiku	sorted_contains	numba	2	refused	_ZN28corpus_haiku_sorted_contains6kernelB4v117B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIxLi1E1A7mutable7alignedE5ArrayIxLi1E1A7mutable7alignedE5ArrayIaLi1E1A7mutable7alignedExx: the access is not proved inside its buffer, a shared variable, or a local variable: ld.u64 %rd7, [%rd36+0]	-
+haiku	sorted_contains	nvcc	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.u64 %rd7, [%rd23+0]	-
+haiku	sorted_contains	nvcc	1	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.u64 %rd8, [%rd24+0]	-
+haiku	sorted_contains	nvcc	2	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.u64 %rd8, [%rd24+0]	-
+haiku	starts_with	numba	0	accepted		-
+haiku	starts_with	nvcc	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.u32 %r2, [%rd15+0]	-
+haiku	starts_with	nvcc	1	invalid	the arguments (('offsets', 'int32'), ('chars', 'uint8'), ('n', None), ('prefix', 'uint8'), ('k', None), ('match', 'int8')) are not the task's (('offsets', 'int32'), ('chars', 'uint8'), ('prefix', 'uint8'), ('k', None), ('match', 'int8'))	-
+haiku	starts_with	nvcc	2	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.u32 %r2, [%rd15+0]	-
+haiku	string_contains	numba	0	refused	_ZN28corpus_haiku_string_contains6kernelB2v4B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIiLi1E1A7mutable7alignedE5ArrayIhLi1E1A7mutable7alignedE5ArrayIhLi1E1A7mutable7alignedE5ArrayIaLi1E1A7mutable7alignedExx: the access is not proved inside its buffer, a shared variable, or a local variable: ld.u8 %rs5, [%rd51+0]	-
+haiku	string_contains	numba	1	accepted		correct
+haiku	string_contains	nvcc	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.u8 %rs4, [%rd20+0]	-
+haiku	string_contains	nvcc	1	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.u8 %rs4, [%rd20+0]	-
+haiku	string_contains	nvcc	2	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.u8 %rs5, [%rd19+0]	-
+haiku	string_contains	triton	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p16 st.global.L1::evict_last.L2::cache_hint.b8 [%rd24+0], {%rs6}, %rd25	-
+haiku	string_contains	triton	1	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p19 st.global.L1::evict_last.L2::cache_hint.b8 [%rd26+0], {%rs6}, %rd27	-
+haiku	string_contains	triton	2	invalid	the source does not compile: at 25:16:	-
+haiku	string_length	numba	0	refused	_ZN26corpus_haiku_string_length6kernelB3v29B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIiLi1E1A7mutable7alignedE5ArrayIhLi1E1A7mutable7alignedE5ArrayIxLi1E1A7mutable7alignedE: the access is not proved aligned to its width: st.u64 [%rd47+0], %rd51	-
+haiku	string_length	numba	1	accepted		correct
+haiku	string_length	nvcc	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.u32 %r1, [%rd8+4]	-
+haiku	string_length	nvcc	1	invalid	the arguments (('offsets', 'int32'), ('chars', 'uint8'), ('n', None), ('lengths', 'int32')) are not the task's (('offsets', 'int32'), ('chars', 'uint8'), ('lengths', 'int32'))	-
+haiku	string_length	nvcc	2	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.u32 %r1, [%rd8+4]	-
+haiku	valid_rows	numba	0	refused	_ZN23corpus_haiku_valid_rows6kernelB2v1B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIhLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedEx: the access is not proved inside its buffer, a shared variable, or a local variable: st.u32 [%rd38+0], %rd1	-
+haiku	valid_rows	numba	1	accepted		correct
+haiku	valid_rows	nvcc	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.u8 %r5, [%rd8+0]	-
+haiku	valid_rows	nvcc	1	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.u8 %r6, [%rd8+0]	-
+haiku	valid_rows	nvcc	2	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.u8 %r6, [%rd14+0]	-
+haiku	valid_rows	triton	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.L1::evict_last.L2::cache_hint.b8 {%rs1}, [%rd8+0], %rd7	-
+haiku	valid_rows	triton	1	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.L1::evict_last.L2::cache_hint.b8 {%rs1}, [%rd9+0], %rd8	-
+haiku	valid_rows	triton	2	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.L1::evict_last.L2::cache_hint.b8 {%rs1}, [%rd13+0], %rd12	-
+opus	days_to_year	numba	0	accepted		-
+opus	days_to_year	nvcc	0	accepted		-
+opus	days_to_year	triton	0	accepted		-
+opus	dictionary_decode	numba	0	accepted		-
+opus	dictionary_decode	nvcc	0	accepted		-
+opus	dictionary_decode	triton	0	accepted		-
+opus	filter_select	numba	0	refused	_ZN25corpus_opus_filter_select6kernelB3v46B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIdLi1E1A7mutable7alignedEd5ArrayIiLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedEx: the access is not proved inside its buffer, a shared variable, or a local variable: ld.f64 %fd2, [%rd87+0]	-
+opus	filter_select	numba	1	refused	_ZN25corpus_opus_filter_select6kernelB3v60B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIdLi1E1A7mutable7alignedEd5ArrayIiLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedEx: the stored value is not proved to be one element in the index range: st.u32 [%rd34+0], %rd8	-
+opus	filter_select	numba	2	accepted		correct
+opus	filter_select	nvcc	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.nc.f64 %fd2, [%rd30+0]	-
+opus	filter_select	nvcc	1	refused	kernel: the stored value is not proved to be one element in the index range: st.global.u32 [%rd24+0], %rd6	-
+opus	filter_select	nvcc	2	accepted		correct
+opus	filter_select	triton	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p20 st.global.b32 [%rd48+0], {%r45}	-
+opus	filter_select	triton	1	accepted		correct
+opus	gather	numba	0	accepted		-
+opus	gather	nvcc	0	accepted		-
+opus	gather	triton	0	accepted		-
+opus	groupby_sum	numba	0	accepted		-
+opus	groupby_sum	nvcc	0	accepted		-
+opus	groupby_sum	triton	0	accepted		-
+opus	hash_build	numba	0	accepted		-
+opus	hash_build	nvcc	0	accepted		-
+opus	hash_build	triton	0	accepted		-
+opus	hash_probe	numba	0	refused	_ZN22corpus_opus_hash_probe6kernelB3v54B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIxLi1E1A7mutable7alignedE5ArrayIxLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedEx5ArrayIiLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedExx: the access is not proved inside its buffer, a shared variable, or a local variable: st.u32 [%rd78+0], %r27	-
+opus	hash_probe	numba	1	refused	_ZN22corpus_opus_hash_probe6kernelB3v61B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIxLi1E1A7mutable7alignedE5ArrayIxLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedEx5ArrayIiLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedExx: the stored value is not proved to be one element in the index range: st.u32 [%rd73+0], %rd8	-
+opus	hash_probe	numba	2	accepted		correct
+opus	hash_probe	nvcc	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: st.global.u32 [%rd57+0], %r30	-
+opus	hash_probe	nvcc	1	refused	kernel: the stored value is not proved to be one element in the index range: st.global.u32 [%rd57+0], %rd12	-
+opus	hash_probe	nvcc	2	accepted		correct
+opus	hash_probe	triton	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p4 st.global.b32 [%rd26+0], {%r11}	-
+opus	hash_probe	triton	1	refused	kernel: the stored value is not proved to be one element in the index range: @%p4 st.global.b32 [%rd27+0], {%r12}	-
+opus	hash_probe	triton	2	accepted		correct
+opus	histogram	numba	0	accepted		-
+opus	histogram	nvcc	0	accepted		-
+opus	histogram	triton	0	accepted		-
+opus	merge_sorted	numba	0	refused	_ZN24corpus_opus_merge_sorted6kernelB2v9B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIxLi1E1A7mutable7alignedE5ArrayIxLi1E1A7mutable7alignedE5ArrayIxLi1E1A7mutable7alignedExx: the access is not proved inside its buffer, a shared variable, or a local variable: ld.u64 %rd89, [%rd88+0]	-
+opus	merge_sorted	numba	1	refused	_ZN24corpus_opus_merge_sorted6kernelB3v64B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIxLi1E1A7mutable7alignedE5ArrayIxLi1E1A7mutable7alignedE5ArrayIxLi1E1A7mutable7alignedExx: the access is not proved inside its buffer, a shared variable, or a local variable: ld.u64 %rd91, [%rd90+0]	-
+opus	merge_sorted	numba	2	refused	_ZN24corpus_opus_merge_sorted6kernelB4v124B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIxLi1E1A7mutable7alignedE5ArrayIxLi1E1A7mutable7alignedE5ArrayIxLi1E1A7mutable7alignedExx: the access is not proved inside its buffer, a shared variable, or a local variable: ld.u64 %rd159, [%rd85+0]	-
+opus	merge_sorted	nvcc	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: call.uni {retval0}, _ZN37_INTERNAL_0388a7d9_9_kernel_cu_kernel5__ldgEPKl, {param0}	-
+opus	merge_sorted	nvcc	1	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.nc.u64 %rd76, [%rd75+0]	-
+opus	merge_sorted	nvcc	2	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.nc.u64 %rd162, [%rd53+0]	-
+opus	merge_sorted	triton	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p283 ld.global.b64 {%rd909}, [%rd910+0]	-
+opus	merge_sorted	triton	1	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p2 ld.global.b64 {%rd15}, [%rd16+0]	-
+opus	merge_sorted	triton	2	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p2 ld.global.b64 {%rd18}, [%rd19+0]	-
+opus	min_max	numba	0	accepted		-
+opus	min_max	nvcc	0	accepted		-
+opus	min_max	triton	0	accepted		-
+opus	projection	numba	0	accepted		-
+opus	projection	nvcc	0	accepted		-
+opus	projection	triton	0	accepted		-
+opus	q6_sum	numba	0	accepted		-
+opus	q6_sum	nvcc	0	accepted		-
+opus	q6_sum	triton	0	accepted		-
+opus	radix_scatter	numba	0	refused	_ZN25corpus_opus_radix_scatter6kernelB2v7B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIjLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedExx: the access is not proved inside its buffer, a shared variable, or a local variable: ld.u32 %rd66, [%rd65+0]	-
+opus	radix_scatter	numba	1	refused	_ZN25corpus_opus_radix_scatter6kernelB3v65B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIjLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedExx: the access is not proved inside its buffer, a shared variable, or a local variable: ld.u32 %rd64, [%rd63+0]	-
+opus	radix_scatter	numba	2	refused	_ZN25corpus_opus_radix_scatter6kernelB4v125B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIjLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedExx: the shared memory access is not proved inside a shared variable: st.shared.u32 [%rd58+0], %r38	-
+opus	radix_scatter	nvcc	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: call.uni {retval0}, _ZN37_INTERNAL_4c89d77a_9_kernel_cu_kernel5__ldgEPKj, {param0}	-
+opus	radix_scatter	nvcc	1	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.nc.u32 %r46, [%rd47+0]	-
+opus	radix_scatter	nvcc	2	refused	kernel: the access is not proved aligned to its width: ld.shared.s32 %rd19, [%r126+0]	-
+opus	radix_scatter	triton	0	refused	kernel: the shared memory access is not proved inside a shared variable: st.shared.v4.b32 [%r50+0], {%r51, %r52, %r53, %r54}	-
+opus	radix_scatter	triton	1	refused	the check did not finish in 3600 seconds	-
+opus	radix_scatter	triton	2	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p2 ld.global.b32 {%r2}, [%rd2+0]	-
+opus	rolling_sum	numba	0	refused	_ZN23corpus_opus_rolling_sum6kernelB2v6B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIdLi1E1A7mutable7alignedE5ArrayIdLi1E1A7mutable7alignedExx: the analysis's invariant does not follow after this instruction: mov.u64 %rd306, 7	-
+opus	rolling_sum	numba	1	refused	_ZN23corpus_opus_rolling_sum6kernelB3v66B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIdLi1E1A7mutable7alignedE5ArrayIdLi1E1A7mutable7alignedExx: the access is not proved aligned to its width: ld.shared.f64 %fd32, [%rd141+0]	-
+opus	rolling_sum	numba	2	refused	_ZN23corpus_opus_rolling_sum6kernelB4v126B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIdLi1E1A7mutable7alignedE5ArrayIdLi1E1A7mutable7alignedExx: the shared memory access is not proved inside a shared variable: ld.shared.f64 %fd35, [%rd142+0]	-
+opus	rolling_sum	nvcc	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: call.uni {retval0}, _ZN37_INTERNAL_2ab9c602_9_kernel_cu_kernel5__ldgEPKd, {param0}	-
+opus	rolling_sum	nvcc	1	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.nc.f64 %fd57, [%rd54+0]	-
+opus	rolling_sum	nvcc	2	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.nc.f64 %fd57, [%rd29+0]	-
+opus	rolling_sum	triton	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p8 ld.global.b64 {%rd15}, [%rd17+0]	-
+opus	rolling_sum	triton	1	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p2 ld.global.b64 {%rd8}, [%rd10+0]	-
+opus	rolling_sum	triton	2	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p2 ld.global.b64 {%rd8}, [%rd10+0]	-
+opus	run_end_decode	numba	0	refused	_ZN26corpus_opus_run_end_decode6kernelB2v3B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIdLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedE5ArrayIdLi1E1A7mutable7alignedExx: the access is not proved inside its buffer, a shared variable, or a local variable: ld.s32 %rd75, [%rd74+0]	-
+opus	run_end_decode	numba	1	refused	_ZN26corpus_opus_run_end_decode6kernelB3v67B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIdLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedE5ArrayIdLi1E1A7mutable7alignedExx: the access is not proved inside its buffer, a shared variable, or a local variable: ld.s32 %rd79, [%rd78+0]	-
+opus	run_end_decode	numba	2	refused	_ZN26corpus_opus_run_end_decode6kernelB4v127B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIdLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedE5ArrayIdLi1E1A7mutable7alignedExx: the access is not proved inside its buffer, a shared variable, or a local variable: ld.s32 %rd70, [%rd69+0]	-
+opus	run_end_decode	nvcc	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: call.uni {retval0}, _ZN37_INTERNAL_58e92513_9_kernel_cu_kernel5__ldgEPKi, {param0}	-
+opus	run_end_decode	nvcc	1	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.nc.u32 %r31, [%rd46+0]	-
+opus	run_end_decode	nvcc	2	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.nc.u32 %r38, [%rd39+0]	-
+opus	run_end_decode	triton	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p2 ld.global.b32 {%r28}, [%rd32+0]	-
+opus	run_end_decode	triton	1	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p2 ld.global.b32 {%r28}, [%rd17+0]	-
+opus	run_end_decode	triton	2	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p1 ld.global.b32 {%r1}, [%rd1+0]	-
+opus	scatter_by_offsets	numba	0	refused	_ZN30corpus_opus_scatter_by_offsets6kernelB3v62B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIaLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedExx: the access is not proved inside its buffer, a shared variable, or a local variable: st.u32 [%rd36+0], %rd38	-
+opus	scatter_by_offsets	numba	1	accepted		correct
+opus	scatter_by_offsets	nvcc	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: st.global.u32 [%rd21+0], %rd23	-
+opus	scatter_by_offsets	nvcc	1	accepted		correct
+opus	scatter_by_offsets	triton	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p9 st.global.b32 [%rd17+0], {%r9}	-
+opus	scatter_by_offsets	triton	1	accepted		correct
+opus	segmented_sum	numba	0	refused	_ZN25corpus_opus_segmented_sum6kernelB3v63B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIiLi1E1A7mutable7alignedE5ArrayIdLi1E1A7mutable7alignedE5ArrayIdLi1E1A7mutable7alignedEx: the access is not proved inside its buffer, a shared variable, or a local variable: ld.f64 %fd42, [%rd354+0]	-
+opus	segmented_sum	numba	1	refused	_ZN25corpus_opus_segmented_sum6kernelB3v69B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIiLi1E1A7mutable7alignedE5ArrayIdLi1E1A7mutable7alignedE5ArrayIdLi1E1A7mutable7alignedEx: the access is not proved inside its buffer, a shared variable, or a local variable: ld.s32 %rd243, [%rd178+0]	-
+opus	segmented_sum	numba	2	accepted		correct
+opus	segmented_sum	nvcc	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.nc.f64 %fd60, [%rd109+0]	-
+opus	segmented_sum	nvcc	1	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.nc.f64 %fd64, [%rd112+0]	-
+opus	segmented_sum	nvcc	2	accepted		correct
+opus	segmented_sum	triton	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p29 ld.global.b32 {%r53}, [%rd159+0]	-
+opus	segmented_sum	triton	1	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p31 ld.global.b64 {%rd170}, [%rd318+0]	-
+opus	segmented_sum	triton	2	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p31 ld.global.b64 {%rd171}, [%rd319+0]	-
+opus	sorted_contains	numba	0	refused	_ZN27corpus_opus_sorted_contains6kernelB3v10B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIxLi1E1A7mutable7alignedE5ArrayIxLi1E1A7mutable7alignedE5ArrayIaLi1E1A7mutable7alignedExx: the access is not proved inside its buffer, a shared variable, or a local variable: ld.u64 %rd33, [%rd32+0]	-
+opus	sorted_contains	numba	1	refused	_ZN27corpus_opus_sorted_contains6kernelB3v72B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIxLi1E1A7mutable7alignedE5ArrayIxLi1E1A7mutable7alignedE5ArrayIaLi1E1A7mutable7alignedExx: the access is not proved inside its buffer, a shared variable, or a local variable: ld.u64 %rd36, [%rd35+0]	-
+opus	sorted_contains	numba	2	accepted		correct
+opus	sorted_contains	nvcc	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: call.uni {retval0}, _ZN37_INTERNAL_d8550326_9_kernel_cu_kernel5__ldgEPKl, {param0}	-
+opus	sorted_contains	nvcc	1	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.nc.u64 %rd27, [%rd26+0]	-
+opus	sorted_contains	nvcc	2	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.nc.u64 %rd52, [%rd51+0]	-
+opus	sorted_contains	triton	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p1 ld.global.b64 {%rd11}, [%rd12+0]	-
+opus	sorted_contains	triton	1	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p1 ld.global.b64 {%rd12}, [%rd13+0]	-
+opus	sorted_contains	triton	2	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p3 ld.global.b64 {%rd25}, [%rd26+0]	-
+opus	starts_with	numba	0	accepted		-
+opus	starts_with	nvcc	0	accepted		-
+opus	starts_with	triton	0	accepted		-
+opus	string_contains	numba	0	refused	_ZN27corpus_opus_string_contains6kernelB2v4B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIiLi1E1A7mutable7alignedE5ArrayIhLi1E1A7mutable7alignedE5ArrayIhLi1E1A7mutable7alignedE5ArrayIaLi1E1A7mutable7alignedExx: the shared memory access is not proved inside a shared variable: st.shared.u32 [%rd127+0], %r1	-
+opus	string_contains	numba	1	refused	the check did not finish in 3600 seconds	-
+opus	string_contains	numba	2	refused	the check did not finish in 3600 seconds	-
+opus	string_contains	nvcc	0	refused	kernel: the shared memory access is not proved inside a shared variable: st.shared.u32 [%r33+0], %r1	-
+opus	string_contains	nvcc	1	refused	the check did not finish in 3600 seconds	-
+opus	string_contains	nvcc	2	refused	the check did not finish in 3600 seconds	-
+opus	string_contains	triton	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p36 ld.global.b8 {%rs36}, [%rd155+0]	-
+opus	string_contains	triton	1	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p41 ld.global.b8 {%rs40}, [%rd185+0]	-
+opus	string_contains	triton	2	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p54 ld.global.b8 {%rs11}, [%rd241+0]	-
+opus	string_length	numba	0	accepted		-
+opus	string_length	nvcc	0	accepted		-
+opus	string_length	triton	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p46 ld.global.b32 {%r50}, [%rd75+0]	-
+opus	string_length	triton	1	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p48 ld.global.b8 {%rs35}, [%rd100+0]	-
+opus	string_length	triton	2	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p48 ld.global.b8 {%rs35}, [%rd101+0]	-
+opus	valid_rows	numba	0	refused	_ZN22corpus_opus_valid_rows6kernelB2v1B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIhLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedEx: the access is not proved inside its buffer, a shared variable, or a local variable: ld.u8 %rd102, [%rd44+0]	-
+opus	valid_rows	numba	1	refused	_ZN22corpus_opus_valid_rows6kernelB3v74B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIhLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedEx: the access is not proved inside its buffer, a shared variable, or a local variable: ld.u8 %rd105, [%rd52+0]	-
+opus	valid_rows	numba	2	refused	_ZN22corpus_opus_valid_rows6kernelB4v133B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIhLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedEx: the access is not proved inside its buffer, a shared variable, or a local variable: ld.u8 %rd49, [%rd48+0]	-
+opus	valid_rows	nvcc	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: call.uni {retval0}, _ZN37_INTERNAL_bb79c1c9_9_kernel_cu_kernel5__ldgEPKh, {param0}	-
+opus	valid_rows	nvcc	1	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.nc.u8 %rs1, [%rd17+0]	-
+opus	valid_rows	nvcc	2	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.nc.u8 %rs1, [%rd32+0]	-
+opus	valid_rows	triton	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p1 ld.global.b8 {%rs1}, [%rd1+0]	-
+opus	valid_rows	triton	1	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p1 ld.global.b8 {%rs1}, [%rd1+0]	-
+opus	valid_rows	triton	2	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p1 ld.global.b8 {%rs1}, [%rd1+0]	-
+sonnet	days_to_year	numba	0	accepted		-
+sonnet	days_to_year	nvcc	0	accepted		-
+sonnet	days_to_year	triton	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p1 ld.global.b32 {%r1}, [%rd1+0]	-
+sonnet	days_to_year	triton	1	accepted		correct
+sonnet	dictionary_decode	numba	0	accepted		-
+sonnet	dictionary_decode	nvcc	0	accepted		-
+sonnet	dictionary_decode	triton	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p1 ld.global.b32 {%r1}, [%rd1+0]	-
+sonnet	dictionary_decode	triton	1	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p1 ld.global.b64 {%rd4}, [%rd3+0]	-
+sonnet	dictionary_decode	triton	2	accepted		correct
+sonnet	filter_select	numba	0	refused	_ZN27corpus_sonnet_filter_select6kernelB3v30B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIdLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedEdx: the access is not proved inside its buffer, a shared variable, or a local variable: st.u32 [%rd22+0], %rd1	-
+sonnet	filter_select	numba	1	accepted		correct
+sonnet	filter_select	nvcc	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: st.global.u32 [%rd13+0], %rd1	-
+sonnet	filter_select	nvcc	1	accepted		correct
+sonnet	filter_select	triton	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p1 ld.global.b64 {%rd1}, [%rd3+0]	-
+sonnet	filter_select	triton	1	accepted		correct
+sonnet	gather	numba	0	accepted		-
+sonnet	gather	nvcc	0	accepted		-
+sonnet	gather	triton	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p1 ld.global.b32 {%r1}, [%rd1+0]	-
+sonnet	gather	triton	1	accepted		correct
+sonnet	groupby_sum	numba	0	accepted		-
+sonnet	groupby_sum	nvcc	0	accepted		-
+sonnet	groupby_sum	triton	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p7 ld.global.b32 {%r2}, [%rd4+0]	-
+sonnet	groupby_sum	triton	1	accepted		correct
+sonnet	hash_build	numba	0	accepted		-
+sonnet	hash_build	nvcc	0	accepted		-
+sonnet	hash_build	triton	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p5 ld.global.b64 {%rd4}, [%rd5+0]	-
+sonnet	hash_build	triton	1	accepted		correct
+sonnet	hash_probe	numba	0	refused	_ZN24corpus_sonnet_hash_probe6kernelB3v36B104cw51cXTLSUwv1sDUaKthoaNgpqmjgEhasCBDCg1bcEADwxst6m1ByRAiDEllSAKoKQcmgeQT22p1WPiqWylALVUHSgJ5hrWaAA_3d_3dE5ArrayIxLi1E1A7mutable7alignedE5ArrayIxLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedExxx: the access is not proved inside its buffer, a shared variable, or a local variable: st.u32 [%rd70+0], %r6	-
+sonnet	hash_probe	numba	1	accepted		correct
+sonnet	hash_probe	nvcc	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: st.global.u32 [%rd45+0], %r5	-
+sonnet	hash_probe	nvcc	1	accepted		correct
+sonnet	hash_probe	triton	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p1 ld.global.b64 {%rd9}, [%rd10+0]	-
+sonnet	hash_probe	triton	1	accepted		correct
+sonnet	histogram	numba	0	accepted		-
+sonnet	histogram	nvcc	0	accepted		-
+sonnet	histogram	triton	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p1 ld.global.b32 {%r66}, [%rd34+0]	-
+sonnet	histogram	triton	1	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p17 ld.global.b32 {%r81}, [%rd50+0]	-
+sonnet	histogram	triton	2	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p1 ld.global.b32 {%r65}, [%rd34+0]	-
+sonnet	merge_sorted	numba	0	refused	_ZN26corpus_sonnet_merge_sorted6kernelB2v9B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIxLi1E1A7mutable7alignedE5ArrayIxLi1E1A7mutable7alignedE5ArrayIxLi1E1A7mutable7alignedExx: the access is not proved inside its buffer, a shared variable, or a local variable: ld.u64 %rd45, [%rd44+0]	-
+sonnet	merge_sorted	numba	1	refused	_ZN26corpus_sonnet_merge_sorted6kernelB3v78B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIxLi1E1A7mutable7alignedE5ArrayIxLi1E1A7mutable7alignedE5ArrayIxLi1E1A7mutable7alignedExx: the access is not proved inside its buffer, a shared variable, or a local variable: ld.u64 %rd52, [%rd51+0]	-
+sonnet	merge_sorted	numba	2	accepted		correct
+sonnet	merge_sorted	nvcc	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.nc.u64 %rd42, [%rd41+0]	-
+sonnet	merge_sorted	nvcc	1	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.nc.u64 %rd41, [%rd40+0]	-
+sonnet	merge_sorted	nvcc	2	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.nc.u64 %rd39, [%rd38+0]	-
+sonnet	min_max	numba	0	accepted		-
+sonnet	min_max	nvcc	0	accepted		-
+sonnet	min_max	triton	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p1 ld.global.b64 {%rd1}, [%rd3+0]	-
+sonnet	min_max	triton	1	accepted		correct
+sonnet	projection	numba	0	accepted		-
+sonnet	projection	nvcc	0	accepted		-
+sonnet	projection	triton	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p1 ld.global.b64 {%rd1}, [%rd2+0]	-
+sonnet	projection	triton	1	accepted		correct
+sonnet	q6_sum	numba	0	accepted		-
+sonnet	q6_sum	nvcc	0	accepted		-
+sonnet	q6_sum	triton	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p1 ld.global.b32 {%r1}, [%rd1+0]	-
+sonnet	q6_sum	triton	1	accepted		correct
+sonnet	radix_scatter	numba	0	refused	_ZN27corpus_sonnet_radix_scatter6kernelB2v7B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIjLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedExx: the access is not proved inside its buffer, a shared variable, or a local variable: st.u32 [%rd28+0], %rd1	-
+sonnet	radix_scatter	numba	1	accepted		correct
+sonnet	radix_scatter	nvcc	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: st.global.u32 [%rd17+0], %rd1	-
+sonnet	radix_scatter	nvcc	1	accepted		correct
+sonnet	radix_scatter	triton	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p1 ld.global.b32 {%r1}, [%rd1+0]	-
+sonnet	radix_scatter	triton	1	accepted		correct
+sonnet	rolling_sum	numba	0	refused	_ZN25corpus_sonnet_rolling_sum6kernelB2v6B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIdLi1E1A7mutable7alignedE5ArrayIdLi1E1A7mutable7alignedExx: the shared memory access is not proved inside a shared variable: st.shared.f64 [%rd37+0], %fd4	-
+sonnet	rolling_sum	numba	1	refused	_ZN25corpus_sonnet_rolling_sum6kernelB3v80B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIdLi1E1A7mutable7alignedE5ArrayIdLi1E1A7mutable7alignedExx: the access is not proved inside its buffer, a shared variable, or a local variable: ld.f64 %fd4, [%rd42+0]	-
+sonnet	rolling_sum	numba	2	accepted		correct
+sonnet	rolling_sum	nvcc	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.nc.f64 %fd10, [%rd31+0]	-
+sonnet	rolling_sum	nvcc	1	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.nc.f64 %fd4, [%rd30+0]	-
+sonnet	rolling_sum	nvcc	2	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.nc.f64 %fd10, [%rd36+0]	-
+sonnet	rolling_sum	triton	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p2 ld.global.b64 {%rd5}, [%rd10+0]	-
+sonnet	rolling_sum	triton	1	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p4 ld.global.b64 {%rd9}, [%rd11+0]	-
+sonnet	rolling_sum	triton	2	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p2 ld.global.b64 {%rd11}, [%rd17+0]	-
+sonnet	run_end_decode	numba	0	refused	_ZN28corpus_sonnet_run_end_decode6kernelB2v3B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIdLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedE5ArrayIdLi1E1A7mutable7alignedExx: the access is not proved inside its buffer, a shared variable, or a local variable: ld.s32 %rd29, [%rd28+0]	-
+sonnet	run_end_decode	numba	1	refused	_ZN28corpus_sonnet_run_end_decode6kernelB3v81B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIdLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedE5ArrayIdLi1E1A7mutable7alignedExx: the access is not proved inside its buffer, a shared variable, or a local variable: ld.s32 %rd33, [%rd32+0]	-
+sonnet	run_end_decode	numba	2	accepted		correct
+sonnet	run_end_decode	nvcc	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.nc.u32 %r4, [%rd20+0]	-
+sonnet	run_end_decode	nvcc	1	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.nc.u32 %r4, [%rd24+0]	-
+sonnet	run_end_decode	nvcc	2	accepted		correct
+sonnet	scatter_by_offsets	numba	0	refused	_ZN32corpus_sonnet_scatter_by_offsets6kernelB3v41B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIaLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedExx: the access is not proved inside its buffer, a shared variable, or a local variable: st.u32 [%rd29+0], %rd1	-
+sonnet	scatter_by_offsets	numba	1	accepted		correct
+sonnet	scatter_by_offsets	nvcc	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: st.global.u32 [%rd15+0], %rd1	-
+sonnet	scatter_by_offsets	nvcc	1	accepted		correct
+sonnet	scatter_by_offsets	triton	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p1 ld.global.b8 {%rs1}, [%rd1+0]	-
+sonnet	scatter_by_offsets	triton	1	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p9 st.global.b32 [%rd17+0], {%r9}	-
+sonnet	scatter_by_offsets	triton	2	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p1 ld.global.b8 {%rs1}, [%rd1+0]	-
+sonnet	segmented_sum	numba	0	accepted		-
+sonnet	segmented_sum	nvcc	0	refused	kernel: the access is not proved aligned to its width: ld.global.f64 %fd8, [%rd20+0]	-
+sonnet	segmented_sum	nvcc	1	accepted		correct
+sonnet	segmented_sum	triton	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.b32 {%r49}, [%rd4+0]	-
+sonnet	segmented_sum	triton	1	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p3 ld.global.b64 {%rd8}, [%rd10+0]	-
+sonnet	segmented_sum	triton	2	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p1 ld.global.b32 {%r3}, [%rd10+0]	-
+sonnet	sorted_contains	numba	0	refused	_ZN29corpus_sonnet_sorted_contains6kernelB3v10B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIxLi1E1A7mutable7alignedE5ArrayIxLi1E1A7mutable7alignedE5ArrayIaLi1E1A7mutable7alignedExx: the access is not proved inside its buffer, a shared variable, or a local variable: ld.u64 %rd35, [%rd34+0]	-
+sonnet	sorted_contains	numba	1	refused	_ZN29corpus_sonnet_sorted_contains6kernelB3v83B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIxLi1E1A7mutable7alignedE5ArrayIxLi1E1A7mutable7alignedE5ArrayIaLi1E1A7mutable7alignedExx: the access is not proved inside its buffer, a shared variable, or a local variable: ld.u64 %rd34, [%rd33+0]	-
+sonnet	sorted_contains	numba	2	accepted		correct
+sonnet	sorted_contains	nvcc	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.nc.u64 %rd25, [%rd24+0]	-
+sonnet	sorted_contains	nvcc	1	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.nc.u64 %rd28, [%rd27+0]	-
+sonnet	sorted_contains	nvcc	2	accepted		correct
+sonnet	starts_with	numba	0	accepted		-
+sonnet	starts_with	nvcc	0	accepted		-
+sonnet	starts_with	triton	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p1 ld.global.b32 {%r3}, [%rd7+0]	-
+sonnet	starts_with	triton	1	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p11 ld.global.b8 {%rs2}, [%rd17+0]	-
+sonnet	starts_with	triton	2	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p1 ld.global.b32 {%r2}, [%rd11+0]	-
+sonnet	string_contains	numba	0	refused	_ZN29corpus_sonnet_string_contains6kernelB2v4B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIiLi1E1A7mutable7alignedE5ArrayIhLi1E1A7mutable7alignedE5ArrayIhLi1E1A7mutable7alignedE5ArrayIaLi1E1A7mutable7alignedExx: the shared memory access is not proved inside a shared variable: st.shared.u8 [%rd37+0], %rs2	-
+sonnet	string_contains	numba	1	refused	_ZN29corpus_sonnet_string_contains6kernelB3v84B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIiLi1E1A7mutable7alignedE5ArrayIhLi1E1A7mutable7alignedE5ArrayIhLi1E1A7mutable7alignedE5ArrayIaLi1E1A7mutable7alignedExx: the access is not proved inside its buffer, a shared variable, or a local variable: ld.u8 %rs4, [%rd35+0]	-
+sonnet	string_contains	numba	2	refused	the check did not finish in 3600 seconds	-
+sonnet	string_contains	nvcc	0	refused	kernel: the shared memory access is not proved inside a shared variable: st.shared.u8 [%r6+0], %rs3	-
+sonnet	string_contains	nvcc	1	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.nc.u8 %rs8, [%rd28+0]	-
+sonnet	string_contains	nvcc	2	refused	the check did not finish in 3600 seconds	-
+sonnet	string_contains	triton	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.b32 {%r4}, [%rd12+0]	-
+sonnet	string_contains	triton	1	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p5 ld.global.b8 {%rs2}, [%rd19+0]	-
+sonnet	string_contains	triton	2	refused	the check did not finish in 3600 seconds	-
+sonnet	string_length	numba	0	accepted		-
+sonnet	string_length	nvcc	0	accepted		-
+sonnet	string_length	triton	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p1 ld.global.b32 {%r23}, [%rd5+0]	-
+sonnet	string_length	triton	1	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p7 ld.global.b8 {%rs1}, [%rd12+0]	-
+sonnet	string_length	triton	2	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p1 ld.global.b32 {%r2}, [%rd8+0]	-
+sonnet	valid_rows	numba	0	refused	_ZN24corpus_sonnet_valid_rows6kernelB2v1B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIhLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedEx: the access is not proved inside its buffer, a shared variable, or a local variable: ld.u8 %rd19, [%rd18+0]	-
+sonnet	valid_rows	numba	1	refused	_ZN24corpus_sonnet_valid_rows6kernelB3v85B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIhLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedEx: the access is not proved inside its buffer, a shared variable, or a local variable: ld.u8 %rd24, [%rd23+0]	-
+sonnet	valid_rows	numba	2	refused	_ZN24corpus_sonnet_valid_rows6kernelB4v139B92cw51cXTLSUwv1sDUaKthoaNgpqmjgOR3W3CwAkMXLaJtQYkOIgxJU0gCqOkEJoHkbttqdVhoqlspQGNFHSgJ5BnWagIAE5ArrayIhLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedE5ArrayIiLi1E1A7mutable7alignedEx: the access is not proved inside its buffer, a shared variable, or a local variable: ld.u8 %rd4, [%rd47+0]	-
+sonnet	valid_rows	nvcc	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.u8 %r9, [%rd10+0]	-
+sonnet	valid_rows	nvcc	1	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.u8 %r9, [%rd15+0]	-
+sonnet	valid_rows	nvcc	2	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: ld.global.u8 %r1, [%rd20+0]	-
+sonnet	valid_rows	triton	0	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p1 ld.global.b8 {%rs1}, [%rd1+0]	-
+sonnet	valid_rows	triton	1	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p1 ld.global.b8 {%rs1}, [%rd1+0]	-
+sonnet	valid_rows	triton	2	refused	kernel: the access is not proved inside its buffer, a shared variable, or a local variable: @%p1 ld.global.b8 {%rs1}, [%rd1+0]	-

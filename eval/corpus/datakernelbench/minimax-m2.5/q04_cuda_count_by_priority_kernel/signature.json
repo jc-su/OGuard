@@ -1,0 +1,72 @@
+[
+  {
+    "name": "o_orderkey",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_orders",
+    "indexes_into": null
+  },
+  {
+    "name": "o_priority",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_orders",
+    "indexes_into": null
+  },
+  {
+    "name": "o_orderdate",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_orders",
+    "indexes_into": null
+  },
+  {
+    "name": "n_orders",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of orders",
+    "indexes_into": null
+  },
+  {
+    "name": "date_lo",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "days since 1970-01-01 that the plan computes from its `date_lo` parameter; any int32 value",
+    "indexes_into": null
+  },
+  {
+    "name": "date_hi",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "days since 1970-01-01 that the plan computes from its `date_hi` parameter; any int32 value",
+    "indexes_into": null
+  },
+  {
+    "name": "late_keys",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_late_keys",
+    "indexes_into": null
+  },
+  {
+    "name": "n_late_keys",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of late_keys",
+    "indexes_into": null
+  },
+  {
+    "name": "counts",
+    "kind": "inout",
+    "dtype": "int64",
+    "length": "num_priorities",
+    "indexes_into": null
+  },
+  {
+    "name": "num_priorities",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "the number of distinct o_orderpriority values",
+    "indexes_into": null
+  }
+]

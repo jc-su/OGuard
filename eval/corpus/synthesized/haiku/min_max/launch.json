@@ -1,0 +1,9 @@
+{
+  "nvcc": {
+    "shared": {
+      "constant": 4096,
+      "terms": {}
+    },
+    "size_maxima": {}
+  }
+}

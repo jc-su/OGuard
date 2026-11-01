@@ -1,0 +1,65 @@
+[
+  {
+    "name": "l_partkey",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "N_l",
+    "indexes_into": null
+  },
+  {
+    "name": "l_suppkey",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "N_l",
+    "indexes_into": null
+  },
+  {
+    "name": "l_quantity",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "N_l",
+    "indexes_into": null
+  },
+  {
+    "name": "ps_partkey",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "N_ps",
+    "indexes_into": null
+  },
+  {
+    "name": "ps_suppkey",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "N_ps",
+    "indexes_into": null
+  },
+  {
+    "name": "hash_table",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "H",
+    "indexes_into": null
+  },
+  {
+    "name": "ps_sum_qty",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "N_ps",
+    "indexes_into": null
+  },
+  {
+    "name": "H",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "slots of hash_table, a power of two of at least 1024",
+    "indexes_into": null
+  },
+  {
+    "name": "N_l",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of the filtered lineitem",
+    "indexes_into": null
+  }
+]

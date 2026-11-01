@@ -1,0 +1,65 @@
+[
+  {
+    "name": "l_orderkey",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_lineitems",
+    "indexes_into": null
+  },
+  {
+    "name": "l_suppkey",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_lineitems",
+    "indexes_into": null
+  },
+  {
+    "name": "l_receiptdate",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_lineitems",
+    "indexes_into": null
+  },
+  {
+    "name": "l_commitdate",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_lineitems",
+    "indexes_into": null
+  },
+  {
+    "name": "order_map",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "max_orderkey + 1",
+    "indexes_into": null
+  },
+  {
+    "name": "counts",
+    "kind": "inout",
+    "dtype": "int32",
+    "length": "num_orders_f",
+    "indexes_into": null
+  },
+  {
+    "name": "lineitems",
+    "kind": "inout",
+    "dtype": "int32",
+    "length": "16 * num_orders_f",
+    "indexes_into": null
+  },
+  {
+    "name": "n_lineitems",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of lineitem",
+    "indexes_into": null
+  },
+  {
+    "name": "max_orderkey",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "largest key of the F orders",
+    "indexes_into": null
+  }
+]

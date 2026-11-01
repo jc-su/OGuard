@@ -1,0 +1,58 @@
+[
+  {
+    "name": "ps_partkey_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "ps_supplycost_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "ps_availqty_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "group_values_ptr",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "dense_size",
+    "indexes_into": null
+  },
+  {
+    "name": "group_counts_ptr",
+    "kind": "inout",
+    "dtype": "int32",
+    "length": "dense_size",
+    "indexes_into": null
+  },
+  {
+    "name": "total_ptr",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "1",
+    "indexes_into": null
+  },
+  {
+    "name": "n_elements",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "rows of the joined partsupp",
+    "indexes_into": null
+  },
+  {
+    "name": "base_key",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "smallest part key of the joined rows",
+    "indexes_into": null
+  }
+]

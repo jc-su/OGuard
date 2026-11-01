@@ -1,0 +1,37 @@
+[
+  {
+    "name": "l_orderkey",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_lineitem",
+    "indexes_into": "bitmap"
+  },
+  {
+    "name": "l_commit",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_lineitem",
+    "indexes_into": null
+  },
+  {
+    "name": "l_receipt",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_lineitem",
+    "indexes_into": null
+  },
+  {
+    "name": "bitmap",
+    "kind": "inout",
+    "dtype": "uint32",
+    "length": "max_key + 1",
+    "indexes_into": null
+  },
+  {
+    "name": "n_lineitem",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of lineitem (l_orderkey.numel())",
+    "indexes_into": null
+  }
+]

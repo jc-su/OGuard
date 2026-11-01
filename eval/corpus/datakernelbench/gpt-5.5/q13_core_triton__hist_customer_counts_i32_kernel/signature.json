@@ -1,0 +1,30 @@
+[
+  {
+    "name": "c_custkey_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_customers",
+    "indexes_into": "counts_ptr"
+  },
+  {
+    "name": "counts_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "counts_n",
+    "indexes_into": null
+  },
+  {
+    "name": "hist_ptr",
+    "kind": "inout",
+    "dtype": "int32",
+    "length": "64",
+    "indexes_into": null
+  },
+  {
+    "name": "n_customers",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "rows of customer",
+    "indexes_into": null
+  }
+]

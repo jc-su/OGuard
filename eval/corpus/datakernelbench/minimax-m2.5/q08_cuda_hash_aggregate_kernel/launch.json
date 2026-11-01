@@ -1,0 +1,1 @@
+{"nvcc": {"block": [1024, 1, 1], "shared": {"constant": 0, "terms": {"num_years": 16}}, "size_maxima": {"num_years": 7}, "grid": [2097151, 1, 1]}}

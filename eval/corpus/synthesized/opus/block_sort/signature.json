@@ -1,0 +1,5 @@
+[
+  {"name": "keys", "kind": "input", "dtype": "int32", "length": "n", "indexes_into": null},
+  {"name": "out", "kind": "output", "dtype": "int32", "length": "n", "indexes_into": null},
+  {"name": "n", "kind": "scalar", "dtype": "int64", "length": "[0, 2147483647]", "indexes_into": null}
+]

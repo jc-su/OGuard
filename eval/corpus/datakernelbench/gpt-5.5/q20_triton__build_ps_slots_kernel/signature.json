@@ -1,0 +1,37 @@
+[
+  {
+    "name": "ps_partkey_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_ps",
+    "indexes_into": "counts_ptr"
+  },
+  {
+    "name": "ps_suppkey_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_ps",
+    "indexes_into": null
+  },
+  {
+    "name": "counts_ptr",
+    "kind": "inout",
+    "dtype": "int32",
+    "length": "n_parts",
+    "indexes_into": null
+  },
+  {
+    "name": "supp_slots_ptr",
+    "kind": "output",
+    "dtype": "int64",
+    "length": "4 * n_parts",
+    "indexes_into": null
+  },
+  {
+    "name": "idx_slots_ptr",
+    "kind": "output",
+    "dtype": "int64",
+    "length": "4 * n_parts",
+    "indexes_into": null
+  }
+]

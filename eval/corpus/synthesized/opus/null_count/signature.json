@@ -1,0 +1,5 @@
+[
+  {"name": "valid", "kind": "input", "dtype": "uint8", "length": "(n + 7) / 8", "indexes_into": null},
+  {"name": "count", "kind": "inout", "dtype": "int64", "length": "1", "indexes_into": null},
+  {"name": "n", "kind": "scalar", "dtype": "int64", "length": "rows of the column", "indexes_into": null}
+]

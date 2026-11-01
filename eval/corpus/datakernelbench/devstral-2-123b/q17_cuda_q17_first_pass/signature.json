@@ -1,0 +1,51 @@
+[
+  {
+    "name": "l_partkey_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_items",
+    "indexes_into": null
+  },
+  {
+    "name": "l_quantity_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_items",
+    "indexes_into": null
+  },
+  {
+    "name": "part_keys_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_parts",
+    "indexes_into": null
+  },
+  {
+    "name": "sum_qty_ptr",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "n_parts",
+    "indexes_into": null
+  },
+  {
+    "name": "cnt_qty_ptr",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "n_parts",
+    "indexes_into": null
+  },
+  {
+    "name": "n_items",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of l_partkey_ptr",
+    "indexes_into": null
+  },
+  {
+    "name": "n_parts",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of part_keys_ptr",
+    "indexes_into": null
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "numba": {
+    "shared": {
+      "constant": 0,
+      "terms": {}
+    },
+    "size_maxima": {},
+    "grid": [
+      1024,
+      1,
+      1
+    ]
+  }
+}

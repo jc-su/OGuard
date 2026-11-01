@@ -1,0 +1,58 @@
+[
+  {
+    "name": "l1_orderkey_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_l1",
+    "indexes_into": null
+  },
+  {
+    "name": "l1_supp_id_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_l1",
+    "indexes_into": "counts_ptr"
+  },
+  {
+    "name": "agg_orderkey_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_agg",
+    "indexes_into": null
+  },
+  {
+    "name": "agg_distinct_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_agg",
+    "indexes_into": null
+  },
+  {
+    "name": "agg_late_distinct_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_agg",
+    "indexes_into": null
+  },
+  {
+    "name": "counts_ptr",
+    "kind": "inout",
+    "dtype": "int64",
+    "length": "num_suppliers",
+    "indexes_into": null
+  },
+  {
+    "name": "n_l1",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "late rows of l1 (l1_orderkey_t.numel())",
+    "indexes_into": null
+  },
+  {
+    "name": "n_agg",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "orders with aggregates (lo_orderkeys_t.numel())",
+    "indexes_into": null
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "name": "col",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "sel",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "m",
+    "indexes_into": "col"
+  },
+  {
+    "name": "out",
+    "kind": "output",
+    "dtype": "float64",
+    "length": "m",
+    "indexes_into": null
+  },
+  {
+    "name": "m",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of sel",
+    "indexes_into": null
+  },
+  {
+    "name": "n",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of col",
+    "indexes_into": null
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "name": "l_orderkey",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_lineitem",
+    "indexes_into": "has_late_lineitem"
+  },
+  {
+    "name": "l_commitdate_days",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_lineitem",
+    "indexes_into": null
+  },
+  {
+    "name": "l_receiptdate_days",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_lineitem",
+    "indexes_into": null
+  },
+  {
+    "name": "has_late_lineitem",
+    "kind": "output",
+    "dtype": "uint8",
+    "length": "max_key + 1",
+    "indexes_into": null
+  },
+  {
+    "name": "n_lineitem",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of lineitem",
+    "indexes_into": null
+  },
+  {
+    "name": "max_key",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "largest order key of orders and lineitem",
+    "indexes_into": null
+  }
+]

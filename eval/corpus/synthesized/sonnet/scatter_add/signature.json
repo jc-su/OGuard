@@ -1,0 +1,7 @@
+[
+  {"name": "idx", "kind": "input", "dtype": "int32", "length": "m", "indexes_into": "out"},
+  {"name": "values", "kind": "input", "dtype": "float64", "length": "m", "indexes_into": null},
+  {"name": "out", "kind": "inout", "dtype": "float64", "length": "n", "indexes_into": null},
+  {"name": "m", "kind": "scalar", "dtype": "int64", "length": "[0, 2147483647]", "indexes_into": null},
+  {"name": "n", "kind": "scalar", "dtype": "int64", "length": "[0, 2147483647]", "indexes_into": null}
+]

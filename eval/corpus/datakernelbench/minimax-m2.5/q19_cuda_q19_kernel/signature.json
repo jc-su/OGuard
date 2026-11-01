@@ -1,0 +1,184 @@
+[
+  {
+    "name": "l_quantity",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "l_extendedprice",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "l_discount",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "p_brand_id",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "p_container_grp",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "p_size",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "out",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "1",
+    "indexes_into": null
+  },
+  {
+    "name": "n",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of the joined frame",
+    "indexes_into": null
+  },
+  {
+    "name": "brand12_id",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "[12, 12]",
+    "indexes_into": null
+  },
+  {
+    "name": "brand23_id",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "[23, 23]",
+    "indexes_into": null
+  },
+  {
+    "name": "brand34_id",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "[34, 34]",
+    "indexes_into": null
+  },
+  {
+    "name": "sm_grp",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "[1, 1]",
+    "indexes_into": null
+  },
+  {
+    "name": "md_grp",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "[2, 2]",
+    "indexes_into": null
+  },
+  {
+    "name": "lg_grp",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "[3, 3]",
+    "indexes_into": null
+  },
+  {
+    "name": "q1_lo",
+    "kind": "scalar",
+    "dtype": "float64",
+    "length": "the constant 1.0",
+    "indexes_into": null
+  },
+  {
+    "name": "q1_hi",
+    "kind": "scalar",
+    "dtype": "float64",
+    "length": "the constant 11.0",
+    "indexes_into": null
+  },
+  {
+    "name": "q2_lo",
+    "kind": "scalar",
+    "dtype": "float64",
+    "length": "the constant 10.0",
+    "indexes_into": null
+  },
+  {
+    "name": "q2_hi",
+    "kind": "scalar",
+    "dtype": "float64",
+    "length": "the constant 20.0",
+    "indexes_into": null
+  },
+  {
+    "name": "q3_lo",
+    "kind": "scalar",
+    "dtype": "float64",
+    "length": "the constant 20.0",
+    "indexes_into": null
+  },
+  {
+    "name": "q3_hi",
+    "kind": "scalar",
+    "dtype": "float64",
+    "length": "the constant 30.0",
+    "indexes_into": null
+  },
+  {
+    "name": "s1_lo",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "[1, 1]",
+    "indexes_into": null
+  },
+  {
+    "name": "s1_hi",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "[5, 5]",
+    "indexes_into": null
+  },
+  {
+    "name": "s2_lo",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "[1, 1]",
+    "indexes_into": null
+  },
+  {
+    "name": "s2_hi",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "[10, 10]",
+    "indexes_into": null
+  },
+  {
+    "name": "s3_lo",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "[1, 1]",
+    "indexes_into": null
+  },
+  {
+    "name": "s3_hi",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "[15, 15]",
+    "indexes_into": null
+  }
+]

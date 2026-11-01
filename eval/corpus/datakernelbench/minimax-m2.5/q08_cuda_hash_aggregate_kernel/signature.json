@@ -1,0 +1,58 @@
+[
+  {
+    "name": "o_year",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "volume",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "is_brazil",
+    "kind": "input",
+    "dtype": "bool",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "n_elements",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of the joined frame li",
+    "indexes_into": null
+  },
+  {
+    "name": "sum_brazil",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "num_years",
+    "indexes_into": null
+  },
+  {
+    "name": "sum_total",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "num_years",
+    "indexes_into": null
+  },
+  {
+    "name": "min_year",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "the least year of o_year",
+    "indexes_into": null
+  },
+  {
+    "name": "num_years",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "max_year - min_year + 1, at most 7",
+    "indexes_into": null
+  }
+]

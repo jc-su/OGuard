@@ -1,0 +1,79 @@
+[
+  {
+    "name": "l_orderkey",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_line",
+    "indexes_into": null
+  },
+  {
+    "name": "l_suppkey",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_line",
+    "indexes_into": null
+  },
+  {
+    "name": "l_receipt",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_line",
+    "indexes_into": null
+  },
+  {
+    "name": "l_commit",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_line",
+    "indexes_into": null
+  },
+  {
+    "name": "n_line",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of lineitem",
+    "indexes_into": null
+  },
+  {
+    "name": "order_flags",
+    "kind": "input",
+    "dtype": "uint8",
+    "length": "max_orderkey + 1",
+    "indexes_into": null
+  },
+  {
+    "name": "max_orderkey",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "max(o_orderkey) of orders",
+    "indexes_into": null
+  },
+  {
+    "name": "supp_map",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "max_suppkey + 1",
+    "indexes_into": null
+  },
+  {
+    "name": "max_suppkey",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "max(s_suppkey) of supplier",
+    "indexes_into": null
+  },
+  {
+    "name": "num_suppliers",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of the suppliers of the nation",
+    "indexes_into": null
+  },
+  {
+    "name": "counts",
+    "kind": "inout",
+    "dtype": "int64",
+    "length": "num_suppliers",
+    "indexes_into": null
+  }
+]

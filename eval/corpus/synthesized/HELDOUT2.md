@@ -1,0 +1,28 @@
+# Second set of held-out GPU query operator tasks
+
+You write GPU kernels for a columnar query engine that runs on NVIDIA GPUs (RTX A6000, sm_86, CUDA 13.0). Columns live in device memory as flat arrays in the Apache Arrow layout. Write each kernel the way you would for a production engine: correct on every input size, including 0 and sizes that are not a multiple of the block size, and fast.
+
+Write every task three times, in the task's directory:
+
+- `numba.py`: a Numba CUDA kernel (`from numba import cuda`). Define the kernel as a plain Python function named `kernel` decorated with nothing, a module-level `TYPES` tuple of Numba types for `cuda.compile_ptx`, and a function `run(...)` that launches `cuda.jit(kernel)` on device arrays with 256 threads per block. Arrays are 1-D Numba arrays (`float64[:]`, `int32[:]`, and so on).
+- `kernel.cu`: a CUDA C++ kernel `extern "C" __global__ void kernel(...)` with raw pointers and scalar arguments, launched with 256 threads per block, plus a separate `test.cu` with a `main` that allocates inputs, launches the kernel, and checks the result against a CPU reference.
+- `triton.py`: a Triton kernel `@triton.jit def kernel(...)`, followed by any `tl.constexpr` arguments, such as a block size. Define at module level `TYPES`, a dict from each argument that is not a `tl.constexpr` to its Triton type (`"*fp64"`, `"*i64"`, `"*i32"`, `"*u32"`, `"*i8"`, or `"*u8"` for a pointer to that element type, and `"i64"` for a scalar); `CONSTANTS`, a dict from each `tl.constexpr` argument to its value; `NUM_WARPS`, the number of warps of each program; and `run(...)`, which launches `kernel[grid](...)` with `num_warps=NUM_WARPS` on PyTorch CUDA tensors.
+
+Each task lists the kernel's arguments in order. Every version takes them in that order and with those names. Scalars are `int64`.
+
+For each task directory, also write `signature.json`: one entry per kernel argument, in order, with the fields `name`, `kind` (`"input"`, `"output"`, `"inout"`, or `"scalar"`), `dtype`, `length` (an expression over the other arguments' names, for example `"n"` or `"m + p"`; for scalars, the value range as `"[lo, hi]"` or a meaning such as `"rows of keys"`), and `indexes_into` (the name of the array whose positions this argument's values denote, or null).
+
+Test every kernel on the GPU against a NumPy reference, with n in {0, 1, 1000, 1000003}: the Numba kernel in `test_numba.py`, the CUDA kernel in `test.cu`, and the Triton kernel in `test_triton.py`. Record in `NOTES.md` any task you could not complete and why.
+
+## Tasks
+
+1. `coalesce(a, valid, b, out, n)`: `a` (float64, n), `valid` (uint8, `(n + 7) / 8` bytes) is the Arrow validity bitmap of `a`: row `i` is valid when bit `i % 8` of byte `i / 8` is 1, the least significant bit first. `b` (float64, n), output `out` (float64, n). `out[i] = a[i]` when row `i` of `a` is valid, and `b[i]` otherwise.
+2. `gather_nullable(col, idx, out, m, n)`: `col` (float64, n), `idx` (int32, m; every value is -1 or a row id of `col`), output `out` (float64, m). `out[i] = col[idx[i]]`, and NaN where `idx[i]` is -1, as for the unmatched rows of a left outer join.
+3. `string_equal(a_offsets, a_chars, b_offsets, b_chars, match, n)`: two string columns of n rows each, as `a_offsets` (int32, n + 1) and `a_chars` (uint8, `a_offsets[n]` bytes), and `b_offsets` (int32, n + 1) and `b_chars` (uint8, `b_offsets[n]` bytes). Output `match` (int8, n). `match[i] = 1` when string `i` of the first column equals string `i` of the second byte for byte, and 0 otherwise.
+4. `ascii_upper(offsets, chars, out, n)`: a string column as `offsets` (int32, n + 1) and `chars` (uint8, `offsets[n]` bytes), output `out` (uint8, `offsets[n]` bytes). Write the column's bytes to `out` with each ASCII lowercase letter `a` to `z` replaced by its uppercase letter, so that `offsets` with `out` is the uppercase column.
+5. `lag(values, first, out, n, k)`: a window function over partitions of consecutive rows. `values` (float64, n), `first` (int32, n; `first[i]` is the id of the first row of row `i`'s partition, so `first[i] <= i`), output `out` (float64, n), scalar `k` (1 to 1024). `out[i] = values[i - k]` when `i - k >= first[i]`, and NaN otherwise.
+6. `bloom_build(keys, bits, n, words)`: `keys` (int64, n), output `bits` (uint32, `words` elements, zero on entry), scalar `words` (a power of two, 1 to 2^26). A Bloom filter of `32 * words` bits, where bit `p` is bit `p % 32` of `bits[p / 32]`. For each key, set the bits `h1 % (32 * words)` and `h2 % (32 * words)`, where `h1 = (key * 0x9E3779B97F4A7C15) >> 32` and `h2 = (key * 0xC2B2AE3D27D4EB4F) >> 32` in unsigned 64-bit arithmetic that wraps around.
+7. `bloom_probe(keys, bits, match, n, words)`: `keys` (int64, n), `bits` (uint32, `words`) a Bloom filter that `bloom_build` wrote, scalar `words` as in `bloom_build`, output `match` (int8, n). `match[i] = 1` when both bits of `keys[i]` are set, and 0 otherwise.
+8. `tile_scan(values, out, totals, n)`: `values` (int32, n), outputs `out` (int32, n) and `totals` (int32, `(n + 1023) / 1024` elements). The rows form tiles of 1024 consecutive rows, the last of which can be shorter. `out[i]` is the sum of `values[j]` over the rows `j < i` of row `i`'s tile, and `totals[t]` is the sum of tile `t`.
+9. `block_sort(keys, out, n)`: `keys` (int32, n), output `out` (int32, n). The rows form tiles of 1024 consecutive rows, the last of which can be shorter. Write the keys of each tile to the same rows of `out`, sorted ascending within the tile.
+10. `bucketize(values, bounds, out, n, b)`: `values` (float64, n, no NaN), `bounds` (float64, b; sorted ascending), output `out` (int32, n). `out[i]` is the number of bounds that are less than or equal to `values[i]`.

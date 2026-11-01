@@ -1,0 +1,79 @@
+[
+  {
+    "name": "year_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "price_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "discount_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "suppkey_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "target_supp_ptr",
+    "kind": "input",
+    "dtype": "uint8",
+    "length": "target_supp_len",
+    "indexes_into": null
+  },
+  {
+    "name": "target_supp_len",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "elements of target_supp_ptr (max s_suppkey + 1)",
+    "indexes_into": null
+  },
+  {
+    "name": "base_year",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "year of orderdate_lo (1995 at the default parameters)",
+    "indexes_into": null
+  },
+  {
+    "name": "out_target_ptr",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "2",
+    "indexes_into": null
+  },
+  {
+    "name": "out_total_ptr",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "2",
+    "indexes_into": null
+  },
+  {
+    "name": "out_count_ptr",
+    "kind": "inout",
+    "dtype": "int64",
+    "length": "2",
+    "indexes_into": null
+  },
+  {
+    "name": "n_elements",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of the joined lineitem",
+    "indexes_into": null
+  }
+]

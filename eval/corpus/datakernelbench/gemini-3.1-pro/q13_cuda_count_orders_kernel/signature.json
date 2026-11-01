@@ -1,0 +1,37 @@
+[
+  {
+    "name": "o_custkey",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "mask",
+    "kind": "input",
+    "dtype": "bool",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "counts",
+    "kind": "inout",
+    "dtype": "int32",
+    "length": "max_custkey + 1",
+    "indexes_into": null
+  },
+  {
+    "name": "n",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of orders",
+    "indexes_into": null
+  },
+  {
+    "name": "max_custkey",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "largest c_custkey",
+    "indexes_into": null
+  }
+]

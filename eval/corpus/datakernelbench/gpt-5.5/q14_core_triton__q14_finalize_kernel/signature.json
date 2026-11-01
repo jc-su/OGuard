@@ -1,0 +1,30 @@
+[
+  {
+    "name": "partials_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "2 * partial_stride",
+    "indexes_into": null
+  },
+  {
+    "name": "out_ptr",
+    "kind": "output",
+    "dtype": "float64",
+    "length": "1",
+    "indexes_into": null
+  },
+  {
+    "name": "partial_stride",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "max(n_blocks, 1)",
+    "indexes_into": null
+  },
+  {
+    "name": "n_blocks",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "[0, 2147483647]",
+    "indexes_into": null
+  }
+]

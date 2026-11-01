@@ -1,0 +1,44 @@
+[
+  {
+    "name": "ps_partkey_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_ps",
+    "indexes_into": null
+  },
+  {
+    "name": "ps_suppkey_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_ps",
+    "indexes_into": null
+  },
+  {
+    "name": "ht_part_ptr",
+    "kind": "output",
+    "dtype": "int64",
+    "length": "table_mask + 1",
+    "indexes_into": null
+  },
+  {
+    "name": "ht_supp_ptr",
+    "kind": "output",
+    "dtype": "int64",
+    "length": "table_mask + 1",
+    "indexes_into": null
+  },
+  {
+    "name": "ht_idx_ptr",
+    "kind": "inout",
+    "dtype": "int64",
+    "length": "table_mask + 1",
+    "indexes_into": null
+  },
+  {
+    "name": "table_mask",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "hash table size minus one, a power of two minus one of at least 15",
+    "indexes_into": null
+  }
+]

@@ -1,0 +1,65 @@
+[
+  {
+    "name": "l_partkey",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "nli",
+    "indexes_into": null
+  },
+  {
+    "name": "l_suppkey",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "nli",
+    "indexes_into": null
+  },
+  {
+    "name": "l_quantity",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "nli",
+    "indexes_into": null
+  },
+  {
+    "name": "ht_part",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "cap",
+    "indexes_into": null
+  },
+  {
+    "name": "ht_supp",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "cap",
+    "indexes_into": null
+  },
+  {
+    "name": "ht_idx",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "cap",
+    "indexes_into": null
+  },
+  {
+    "name": "sums",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "nps",
+    "indexes_into": null
+  },
+  {
+    "name": "nli",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of the filtered lineitem",
+    "indexes_into": null
+  },
+  {
+    "name": "cap",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "hash table capacity, a power of two of at least 16",
+    "indexes_into": null
+  }
+]

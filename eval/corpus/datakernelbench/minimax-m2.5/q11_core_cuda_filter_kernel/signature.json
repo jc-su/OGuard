@@ -1,0 +1,51 @@
+[
+  {
+    "name": "keys_in",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_in",
+    "indexes_into": null
+  },
+  {
+    "name": "values_in",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_in",
+    "indexes_into": null
+  },
+  {
+    "name": "keys_out",
+    "kind": "output",
+    "dtype": "int64",
+    "length": "n_in",
+    "indexes_into": null
+  },
+  {
+    "name": "values_out",
+    "kind": "output",
+    "dtype": "float64",
+    "length": "n_in",
+    "indexes_into": null
+  },
+  {
+    "name": "out_count",
+    "kind": "inout",
+    "dtype": "int32",
+    "length": "1",
+    "indexes_into": null
+  },
+  {
+    "name": "n_in",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "the distinct part keys",
+    "indexes_into": null
+  },
+  {
+    "name": "threshold",
+    "kind": "scalar",
+    "dtype": "float64",
+    "length": "the HAVING threshold",
+    "indexes_into": null
+  }
+]

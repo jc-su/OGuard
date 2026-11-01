@@ -1,0 +1,16 @@
+[
+  {
+    "name": "out",
+    "kind": "output",
+    "dtype": "int64",
+    "length": "k",
+    "indexes_into": null
+  },
+  {
+    "name": "k",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows to return, the length of out",
+    "indexes_into": null
+  }
+]

@@ -1,0 +1,30 @@
+[
+  {
+    "name": "part",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "N",
+    "indexes_into": null
+  },
+  {
+    "name": "supp",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "N",
+    "indexes_into": null
+  },
+  {
+    "name": "out",
+    "kind": "output",
+    "dtype": "uint64",
+    "length": "N",
+    "indexes_into": null
+  },
+  {
+    "name": "N",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of the filtered lineitem or partsupp",
+    "indexes_into": null
+  }
+]

@@ -1,0 +1,18 @@
+{
+  "nvcc": {
+    "block": [
+      1024,
+      1,
+      1
+    ],
+    "shared": {
+      "constant": 0,
+      "terms": {
+        "n_unique_keys": 8
+      }
+    },
+    "size_maxima": {
+      "n_unique_keys": 1024
+    }
+  }
+}

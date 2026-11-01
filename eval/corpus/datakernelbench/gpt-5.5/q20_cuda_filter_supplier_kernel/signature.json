@@ -1,0 +1,44 @@
+[
+  {
+    "name": "s_suppkey",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "ns",
+    "indexes_into": null
+  },
+  {
+    "name": "supp_mask",
+    "kind": "input",
+    "dtype": "uint8",
+    "length": "max_suppkey + 1",
+    "indexes_into": null
+  },
+  {
+    "name": "out_row_idx",
+    "kind": "output",
+    "dtype": "int64",
+    "length": "ns",
+    "indexes_into": null
+  },
+  {
+    "name": "out_count",
+    "kind": "inout",
+    "dtype": "int64",
+    "length": "1",
+    "indexes_into": null
+  },
+  {
+    "name": "ns",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of the nation-filtered supplier",
+    "indexes_into": null
+  },
+  {
+    "name": "max_suppkey",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "max(s_suppkey) of supplier, at least 0",
+    "indexes_into": null
+  }
+]

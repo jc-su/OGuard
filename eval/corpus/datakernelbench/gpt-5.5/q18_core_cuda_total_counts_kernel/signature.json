@@ -1,0 +1,44 @@
+[
+  {
+    "name": "unique_offsets",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_blocks",
+    "indexes_into": null
+  },
+  {
+    "name": "unique_counts",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_blocks",
+    "indexes_into": null
+  },
+  {
+    "name": "big_offsets",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_blocks",
+    "indexes_into": null
+  },
+  {
+    "name": "big_counts",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_blocks",
+    "indexes_into": null
+  },
+  {
+    "name": "n_blocks",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "blocks of the counting kernel",
+    "indexes_into": null
+  },
+  {
+    "name": "totals",
+    "kind": "output",
+    "dtype": "int64",
+    "length": "2",
+    "indexes_into": null
+  }
+]

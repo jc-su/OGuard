@@ -1,0 +1,72 @@
+[
+  {
+    "name": "l_suppkey",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_rows",
+    "indexes_into": null
+  },
+  {
+    "name": "l_extendedprice",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_rows",
+    "indexes_into": null
+  },
+  {
+    "name": "l_discount",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_rows",
+    "indexes_into": null
+  },
+  {
+    "name": "l_shipdate_days",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_rows",
+    "indexes_into": null
+  },
+  {
+    "name": "sorted_suppkeys",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_suppliers",
+    "indexes_into": null
+  },
+  {
+    "name": "date_lo",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "days since 1970-01-01 that the plan computes from its `shipdate_lo` parameter; any int32 value",
+    "indexes_into": null
+  },
+  {
+    "name": "date_hi",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "days since 1970-01-01 that the plan computes from its `shipdate_hi` parameter; any int32 value",
+    "indexes_into": null
+  },
+  {
+    "name": "out_totals",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "n_suppliers",
+    "indexes_into": null
+  },
+  {
+    "name": "n_rows",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of lineitem",
+    "indexes_into": null
+  },
+  {
+    "name": "n_suppliers",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of supplier",
+    "indexes_into": null
+  }
+]

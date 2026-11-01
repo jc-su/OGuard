@@ -1,0 +1,44 @@
+[
+  {
+    "name": "nation_id",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_elements",
+    "indexes_into": "out"
+  },
+  {
+    "name": "price",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "discount",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "out",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "num_nations",
+    "indexes_into": null
+  },
+  {
+    "name": "n_elements",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of the joined lineitem",
+    "indexes_into": null
+  },
+  {
+    "name": "num_nations",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "nations of the region, 5 at scale factor 10",
+    "indexes_into": null
+  }
+]

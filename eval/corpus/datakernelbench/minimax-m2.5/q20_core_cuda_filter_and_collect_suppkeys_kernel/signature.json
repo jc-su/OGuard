@@ -1,0 +1,44 @@
+[
+  {
+    "name": "group_ids",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "N",
+    "indexes_into": "sum_qty"
+  },
+  {
+    "name": "suppkeys",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "N",
+    "indexes_into": null
+  },
+  {
+    "name": "availqty",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "N",
+    "indexes_into": null
+  },
+  {
+    "name": "sum_qty",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "num_groups",
+    "indexes_into": null
+  },
+  {
+    "name": "output",
+    "kind": "output",
+    "dtype": "int64",
+    "length": "N",
+    "indexes_into": null
+  },
+  {
+    "name": "N",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of the filtered partsupp",
+    "indexes_into": null
+  }
+]

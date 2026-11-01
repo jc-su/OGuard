@@ -1,0 +1,51 @@
+[
+  {
+    "name": "totals",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_sup",
+    "indexes_into": null
+  },
+  {
+    "name": "present",
+    "kind": "input",
+    "dtype": "uint8",
+    "length": "n_sup",
+    "indexes_into": null
+  },
+  {
+    "name": "max_value",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "1",
+    "indexes_into": null
+  },
+  {
+    "name": "counter",
+    "kind": "inout",
+    "dtype": "int64",
+    "length": "1",
+    "indexes_into": null
+  },
+  {
+    "name": "selected_indices",
+    "kind": "output",
+    "dtype": "int64",
+    "length": "selected_count",
+    "indexes_into": null
+  },
+  {
+    "name": "selected_revenues",
+    "kind": "output",
+    "dtype": "float64",
+    "length": "selected_count",
+    "indexes_into": null
+  },
+  {
+    "name": "n_sup",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of supplier",
+    "indexes_into": null
+  }
+]

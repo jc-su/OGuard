@@ -1,0 +1,58 @@
+[
+  {
+    "name": "ps_key",
+    "kind": "input",
+    "dtype": "uint64",
+    "length": "n_ps",
+    "indexes_into": null
+  },
+  {
+    "name": "lower_idx",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_ps",
+    "indexes_into": null
+  },
+  {
+    "name": "uniq_key",
+    "kind": "input",
+    "dtype": "uint64",
+    "length": "li_n",
+    "indexes_into": null
+  },
+  {
+    "name": "uniq_sum",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "li_n",
+    "indexes_into": null
+  },
+  {
+    "name": "ps_availqty",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_ps",
+    "indexes_into": null
+  },
+  {
+    "name": "mask",
+    "kind": "output",
+    "dtype": "uint8",
+    "length": "n_ps",
+    "indexes_into": null
+  },
+  {
+    "name": "n_ps",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of the filtered partsupp",
+    "indexes_into": null
+  },
+  {
+    "name": "n_groups",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "distinct (partkey, suppkey) pairs of the filtered lineitem, at most li_n",
+    "indexes_into": null
+  }
+]

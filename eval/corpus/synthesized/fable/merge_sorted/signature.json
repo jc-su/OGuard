@@ -1,0 +1,7 @@
+[
+  {"name": "a", "kind": "input", "dtype": "int64", "length": "m", "indexes_into": null},
+  {"name": "b", "kind": "input", "dtype": "int64", "length": "p", "indexes_into": null},
+  {"name": "out", "kind": "output", "dtype": "int64", "length": "m + p", "indexes_into": null},
+  {"name": "m", "kind": "scalar", "dtype": "int64", "length": "rows of a", "indexes_into": null},
+  {"name": "p", "kind": "scalar", "dtype": "int64", "length": "rows of b", "indexes_into": null}
+]

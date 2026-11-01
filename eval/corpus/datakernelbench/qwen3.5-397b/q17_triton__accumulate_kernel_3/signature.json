@@ -1,0 +1,44 @@
+[
+  {
+    "name": "partkey_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_elements",
+    "indexes_into": "is_filtered_ptr"
+  },
+  {
+    "name": "quantity_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "is_filtered_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "max_partkey + 1",
+    "indexes_into": null
+  },
+  {
+    "name": "sum_qty_ptr",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "max_partkey + 1",
+    "indexes_into": null
+  },
+  {
+    "name": "cnt_qty_ptr",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "max_partkey + 1",
+    "indexes_into": null
+  },
+  {
+    "name": "n_elements",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "rows of lineitem (l_partkey.numel())",
+    "indexes_into": null
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "name": "ps_suppkey",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "nps",
+    "indexes_into": null
+  },
+  {
+    "name": "ps_availqty",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "nps",
+    "indexes_into": null
+  },
+  {
+    "name": "sums",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "nps",
+    "indexes_into": null
+  },
+  {
+    "name": "qual_supp_set",
+    "kind": "inout",
+    "dtype": "int64",
+    "length": "supp_cap",
+    "indexes_into": null
+  },
+  {
+    "name": "nps",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of the filtered partsupp",
+    "indexes_into": null
+  },
+  {
+    "name": "supp_cap",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "hash set capacity, a power of two of at least 16",
+    "indexes_into": null
+  }
+]

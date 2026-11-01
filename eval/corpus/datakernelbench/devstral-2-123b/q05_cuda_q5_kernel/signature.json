@@ -1,0 +1,44 @@
+[
+  {
+    "name": "l_extendedprice",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "num_rows",
+    "indexes_into": null
+  },
+  {
+    "name": "l_discount",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "num_rows",
+    "indexes_into": null
+  },
+  {
+    "name": "nation_id_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "num_rows",
+    "indexes_into": "out_revenue"
+  },
+  {
+    "name": "out_revenue",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "num_nations",
+    "indexes_into": null
+  },
+  {
+    "name": "num_nations",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of out_revenue",
+    "indexes_into": null
+  },
+  {
+    "name": "num_rows",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of l_extendedprice",
+    "indexes_into": null
+  }
+]

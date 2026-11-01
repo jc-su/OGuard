@@ -1,0 +1,100 @@
+[
+  {
+    "name": "quantity_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "extendedprice_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "discount_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "brand_id_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "container_grp_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "size_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "out_ptr",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "1",
+    "indexes_into": null
+  },
+  {
+    "name": "n_elements",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "rows of the joined lineitem",
+    "indexes_into": null
+  },
+  {
+    "name": "brand12_id",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "code of the first brand, 12",
+    "indexes_into": null
+  },
+  {
+    "name": "brand23_id",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "code of the second brand, 23",
+    "indexes_into": null
+  },
+  {
+    "name": "brand34_id",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "code of the third brand, 34",
+    "indexes_into": null
+  },
+  {
+    "name": "sm_grp",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "code of the SM container group, 1",
+    "indexes_into": null
+  },
+  {
+    "name": "md_grp",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "code of the MED container group, 2",
+    "indexes_into": null
+  },
+  {
+    "name": "lg_grp",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "code of the LG container group, 3",
+    "indexes_into": null
+  }
+]

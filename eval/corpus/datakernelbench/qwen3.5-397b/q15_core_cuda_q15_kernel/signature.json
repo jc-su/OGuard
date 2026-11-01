@@ -1,0 +1,79 @@
+[
+  {
+    "name": "l_suppkey",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_li",
+    "indexes_into": null
+  },
+  {
+    "name": "l_price",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_li",
+    "indexes_into": null
+  },
+  {
+    "name": "l_disc",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_li",
+    "indexes_into": null
+  },
+  {
+    "name": "l_shipdate",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_li",
+    "indexes_into": null
+  },
+  {
+    "name": "supp_pos",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_li",
+    "indexes_into": null
+  },
+  {
+    "name": "block_totals",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "1024 * n_sup",
+    "indexes_into": null
+  },
+  {
+    "name": "date_lo",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "inclusive lower bound of l_shipdate in epoch days",
+    "indexes_into": null
+  },
+  {
+    "name": "date_hi",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "exclusive upper bound of l_shipdate in epoch days",
+    "indexes_into": null
+  },
+  {
+    "name": "n_li",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of lineitem (l_suppkey.numel())",
+    "indexes_into": null
+  },
+  {
+    "name": "n_sup",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "max(supp_pos) + 1, the row stride of block_totals",
+    "indexes_into": null
+  },
+  {
+    "name": "block_stride",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "n_sup, the row stride of block_totals",
+    "indexes_into": null
+  }
+]

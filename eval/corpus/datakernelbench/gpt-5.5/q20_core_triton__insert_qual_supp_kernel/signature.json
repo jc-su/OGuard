@@ -1,0 +1,37 @@
+[
+  {
+    "name": "ps_suppkey_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_ps",
+    "indexes_into": null
+  },
+  {
+    "name": "ps_availqty_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_ps",
+    "indexes_into": null
+  },
+  {
+    "name": "sum_qty_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_ps",
+    "indexes_into": null
+  },
+  {
+    "name": "supp_set_ptr",
+    "kind": "inout",
+    "dtype": "int64",
+    "length": "table_mask + 1",
+    "indexes_into": null
+  },
+  {
+    "name": "table_mask",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "hash set size minus one, a power of two minus one of at least 15",
+    "indexes_into": null
+  }
+]

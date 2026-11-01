@@ -1,0 +1,30 @@
+[
+  {
+    "name": "c_acctbal_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_customer",
+    "indexes_into": null
+  },
+  {
+    "name": "in_cntrycode_mask_ptr",
+    "kind": "input",
+    "dtype": "bool",
+    "length": "n_customer",
+    "indexes_into": null
+  },
+  {
+    "name": "avg_placeholder_ptr",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "2",
+    "indexes_into": null
+  },
+  {
+    "name": "n_customer",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of c_acctbal_ptr",
+    "indexes_into": null
+  }
+]

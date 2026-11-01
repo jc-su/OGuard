@@ -1,0 +1,7 @@
+[
+  {"name": "run_values", "kind": "input", "dtype": "float64", "length": "r", "indexes_into": null},
+  {"name": "run_ends", "kind": "input", "dtype": "int32", "length": "r", "indexes_into": "out"},
+  {"name": "out", "kind": "output", "dtype": "float64", "length": "n", "indexes_into": null},
+  {"name": "r", "kind": "scalar", "dtype": "int64", "length": "rows of run_values", "indexes_into": null},
+  {"name": "n", "kind": "scalar", "dtype": "int64", "length": "rows of out", "indexes_into": null}
+]

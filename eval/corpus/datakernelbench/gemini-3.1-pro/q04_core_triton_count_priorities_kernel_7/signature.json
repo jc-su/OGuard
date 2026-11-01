@@ -1,0 +1,65 @@
+[
+  {
+    "name": "o_okey_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "o_odate_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "o_priority_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "exists_map_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "max_key + 1",
+    "indexes_into": null
+  },
+  {
+    "name": "counts_out_ptr",
+    "kind": "inout",
+    "dtype": "int64",
+    "length": "5",
+    "indexes_into": null
+  },
+  {
+    "name": "date_lo",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "o_orderdate lower bound (inclusive), days",
+    "indexes_into": null
+  },
+  {
+    "name": "date_hi",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "o_orderdate upper bound (exclusive), days",
+    "indexes_into": null
+  },
+  {
+    "name": "max_key",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "the largest order key, the length of exists_map_ptr less 1",
+    "indexes_into": null
+  },
+  {
+    "name": "n_elements",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "rows of orders",
+    "indexes_into": null
+  }
+]

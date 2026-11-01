@@ -1,0 +1,51 @@
+[
+  {
+    "name": "o_orderkey",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n",
+    "indexes_into": "order_map"
+  },
+  {
+    "name": "o_custkey",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "o_orderdate",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "order_map",
+    "kind": "inout",
+    "dtype": "int32",
+    "length": "max_orderkey + 1",
+    "indexes_into": null
+  },
+  {
+    "name": "date_lo",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "o_orderdate lower bound (inclusive), days",
+    "indexes_into": null
+  },
+  {
+    "name": "date_hi",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "o_orderdate upper bound (exclusive), days",
+    "indexes_into": null
+  },
+  {
+    "name": "n",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of orders",
+    "indexes_into": null
+  }
+]

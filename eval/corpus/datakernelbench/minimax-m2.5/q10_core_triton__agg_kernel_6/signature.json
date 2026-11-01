@@ -1,0 +1,44 @@
+[
+  {
+    "name": "custkey_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "price_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "discount_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "out_ptr",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "num_keys",
+    "indexes_into": null
+  },
+  {
+    "name": "min_key",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "the least c_custkey of the joined frame",
+    "indexes_into": null
+  },
+  {
+    "name": "n_elements",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "rows of the joined frame",
+    "indexes_into": null
+  }
+]

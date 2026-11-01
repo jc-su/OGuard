@@ -1,0 +1,7 @@
+[
+  {"name": "group", "kind": "input", "dtype": "int32", "length": "n", "indexes_into": "best"},
+  {"name": "value", "kind": "input", "dtype": "int64", "length": "n", "indexes_into": null},
+  {"name": "best", "kind": "inout", "dtype": "int32", "length": "g", "indexes_into": "value"},
+  {"name": "n", "kind": "scalar", "dtype": "int64", "length": "[0, 2^30]", "indexes_into": null},
+  {"name": "g", "kind": "scalar", "dtype": "int64", "length": "[1, 2^20]", "indexes_into": null}
+]

@@ -1,0 +1,51 @@
+[
+  {
+    "name": "sum_brazil_arr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "max_bins",
+    "indexes_into": null
+  },
+  {
+    "name": "sum_total_arr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "max_bins",
+    "indexes_into": null
+  },
+  {
+    "name": "year_flags",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "max_bins",
+    "indexes_into": null
+  },
+  {
+    "name": "out_years",
+    "kind": "output",
+    "dtype": "int32",
+    "length": "20",
+    "indexes_into": null
+  },
+  {
+    "name": "out_mkt_share",
+    "kind": "output",
+    "dtype": "float64",
+    "length": "20",
+    "indexes_into": null
+  },
+  {
+    "name": "num_years_dev",
+    "kind": "inout",
+    "dtype": "int32",
+    "length": "1",
+    "indexes_into": null
+  },
+  {
+    "name": "max_bins",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "bins of the year arrays",
+    "indexes_into": null
+  }
+]

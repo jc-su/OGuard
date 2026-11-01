@@ -1,0 +1,51 @@
+[
+  {
+    "name": "s_suppkey",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_s",
+    "indexes_into": null
+  },
+  {
+    "name": "s_row_idx",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_s",
+    "indexes_into": null
+  },
+  {
+    "name": "qual_suppkeys",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_qual",
+    "indexes_into": null
+  },
+  {
+    "name": "n_s",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "suppliers of the nation",
+    "indexes_into": null
+  },
+  {
+    "name": "n_qual",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "distinct qualifying suppliers",
+    "indexes_into": null
+  },
+  {
+    "name": "out_indices",
+    "kind": "output",
+    "dtype": "int64",
+    "length": "n_s",
+    "indexes_into": null
+  },
+  {
+    "name": "n_out",
+    "kind": "inout",
+    "dtype": "int64",
+    "length": "1",
+    "indexes_into": null
+  }
+]

@@ -1,0 +1,7 @@
+[
+  {"name": "quantity", "kind": "input", "dtype": "float64", "length": "n", "indexes_into": null},
+  {"name": "threshold", "kind": "scalar", "dtype": "float64", "length": "[-inf, inf]", "indexes_into": null},
+  {"name": "sel", "kind": "output", "dtype": "int32", "length": "n", "indexes_into": "quantity"},
+  {"name": "count", "kind": "inout", "dtype": "int32", "length": "1", "indexes_into": null},
+  {"name": "n", "kind": "scalar", "dtype": "int64", "length": "rows of quantity", "indexes_into": null}
+]

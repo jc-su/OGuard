@@ -1,0 +1,23 @@
+[
+  {
+    "name": "map_ptr",
+    "kind": "output",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "out_ptr",
+    "kind": "output",
+    "dtype": "float64",
+    "length": "1",
+    "indexes_into": null
+  },
+  {
+    "name": "n_elements",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "largest filtered part key plus one",
+    "indexes_into": null
+  }
+]

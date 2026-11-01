@@ -1,0 +1,23 @@
+[
+  {
+    "name": "o_custkey_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "15000000",
+    "indexes_into": null
+  },
+  {
+    "name": "excluded_ptr",
+    "kind": "input",
+    "dtype": "bool",
+    "length": "15000000",
+    "indexes_into": null
+  },
+  {
+    "name": "counts_ptr",
+    "kind": "inout",
+    "dtype": "int32",
+    "length": "1500001",
+    "indexes_into": null
+  }
+]

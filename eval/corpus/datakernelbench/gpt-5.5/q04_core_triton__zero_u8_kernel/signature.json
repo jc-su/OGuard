@@ -1,0 +1,16 @@
+[
+  {
+    "name": "ptr",
+    "kind": "output",
+    "dtype": "uint8",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "n_elements",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "largest lineitem order key plus one",
+    "indexes_into": null
+  }
+]

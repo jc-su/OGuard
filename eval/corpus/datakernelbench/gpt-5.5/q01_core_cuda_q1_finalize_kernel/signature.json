@@ -1,0 +1,128 @@
+[
+  {
+    "name": "group_ids",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_groups",
+    "indexes_into": "g_count"
+  },
+  {
+    "name": "g_sum_qty",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "256",
+    "indexes_into": null
+  },
+  {
+    "name": "g_sum_base_price",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "256",
+    "indexes_into": null
+  },
+  {
+    "name": "g_sum_disc_price",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "256",
+    "indexes_into": null
+  },
+  {
+    "name": "g_sum_charge",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "256",
+    "indexes_into": null
+  },
+  {
+    "name": "g_sum_disc",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "256",
+    "indexes_into": null
+  },
+  {
+    "name": "g_count",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "256",
+    "indexes_into": null
+  },
+  {
+    "name": "out_rf",
+    "kind": "output",
+    "dtype": "int64",
+    "length": "n_groups",
+    "indexes_into": null
+  },
+  {
+    "name": "out_ls",
+    "kind": "output",
+    "dtype": "int64",
+    "length": "n_groups",
+    "indexes_into": null
+  },
+  {
+    "name": "out_sum_qty",
+    "kind": "output",
+    "dtype": "float64",
+    "length": "n_groups",
+    "indexes_into": null
+  },
+  {
+    "name": "out_sum_base_price",
+    "kind": "output",
+    "dtype": "float64",
+    "length": "n_groups",
+    "indexes_into": null
+  },
+  {
+    "name": "out_sum_disc_price",
+    "kind": "output",
+    "dtype": "float64",
+    "length": "n_groups",
+    "indexes_into": null
+  },
+  {
+    "name": "out_sum_charge",
+    "kind": "output",
+    "dtype": "float64",
+    "length": "n_groups",
+    "indexes_into": null
+  },
+  {
+    "name": "out_avg_qty",
+    "kind": "output",
+    "dtype": "float64",
+    "length": "n_groups",
+    "indexes_into": null
+  },
+  {
+    "name": "out_avg_price",
+    "kind": "output",
+    "dtype": "float64",
+    "length": "n_groups",
+    "indexes_into": null
+  },
+  {
+    "name": "out_avg_disc",
+    "kind": "output",
+    "dtype": "float64",
+    "length": "n_groups",
+    "indexes_into": null
+  },
+  {
+    "name": "out_count",
+    "kind": "output",
+    "dtype": "int64",
+    "length": "n_groups",
+    "indexes_into": null
+  },
+  {
+    "name": "n_groups",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "number of nonempty (returnflag, linestatus) groups",
+    "indexes_into": null
+  }
+]

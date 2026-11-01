@@ -1,0 +1,79 @@
+[
+  {
+    "name": "c_custkey",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_customers",
+    "indexes_into": null
+  },
+  {
+    "name": "c_acctbal",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_customers",
+    "indexes_into": null
+  },
+  {
+    "name": "cntrycode",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_customers",
+    "indexes_into": null
+  },
+  {
+    "name": "order_flags",
+    "kind": "input",
+    "dtype": "uint8",
+    "length": "flags_len",
+    "indexes_into": null
+  },
+  {
+    "name": "flags_len",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "max(1, max(c_custkey) + 1)",
+    "indexes_into": null
+  },
+  {
+    "name": "codes",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "num_codes",
+    "indexes_into": null
+  },
+  {
+    "name": "num_codes",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "distinct country codes, 1 to 1024",
+    "indexes_into": null
+  },
+  {
+    "name": "avg_stats",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "2",
+    "indexes_into": null
+  },
+  {
+    "name": "out_counts_i64",
+    "kind": "inout",
+    "dtype": "int64",
+    "length": "num_codes",
+    "indexes_into": null
+  },
+  {
+    "name": "out_sums",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "num_codes",
+    "indexes_into": null
+  },
+  {
+    "name": "n_customers",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of customer",
+    "indexes_into": null
+  }
+]

@@ -1,0 +1,30 @@
+[
+  {
+    "name": "keys",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "capacity",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "power of 2, >= 2n",
+    "indexes_into": null
+  },
+  {
+    "name": "table_keys",
+    "kind": "output",
+    "dtype": "int64",
+    "length": "capacity",
+    "indexes_into": null
+  },
+  {
+    "name": "table_rows",
+    "kind": "output",
+    "dtype": "int32",
+    "length": "capacity",
+    "indexes_into": null
+  }
+]

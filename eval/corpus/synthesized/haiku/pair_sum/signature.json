@@ -1,0 +1,58 @@
+[
+  {
+    "name": "left_idx",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "m",
+    "indexes_into": "left"
+  },
+  {
+    "name": "right_idx",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "m",
+    "indexes_into": "right"
+  },
+  {
+    "name": "left",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "l",
+    "indexes_into": null
+  },
+  {
+    "name": "right",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "r",
+    "indexes_into": null
+  },
+  {
+    "name": "out",
+    "kind": "output",
+    "dtype": "float64",
+    "length": "m",
+    "indexes_into": null
+  },
+  {
+    "name": "m",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "[0, 2^31]",
+    "indexes_into": null
+  },
+  {
+    "name": "l",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "[0, 2^31]",
+    "indexes_into": null
+  },
+  {
+    "name": "r",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "[0, 2^31]",
+    "indexes_into": null
+  }
+]

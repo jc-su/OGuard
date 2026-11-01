@@ -1,0 +1,37 @@
+[
+  {
+    "name": "group_ids",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "supp_ids",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "bitmap",
+    "kind": "inout",
+    "dtype": "uint32",
+    "length": "(max_supp + 32) / 32 * num_groups",
+    "indexes_into": null
+  },
+  {
+    "name": "n_elements",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of the part-partsupp join",
+    "indexes_into": null
+  },
+  {
+    "name": "num_groups",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "[1, 2147483647]",
+    "indexes_into": null
+  }
+]

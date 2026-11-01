@@ -1,0 +1,37 @@
+[
+  {
+    "name": "keys",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "qty",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "threshold",
+    "kind": "scalar",
+    "dtype": "float64",
+    "length": "HAVING threshold of sum(l_quantity)",
+    "indexes_into": null
+  },
+  {
+    "name": "count_out",
+    "kind": "inout",
+    "dtype": "uint64",
+    "length": "1",
+    "indexes_into": null
+  },
+  {
+    "name": "n",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of lineitem",
+    "indexes_into": null
+  }
+]

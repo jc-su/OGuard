@@ -1,0 +1,58 @@
+[
+  {
+    "name": "line_partkey",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_rows",
+    "indexes_into": null
+  },
+  {
+    "name": "line_quantity",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_rows",
+    "indexes_into": null
+  },
+  {
+    "name": "line_price",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_rows",
+    "indexes_into": null
+  },
+  {
+    "name": "sorted_keys",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_parts",
+    "indexes_into": null
+  },
+  {
+    "name": "thresholds",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_parts",
+    "indexes_into": null
+  },
+  {
+    "name": "n_parts",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "filtered parts",
+    "indexes_into": null
+  },
+  {
+    "name": "out_sum",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "1",
+    "indexes_into": null
+  },
+  {
+    "name": "n_rows",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of lineitem",
+    "indexes_into": null
+  }
+]

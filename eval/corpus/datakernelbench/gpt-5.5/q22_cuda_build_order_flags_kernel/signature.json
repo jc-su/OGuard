@@ -1,0 +1,30 @@
+[
+  {
+    "name": "o_custkey",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_orders",
+    "indexes_into": null
+  },
+  {
+    "name": "flags",
+    "kind": "output",
+    "dtype": "uint8",
+    "length": "flags_len",
+    "indexes_into": null
+  },
+  {
+    "name": "n_orders",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of orders",
+    "indexes_into": null
+  },
+  {
+    "name": "flags_len",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "max(1, max(c_custkey) + 1)",
+    "indexes_into": null
+  }
+]

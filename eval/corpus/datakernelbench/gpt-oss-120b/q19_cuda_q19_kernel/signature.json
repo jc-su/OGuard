@@ -1,0 +1,100 @@
+[
+  {
+    "name": "l_quantity",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "N",
+    "indexes_into": null
+  },
+  {
+    "name": "l_extendedprice",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "N",
+    "indexes_into": null
+  },
+  {
+    "name": "l_discount",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "N",
+    "indexes_into": null
+  },
+  {
+    "name": "p_brand_id",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "N",
+    "indexes_into": null
+  },
+  {
+    "name": "p_container_grp",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "N",
+    "indexes_into": null
+  },
+  {
+    "name": "p_size",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "N",
+    "indexes_into": null
+  },
+  {
+    "name": "brand12_id",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "[12, 12]",
+    "indexes_into": null
+  },
+  {
+    "name": "brand23_id",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "[23, 23]",
+    "indexes_into": null
+  },
+  {
+    "name": "brand34_id",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "[34, 34]",
+    "indexes_into": null
+  },
+  {
+    "name": "sm_grp",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "[1, 1]",
+    "indexes_into": null
+  },
+  {
+    "name": "md_grp",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "[2, 2]",
+    "indexes_into": null
+  },
+  {
+    "name": "lg_grp",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "[3, 3]",
+    "indexes_into": null
+  },
+  {
+    "name": "out",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "1",
+    "indexes_into": null
+  },
+  {
+    "name": "N",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of the joined table",
+    "indexes_into": null
+  }
+]

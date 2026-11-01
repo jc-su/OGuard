@@ -1,0 +1,58 @@
+[
+  {
+    "name": "sums",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "num_slots",
+    "indexes_into": null
+  },
+  {
+    "name": "out_all_keys",
+    "kind": "output",
+    "dtype": "int64",
+    "length": "num_slots",
+    "indexes_into": null
+  },
+  {
+    "name": "out_big_keys",
+    "kind": "output",
+    "dtype": "int64",
+    "length": "num_slots",
+    "indexes_into": null
+  },
+  {
+    "name": "out_big_sums",
+    "kind": "output",
+    "dtype": "float64",
+    "length": "num_slots",
+    "indexes_into": null
+  },
+  {
+    "name": "count_all",
+    "kind": "inout",
+    "dtype": "int32",
+    "length": "1",
+    "indexes_into": null
+  },
+  {
+    "name": "count_big",
+    "kind": "inout",
+    "dtype": "int32",
+    "length": "1",
+    "indexes_into": null
+  },
+  {
+    "name": "num_slots",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "max(l_orderkey) + 1, the length of sums and the outputs",
+    "indexes_into": null
+  },
+  {
+    "name": "threshold",
+    "kind": "scalar",
+    "dtype": "float64",
+    "length": "the HAVING quantity threshold (300 by default)",
+    "indexes_into": null
+  }
+]

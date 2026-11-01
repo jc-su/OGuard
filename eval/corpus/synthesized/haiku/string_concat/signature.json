@@ -1,0 +1,9 @@
+[
+  {"name": "a_offsets", "kind": "input", "dtype": "int32", "length": "n + 1", "indexes_into": null},
+  {"name": "a_chars", "kind": "input", "dtype": "uint8", "length": "a_offsets[n]", "indexes_into": null},
+  {"name": "b_offsets", "kind": "input", "dtype": "int32", "length": "n + 1", "indexes_into": null},
+  {"name": "b_chars", "kind": "input", "dtype": "uint8", "length": "b_offsets[n]", "indexes_into": null},
+  {"name": "out_offsets", "kind": "output", "dtype": "int32", "length": "n + 1", "indexes_into": null},
+  {"name": "out_chars", "kind": "output", "dtype": "uint8", "length": "out_offsets[n]", "indexes_into": null},
+  {"name": "n", "kind": "scalar", "dtype": "int64", "length": "[0, 2^30]", "indexes_into": null}
+]

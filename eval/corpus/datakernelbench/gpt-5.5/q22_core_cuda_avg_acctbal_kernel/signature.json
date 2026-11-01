@@ -1,0 +1,37 @@
+[
+  {
+    "name": "c_acctbal",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "in_mask",
+    "kind": "input",
+    "dtype": "bool",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "avg_sum",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "1",
+    "indexes_into": null
+  },
+  {
+    "name": "avg_count",
+    "kind": "inout",
+    "dtype": "int64",
+    "length": "1",
+    "indexes_into": null
+  },
+  {
+    "name": "n",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of customer",
+    "indexes_into": null
+  }
+]

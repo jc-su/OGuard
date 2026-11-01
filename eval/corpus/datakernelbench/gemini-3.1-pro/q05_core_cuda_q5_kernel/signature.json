@@ -1,0 +1,51 @@
+[
+  {
+    "name": "nation_id",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "extendedprice",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "discount",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "out",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "num_nations",
+    "indexes_into": null
+  },
+  {
+    "name": "n_elements",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of the joined frame",
+    "indexes_into": null
+  },
+  {
+    "name": "num_nations",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "nations of the region, the length of out",
+    "indexes_into": null
+  },
+  {
+    "name": "num_copies",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "[8, 8]",
+    "indexes_into": null
+  }
+]

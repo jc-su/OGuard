@@ -1,0 +1,6 @@
+[
+  {"name": "offsets", "kind": "input", "dtype": "int32", "length": "g + 1", "indexes_into": "values"},
+  {"name": "values", "kind": "input", "dtype": "int64", "length": "offsets[g]", "indexes_into": null},
+  {"name": "maxes", "kind": "output", "dtype": "int64", "length": "g", "indexes_into": null},
+  {"name": "g", "kind": "scalar", "dtype": "int64", "length": "[0, 2147483646]", "indexes_into": null}
+]

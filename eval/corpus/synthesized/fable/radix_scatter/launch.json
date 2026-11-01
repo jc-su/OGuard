@@ -1,0 +1,26 @@
+{
+  "numba": {
+    "shared": {
+      "constant": 0,
+      "terms": {}
+    },
+    "size_maxima": {},
+    "grid": [
+      2147483647,
+      1,
+      1
+    ]
+  },
+  "nvcc": {
+    "shared": {
+      "constant": 0,
+      "terms": {}
+    },
+    "size_maxima": {},
+    "grid": [
+      2147483647,
+      1,
+      1
+    ]
+  }
+}

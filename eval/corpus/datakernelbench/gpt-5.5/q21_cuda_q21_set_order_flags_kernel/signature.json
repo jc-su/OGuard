@@ -1,0 +1,30 @@
+[
+  {
+    "name": "order_keys",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "n",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of the orders with o_orderstatus 'F'",
+    "indexes_into": null
+  },
+  {
+    "name": "max_orderkey",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "max(o_orderkey) of orders",
+    "indexes_into": null
+  },
+  {
+    "name": "flags",
+    "kind": "output",
+    "dtype": "uint8",
+    "length": "max_orderkey + 1",
+    "indexes_into": null
+  }
+]

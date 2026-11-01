@@ -1,0 +1,44 @@
+[
+  {
+    "name": "part_idx",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n",
+    "indexes_into": "threshold"
+  },
+  {
+    "name": "quantity",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "price",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "threshold",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_parts",
+    "indexes_into": null
+  },
+  {
+    "name": "total",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "1",
+    "indexes_into": null
+  },
+  {
+    "name": "n",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of lineitem in the part set",
+    "indexes_into": null
+  }
+]

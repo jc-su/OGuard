@@ -1,0 +1,23 @@
+[
+  {
+    "name": "o_custkey_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "counts_ptr",
+    "kind": "inout",
+    "dtype": "int64",
+    "length": "max_custkey + 1",
+    "indexes_into": null
+  },
+  {
+    "name": "n_elements",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of the filtered orders",
+    "indexes_into": null
+  }
+]

@@ -1,0 +1,51 @@
+[
+  {
+    "name": "l_orderkey",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "l_extendedprice",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "l_discount",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "order_map",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "max_orderkey + 1",
+    "indexes_into": null
+  },
+  {
+    "name": "customer_revenue",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "max_custkey + 1",
+    "indexes_into": null
+  },
+  {
+    "name": "max_orderkey",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "largest o_orderkey",
+    "indexes_into": null
+  },
+  {
+    "name": "n",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of lineitem with l_returnflag R",
+    "indexes_into": null
+  }
+]

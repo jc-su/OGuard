@@ -1,0 +1,23 @@
+[
+  {
+    "name": "unique_packed_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "counts_ptr",
+    "kind": "inout",
+    "dtype": "int64",
+    "length": "num_groups",
+    "indexes_into": null
+  },
+  {
+    "name": "n_elements",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "distinct packed keys",
+    "indexes_into": null
+  }
+]

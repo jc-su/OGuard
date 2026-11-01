@@ -1,0 +1,16 @@
+[
+  {
+    "name": "out_ptr",
+    "kind": "output",
+    "dtype": "int64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "n_elements",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "k = min(limit, rows of the final frame), with limit 100",
+    "indexes_into": null
+  }
+]

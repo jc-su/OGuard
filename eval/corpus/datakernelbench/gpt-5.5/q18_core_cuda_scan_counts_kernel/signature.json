@@ -1,0 +1,30 @@
+[
+  {
+    "name": "in",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "out",
+    "kind": "output",
+    "dtype": "int64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "block_sums",
+    "kind": "output",
+    "dtype": "int64",
+    "length": "(n + 1023) / 1024",
+    "indexes_into": null
+  },
+  {
+    "name": "n",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "entries to scan, the block count of the previous kernel",
+    "indexes_into": null
+  }
+]

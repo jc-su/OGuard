@@ -1,0 +1,30 @@
+[
+  {
+    "name": "keys",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "bits",
+    "kind": "output",
+    "dtype": "uint32",
+    "length": "words",
+    "indexes_into": null
+  },
+  {
+    "name": "n",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "[0, 2^31)",
+    "indexes_into": null
+  },
+  {
+    "name": "words",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "power of 2, [1, 2^26]",
+    "indexes_into": null
+  }
+]

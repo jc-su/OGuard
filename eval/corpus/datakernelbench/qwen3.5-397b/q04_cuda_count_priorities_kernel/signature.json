@@ -1,0 +1,58 @@
+[
+  {
+    "name": "o_orderkey",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_orders",
+    "indexes_into": "bitmap"
+  },
+  {
+    "name": "o_date",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_orders",
+    "indexes_into": null
+  },
+  {
+    "name": "o_priority",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_orders",
+    "indexes_into": "counts"
+  },
+  {
+    "name": "bitmap",
+    "kind": "input",
+    "dtype": "uint32",
+    "length": "max_key + 1",
+    "indexes_into": null
+  },
+  {
+    "name": "counts",
+    "kind": "inout",
+    "dtype": "uint64",
+    "length": "num_priorities",
+    "indexes_into": null
+  },
+  {
+    "name": "date_lo",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "inclusive lower bound of o_orderdate in epoch days",
+    "indexes_into": null
+  },
+  {
+    "name": "date_hi",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "exclusive upper bound of o_orderdate in epoch days",
+    "indexes_into": null
+  },
+  {
+    "name": "n_orders",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of orders (o_orderkey.numel())",
+    "indexes_into": null
+  }
+]

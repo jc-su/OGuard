@@ -1,0 +1,65 @@
+[
+  {
+    "name": "l_partkey",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_lineitem",
+    "indexes_into": null
+  },
+  {
+    "name": "l_quantity",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_lineitem",
+    "indexes_into": null
+  },
+  {
+    "name": "l_extendedprice",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_lineitem",
+    "indexes_into": null
+  },
+  {
+    "name": "part_map",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "map_size",
+    "indexes_into": null
+  },
+  {
+    "name": "sum_qty",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_parts",
+    "indexes_into": null
+  },
+  {
+    "name": "cnt_qty",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_parts",
+    "indexes_into": null
+  },
+  {
+    "name": "out",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "1",
+    "indexes_into": null
+  },
+  {
+    "name": "n_lineitem",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of lineitem",
+    "indexes_into": null
+  },
+  {
+    "name": "map_size",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "largest filtered part key plus 1",
+    "indexes_into": null
+  }
+]

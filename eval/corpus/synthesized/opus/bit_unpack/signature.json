@@ -1,0 +1,7 @@
+[
+  {"name": "packed", "kind": "input", "dtype": "uint32", "length": "w", "indexes_into": null},
+  {"name": "out", "kind": "output", "dtype": "uint32", "length": "n", "indexes_into": null},
+  {"name": "n", "kind": "scalar", "dtype": "int64", "length": "[0, 2^30]", "indexes_into": null},
+  {"name": "w", "kind": "scalar", "dtype": "int64", "length": "(n * bits + 31) / 32", "indexes_into": null},
+  {"name": "bits", "kind": "scalar", "dtype": "int64", "length": "[1, 32]", "indexes_into": null}
+]

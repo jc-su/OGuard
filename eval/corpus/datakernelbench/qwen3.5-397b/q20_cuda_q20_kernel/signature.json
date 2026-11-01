@@ -1,0 +1,72 @@
+[
+  {
+    "name": "ps_partkey",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_ps",
+    "indexes_into": null
+  },
+  {
+    "name": "ps_suppkey",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_ps",
+    "indexes_into": null
+  },
+  {
+    "name": "ps_availqty",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_ps",
+    "indexes_into": null
+  },
+  {
+    "name": "n_ps",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of the filtered partsupp (ps_partkey.numel())",
+    "indexes_into": null
+  },
+  {
+    "name": "li_partkey",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_li",
+    "indexes_into": null
+  },
+  {
+    "name": "li_suppkey",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_li",
+    "indexes_into": null
+  },
+  {
+    "name": "li_quantity",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_li",
+    "indexes_into": null
+  },
+  {
+    "name": "n_li",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of the filtered lineitem (li_partkey.numel())",
+    "indexes_into": null
+  },
+  {
+    "name": "out_suppkeys",
+    "kind": "output",
+    "dtype": "int64",
+    "length": "n_ps",
+    "indexes_into": null
+  },
+  {
+    "name": "out_count",
+    "kind": "inout",
+    "dtype": "int32",
+    "length": "1",
+    "indexes_into": null
+  }
+]

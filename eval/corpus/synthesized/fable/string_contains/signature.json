@@ -1,0 +1,8 @@
+[
+  {"name": "offsets", "kind": "input", "dtype": "int32", "length": "n + 1", "indexes_into": "chars"},
+  {"name": "chars", "kind": "input", "dtype": "uint8", "length": "offsets[n]", "indexes_into": null},
+  {"name": "pattern", "kind": "input", "dtype": "uint8", "length": "k", "indexes_into": null},
+  {"name": "match", "kind": "output", "dtype": "int8", "length": "n", "indexes_into": null},
+  {"name": "n", "kind": "scalar", "dtype": "int64", "length": "rows of match (strings)", "indexes_into": null},
+  {"name": "k", "kind": "scalar", "dtype": "int64", "length": "rows of pattern", "indexes_into": null}
+]

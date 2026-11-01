@@ -1,0 +1,145 @@
+The Python environment is /opgate/.venv/bin/python, which
+has numba-cuda 0.30.4 (numba 0.64: `from numba import cuda`), numpy, and cupy.
+nvcc is $HOME/miniconda3/bin/nvcc (CUDA 13.0). Use GPU 1 only:
+prefix every command that uses the GPU with `CUDA_VISIBLE_DEVICES=1`. A file
+named `numba.py` in the working directory shadows the numba package: run
+Python tests from the model's directory, not a task directory, and load a
+task's `numba.py` by path with importlib.
+
+Revise each of these kernels:
+
+You wrote the nvcc kernel /opgate/eval/corpus/synthesized/haiku/groupby_sum/repair1/kernel.cu for the task `groupby_sum` of
+/opgate/eval/corpus/synthesized/TASKS.md. A static checker of GPU memory accesses refused it
+with this reason:
+
+    the arguments (('group', 'int32'), ('value', 'float64'), ('n', None), ('capacity', None), ('table_keys', 'int32'), ('table_sums', 'float64')) are not the task's (('group', 'int32'), ('value', 'float64'), ('capacity', None), ('table_keys', 'int32'), ('table_sums', 'float64'))
+
+The checker accepts a kernel only if it can prove that every memory access
+stays inside its buffer for every input that meets the task's contract,
+whatever the output buffers hold on entry, and for any grid. Revise the
+kernel so that the checker can prove it, keeping the task's semantics and
+the arguments that your signature.json states. Write the revision as /opgate/eval/corpus/synthesized/haiku/groupby_sum/repair2/kernel.cu,
+test it on GPU 1 (`CUDA_VISIBLE_DEVICES=1`) against the reference as you
+tested the first kernel, and do not change any other file. Read only
+TASKS.md and your own files of this task.
+
+---
+
+You wrote the nvcc kernel /opgate/eval/corpus/synthesized/haiku/hash_build/repair1/kernel.cu for the task `hash_build` of
+/opgate/eval/corpus/synthesized/TASKS.md. A static checker of GPU memory accesses refused it
+with this reason:
+
+    the arguments (('keys', 'int64'), ('n', None), ('capacity', None), ('table_keys', 'int64'), ('table_rows', 'int32')) are not the task's (('keys', 'int64'), ('capacity', None), ('table_keys', 'int64'), ('table_rows', 'int32'))
+
+The checker accepts a kernel only if it can prove that every memory access
+stays inside its buffer for every input that meets the task's contract,
+whatever the output buffers hold on entry, and for any grid. Revise the
+kernel so that the checker can prove it, keeping the task's semantics and
+the arguments that your signature.json states. Write the revision as /opgate/eval/corpus/synthesized/haiku/hash_build/repair2/kernel.cu,
+test it on GPU 1 (`CUDA_VISIBLE_DEVICES=1`) against the reference as you
+tested the first kernel, and do not change any other file. Read only
+TASKS.md and your own files of this task.
+
+---
+
+You wrote the numba kernel /opgate/eval/corpus/synthesized/haiku/hash_probe/repair1/numba.py for the task `hash_probe` of
+/opgate/eval/corpus/synthesized/TASKS.md. A static checker of GPU memory accesses refused it
+with this reason:
+
+    the arguments (('probe_keys', 'int64'), ('m', None), ('table_keys', 'int64'), ('table_rows', 'int32'), ('capacity', None), ('out_cap', None), ('out_build', 'int32'), ('out_probe', 'int32'), ('out_count', 'int32')) are not the task's (('probe_keys', 'int64'), ('m', None), ('table_keys', 'int64'), ('table_rows', 'int32'), ('capacity', None), ('out_build', 'int32'), ('out_probe', 'int32'), ('out_count', 'int32'))
+
+The checker accepts a kernel only if it can prove that every memory access
+stays inside its buffer for every input that meets the task's contract,
+whatever the output buffers hold on entry, and for any grid. Revise the
+kernel so that the checker can prove it, keeping the task's semantics and
+the arguments that your signature.json states. Write the revision as /opgate/eval/corpus/synthesized/haiku/hash_probe/repair2/numba.py,
+test it on GPU 1 (`CUDA_VISIBLE_DEVICES=1`) against the reference as you
+tested the first kernel, and do not change any other file. Read only
+TASKS.md and your own files of this task.
+
+---
+
+You wrote the nvcc kernel /opgate/eval/corpus/synthesized/haiku/hash_probe/repair1/kernel.cu for the task `hash_probe` of
+/opgate/eval/corpus/synthesized/TASKS.md. A static checker of GPU memory accesses refused it
+with this reason:
+
+    the arguments (('probe_keys', 'int64'), ('m', None), ('table_keys', 'int64'), ('table_rows', 'int32'), ('capacity', None), ('out_build', 'int32'), ('out_probe', 'int32'), ('out_count', 'int32'), ('out_cap', None)) are not the task's (('probe_keys', 'int64'), ('m', None), ('table_keys', 'int64'), ('table_rows', 'int32'), ('capacity', None), ('out_build', 'int32'), ('out_probe', 'int32'), ('out_count', 'int32'))
+
+The checker accepts a kernel only if it can prove that every memory access
+stays inside its buffer for every input that meets the task's contract,
+whatever the output buffers hold on entry, and for any grid. Revise the
+kernel so that the checker can prove it, keeping the task's semantics and
+the arguments that your signature.json states. Write the revision as /opgate/eval/corpus/synthesized/haiku/hash_probe/repair2/kernel.cu,
+test it on GPU 1 (`CUDA_VISIBLE_DEVICES=1`) against the reference as you
+tested the first kernel, and do not change any other file. Read only
+TASKS.md and your own files of this task.
+
+---
+
+You wrote the nvcc kernel /opgate/eval/corpus/synthesized/haiku/histogram/repair1/kernel.cu for the task `histogram` of
+/opgate/eval/corpus/synthesized/TASKS.md. A static checker of GPU memory accesses refused it
+with this reason:
+
+    the arguments (('keys', 'uint32'), ('n', None), ('shift', None), ('counts', 'int32')) are not the task's (('keys', 'uint32'), ('shift', None), ('counts', 'int32'))
+
+The checker accepts a kernel only if it can prove that every memory access
+stays inside its buffer for every input that meets the task's contract,
+whatever the output buffers hold on entry, and for any grid. Revise the
+kernel so that the checker can prove it, keeping the task's semantics and
+the arguments that your signature.json states. Write the revision as /opgate/eval/corpus/synthesized/haiku/histogram/repair2/kernel.cu,
+test it on GPU 1 (`CUDA_VISIBLE_DEVICES=1`) against the reference as you
+tested the first kernel, and do not change any other file. Read only
+TASKS.md and your own files of this task.
+
+---
+
+You wrote the nvcc kernel /opgate/eval/corpus/synthesized/haiku/q6_sum/repair1/kernel.cu for the task `q6_sum` of
+/opgate/eval/corpus/synthesized/TASKS.md. A static checker of GPU memory accesses refused it
+with this reason:
+
+    the arguments (('shipdate', 'int32'), ('discount', 'float64'), ('quantity', 'float64'), ('price', 'float64'), ('n', None), ('date_lo', None), ('date_hi', None), ('disc_lo', None), ('disc_hi', None), ('qty_max', None), ('result', 'float64')) are not the task's (('shipdate', 'int32'), ('discount', 'float64'), ('quantity', 'float64'), ('price', 'float64'), ('date_lo', None), ('date_hi', None), ('disc_lo', None), ('disc_hi', None), ('qty_max', None), ('result', 'float64'))
+
+The checker accepts a kernel only if it can prove that every memory access
+stays inside its buffer for every input that meets the task's contract,
+whatever the output buffers hold on entry, and for any grid. Revise the
+kernel so that the checker can prove it, keeping the task's semantics and
+the arguments that your signature.json states. Write the revision as /opgate/eval/corpus/synthesized/haiku/q6_sum/repair2/kernel.cu,
+test it on GPU 1 (`CUDA_VISIBLE_DEVICES=1`) against the reference as you
+tested the first kernel, and do not change any other file. Read only
+TASKS.md and your own files of this task.
+
+---
+
+You wrote the nvcc kernel /opgate/eval/corpus/synthesized/haiku/starts_with/repair1/kernel.cu for the task `starts_with` of
+/opgate/eval/corpus/synthesized/TASKS.md. A static checker of GPU memory accesses refused it
+with this reason:
+
+    the arguments (('offsets', 'int32'), ('chars', 'uint8'), ('n', None), ('prefix', 'uint8'), ('k', None), ('match', 'int8')) are not the task's (('offsets', 'int32'), ('chars', 'uint8'), ('prefix', 'uint8'), ('k', None), ('match', 'int8'))
+
+The checker accepts a kernel only if it can prove that every memory access
+stays inside its buffer for every input that meets the task's contract,
+whatever the output buffers hold on entry, and for any grid. Revise the
+kernel so that the checker can prove it, keeping the task's semantics and
+the arguments that your signature.json states. Write the revision as /opgate/eval/corpus/synthesized/haiku/starts_with/repair2/kernel.cu,
+test it on GPU 1 (`CUDA_VISIBLE_DEVICES=1`) against the reference as you
+tested the first kernel, and do not change any other file. Read only
+TASKS.md and your own files of this task.
+
+---
+
+You wrote the nvcc kernel /opgate/eval/corpus/synthesized/haiku/string_length/repair1/kernel.cu for the task `string_length` of
+/opgate/eval/corpus/synthesized/TASKS.md. A static checker of GPU memory accesses refused it
+with this reason:
+
+    the arguments (('offsets', 'int32'), ('chars', 'uint8'), ('n', None), ('lengths', 'int32')) are not the task's (('offsets', 'int32'), ('chars', 'uint8'), ('lengths', 'int32'))
+
+The checker accepts a kernel only if it can prove that every memory access
+stays inside its buffer for every input that meets the task's contract,
+whatever the output buffers hold on entry, and for any grid. Revise the
+kernel so that the checker can prove it, keeping the task's semantics and
+the arguments that your signature.json states. Write the revision as /opgate/eval/corpus/synthesized/haiku/string_length/repair2/kernel.cu,
+test it on GPU 1 (`CUDA_VISIBLE_DEVICES=1`) against the reference as you
+tested the first kernel, and do not change any other file. Read only
+TASKS.md and your own files of this task.
+
+When done, reply with the revisions you wrote and whether each passed its test.

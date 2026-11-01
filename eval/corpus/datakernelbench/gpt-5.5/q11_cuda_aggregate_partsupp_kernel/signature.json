@@ -1,0 +1,72 @@
+[
+  {
+    "name": "ps_partkey",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_partsupp",
+    "indexes_into": "part_sums"
+  },
+  {
+    "name": "ps_suppkey",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_partsupp",
+    "indexes_into": "supplier_keep"
+  },
+  {
+    "name": "ps_supplycost",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_partsupp",
+    "indexes_into": null
+  },
+  {
+    "name": "ps_availqty",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_partsupp",
+    "indexes_into": null
+  },
+  {
+    "name": "supplier_keep",
+    "kind": "input",
+    "dtype": "uint8",
+    "length": "supplier_keep_len",
+    "indexes_into": null
+  },
+  {
+    "name": "supplier_keep_len",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "max_suppkey + 1",
+    "indexes_into": null
+  },
+  {
+    "name": "part_sums",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "part_sums_len",
+    "indexes_into": null
+  },
+  {
+    "name": "part_sums_len",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "max_partkey + 1",
+    "indexes_into": null
+  },
+  {
+    "name": "total_sum",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "1",
+    "indexes_into": null
+  },
+  {
+    "name": "n_partsupp",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of partsupp",
+    "indexes_into": null
+  }
+]

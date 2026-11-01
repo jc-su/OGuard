@@ -1,0 +1,30 @@
+[
+  {
+    "name": "group_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_elements",
+    "indexes_into": "out_ptr"
+  },
+  {
+    "name": "supp_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "out_ptr",
+    "kind": "inout",
+    "dtype": "int64",
+    "length": "num_groups",
+    "indexes_into": null
+  },
+  {
+    "name": "n_elements",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "rows of the joined table (group_ids.numel())",
+    "indexes_into": null
+  }
+]

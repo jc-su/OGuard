@@ -1,0 +1,7 @@
+[
+  {"name": "ts", "kind": "input", "dtype": "int64", "length": "n", "indexes_into": null},
+  {"name": "values", "kind": "input", "dtype": "int64", "length": "n", "indexes_into": null},
+  {"name": "out", "kind": "output", "dtype": "int64", "length": "n", "indexes_into": null},
+  {"name": "n", "kind": "scalar", "dtype": "int64", "length": "[0, 2^30]", "indexes_into": null},
+  {"name": "range", "kind": "scalar", "dtype": "int64", "length": "[0, 2^62]", "indexes_into": null}
+]

@@ -1,0 +1,30 @@
+[
+  {
+    "name": "p_size",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "size_val",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "p_size value to match",
+    "indexes_into": null
+  },
+  {
+    "name": "out_mask",
+    "kind": "output",
+    "dtype": "bool",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "n",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of part",
+    "indexes_into": null
+  }
+]

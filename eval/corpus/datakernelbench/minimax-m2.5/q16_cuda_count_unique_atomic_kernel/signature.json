@@ -1,0 +1,23 @@
+[
+  {
+    "name": "sorted_packed_pairs",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "num_pairs",
+    "indexes_into": null
+  },
+  {
+    "name": "group_counts",
+    "kind": "inout",
+    "dtype": "int64",
+    "length": "num_groups",
+    "indexes_into": null
+  },
+  {
+    "name": "num_pairs",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of the joined frame",
+    "indexes_into": null
+  }
+]

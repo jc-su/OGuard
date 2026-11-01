@@ -1,0 +1,30 @@
+[
+  {
+    "name": "supp_ids_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_elements",
+    "indexes_into": "out_ptr"
+  },
+  {
+    "name": "mask_ptr",
+    "kind": "input",
+    "dtype": "bool",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "out_ptr",
+    "kind": "inout",
+    "dtype": "int64",
+    "length": "num_suppliers",
+    "indexes_into": null
+  },
+  {
+    "name": "n_elements",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "rows of l1",
+    "indexes_into": null
+  }
+]

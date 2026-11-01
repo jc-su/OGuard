@@ -1,0 +1,23 @@
+[
+  {
+    "name": "block_max",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_blocks",
+    "indexes_into": null
+  },
+  {
+    "name": "out",
+    "kind": "output",
+    "dtype": "int64",
+    "length": "1",
+    "indexes_into": null
+  },
+  {
+    "name": "n_blocks",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "blocks of q10_max_reduce_kernel",
+    "indexes_into": null
+  }
+]

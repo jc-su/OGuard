@@ -1,0 +1,86 @@
+[
+  {
+    "name": "extendedprice",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "discount",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "supplycost",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "quantity",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "nationkey",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "year",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "n_elements",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of the joined lineitem",
+    "indexes_into": null
+  },
+  {
+    "name": "year_min",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "least order year of the joined rows",
+    "indexes_into": null
+  },
+  {
+    "name": "n_years",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "year_max - year_min + 1",
+    "indexes_into": null
+  },
+  {
+    "name": "max_nation_key",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "[24, 24]",
+    "indexes_into": null
+  },
+  {
+    "name": "out_sums",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "25 * n_years",
+    "indexes_into": null
+  },
+  {
+    "name": "out_counts",
+    "kind": "inout",
+    "dtype": "uint64",
+    "length": "25 * n_years",
+    "indexes_into": null
+  }
+]

@@ -1,0 +1,30 @@
+[
+  {
+    "name": "target_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_years",
+    "indexes_into": null
+  },
+  {
+    "name": "total_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_years",
+    "indexes_into": null
+  },
+  {
+    "name": "share_ptr",
+    "kind": "output",
+    "dtype": "float64",
+    "length": "n_years",
+    "indexes_into": null
+  },
+  {
+    "name": "n_years",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "number of order years",
+    "indexes_into": null
+  }
+]

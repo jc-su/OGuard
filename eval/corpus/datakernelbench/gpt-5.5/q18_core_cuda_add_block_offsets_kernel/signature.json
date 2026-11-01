@@ -1,0 +1,23 @@
+[
+  {
+    "name": "offsets",
+    "kind": "inout",
+    "dtype": "int64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "block_offsets",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "(n + 1023) / 1024",
+    "indexes_into": null
+  },
+  {
+    "name": "n",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "entries scanned by scan_counts_kernel",
+    "indexes_into": null
+  }
+]

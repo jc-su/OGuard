@@ -1,0 +1,81 @@
+"""Test and compile hash_build's numba.py to PTX.
+
+Runs the kernel on the GPU for n in {0, 1, 1000, 1000003} and checks
+the resulting table against the invariants of a correct build: every
+input key is present exactly once, at a slot whose table_rows entry
+points back to the row that holds it. Also writes numba.ptx.
+"""
+
+import importlib.util
+import os
+
+import numpy as np
+from numba import cuda
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+
+
+def load_task_module():
+    spec = importlib.util.spec_from_file_location(
+        "hash_build_numba", os.path.join(HERE, "numba.py")
+    )
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+def next_pow2(x):
+    p = 1
+    while p < x:
+        p *= 2
+    return p
+
+
+def check(task, n, rng):
+    capacity = max(2, next_pow2(2 * n))
+
+    # Distinct keys, never -1.
+    keys = rng.choice(
+        np.arange(1, 4 * n + 4, dtype=np.int64), size=n, replace=False
+    )
+
+    d_keys = cuda.to_device(keys)
+    d_table_keys = cuda.to_device(np.full(capacity, -1, dtype=np.int64))
+    d_table_rows = cuda.to_device(np.zeros(capacity, dtype=np.int32))
+
+    task.run(d_keys, d_table_keys, d_table_rows, capacity, n)
+    cuda.synchronize()
+
+    table_keys = d_table_keys.copy_to_host()
+    table_rows = d_table_rows.copy_to_host()
+
+    occupied = np.nonzero(table_keys != -1)[0]
+    assert occupied.shape[0] == n, (
+        f"n={n}: {occupied.shape[0]} occupied slots, expected {n}"
+    )
+
+    rows = table_rows[occupied]
+    assert np.array_equal(np.sort(rows), np.arange(n)), (
+        f"n={n}: row ids in table are not exactly 0..n-1"
+    )
+    assert np.array_equal(table_keys[occupied], keys[rows]), (
+        f"n={n}: table_keys[slot] != keys[table_rows[slot]] for some slot"
+    )
+
+    print(f"n={n}: PASS (capacity={capacity})")
+
+
+def main():
+    task = load_task_module()
+    rng = np.random.default_rng(0)
+    for n in (0, 1, 1000, 1000003):
+        check(task, n, rng)
+
+    ptx, resty = cuda.compile_ptx(task.kernel, task.TYPES, cc=(8, 6))
+    with open(os.path.join(HERE, "numba.ptx"), "w") as f:
+        f.write(ptx)
+    print("wrote numba.ptx")
+
+
+if __name__ == "__main__":
+    main()

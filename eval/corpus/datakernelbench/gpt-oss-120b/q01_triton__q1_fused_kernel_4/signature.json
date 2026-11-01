@@ -1,0 +1,107 @@
+[
+  {
+    "name": "RF_PTR",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "N_ELEM",
+    "indexes_into": null
+  },
+  {
+    "name": "LS_PTR",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "N_ELEM",
+    "indexes_into": null
+  },
+  {
+    "name": "QTY_PTR",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "N_ELEM",
+    "indexes_into": null
+  },
+  {
+    "name": "PRICE_PTR",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "N_ELEM",
+    "indexes_into": null
+  },
+  {
+    "name": "DISC_PTR",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "N_ELEM",
+    "indexes_into": null
+  },
+  {
+    "name": "TAX_PTR",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "N_ELEM",
+    "indexes_into": null
+  },
+  {
+    "name": "SHIPDATE_PTR",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "N_ELEM",
+    "indexes_into": null
+  },
+  {
+    "name": "SHIPDATE_HI",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "l_shipdate upper bound (inclusive), days since epoch",
+    "indexes_into": null
+  },
+  {
+    "name": "OUT_SUM_QTY",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "65536",
+    "indexes_into": null
+  },
+  {
+    "name": "OUT_SUM_BASE",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "65536",
+    "indexes_into": null
+  },
+  {
+    "name": "OUT_SUM_DISC_PRICE",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "65536",
+    "indexes_into": null
+  },
+  {
+    "name": "OUT_SUM_CHARGE",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "65536",
+    "indexes_into": null
+  },
+  {
+    "name": "OUT_SUM_DISC",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "65536",
+    "indexes_into": null
+  },
+  {
+    "name": "OUT_COUNT",
+    "kind": "inout",
+    "dtype": "int32",
+    "length": "65536",
+    "indexes_into": null
+  },
+  {
+    "name": "N_ELEM",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "rows of lineitem",
+    "indexes_into": null
+  }
+]

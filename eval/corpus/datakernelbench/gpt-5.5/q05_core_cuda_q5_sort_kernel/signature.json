@@ -1,0 +1,30 @@
+[
+  {
+    "name": "revenue",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "num_nations",
+    "indexes_into": null
+  },
+  {
+    "name": "sorted_ids",
+    "kind": "inout",
+    "dtype": "int64",
+    "length": "num_nations",
+    "indexes_into": null
+  },
+  {
+    "name": "sorted_revenue",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "num_nations",
+    "indexes_into": null
+  },
+  {
+    "name": "num_nations",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "nations of the region, 5 at scale factor 10",
+    "indexes_into": null
+  }
+]

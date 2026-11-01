@@ -1,0 +1,51 @@
+[
+  {
+    "name": "ps_partkey",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "nps",
+    "indexes_into": null
+  },
+  {
+    "name": "ps_suppkey",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "nps",
+    "indexes_into": null
+  },
+  {
+    "name": "ht_part",
+    "kind": "output",
+    "dtype": "int64",
+    "length": "cap",
+    "indexes_into": null
+  },
+  {
+    "name": "ht_supp",
+    "kind": "output",
+    "dtype": "int64",
+    "length": "cap",
+    "indexes_into": null
+  },
+  {
+    "name": "ht_idx",
+    "kind": "inout",
+    "dtype": "int64",
+    "length": "cap",
+    "indexes_into": null
+  },
+  {
+    "name": "nps",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of the filtered partsupp",
+    "indexes_into": null
+  },
+  {
+    "name": "cap",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "hash table capacity, a power of two of at least 16",
+    "indexes_into": null
+  }
+]

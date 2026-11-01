@@ -1,0 +1,30 @@
+[
+  {
+    "name": "sorted_comp_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "num_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "counts_ptr",
+    "kind": "inout",
+    "dtype": "int64",
+    "length": "num_groups",
+    "indexes_into": null
+  },
+  {
+    "name": "multiplier",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "[1, 2147483647]",
+    "indexes_into": null
+  },
+  {
+    "name": "num_elements",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "rows of the part-partsupp join",
+    "indexes_into": null
+  }
+]

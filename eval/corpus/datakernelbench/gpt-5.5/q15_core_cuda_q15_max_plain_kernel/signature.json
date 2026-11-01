@@ -1,0 +1,23 @@
+[
+  {
+    "name": "values",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "partial",
+    "kind": "output",
+    "dtype": "float64",
+    "length": "(n + 255) / 256",
+    "indexes_into": null
+  },
+  {
+    "name": "n",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "entries of the previous level's block maxima",
+    "indexes_into": null
+  }
+]

@@ -1,0 +1,72 @@
+[
+  {
+    "name": "l_orderkey_ptr",
+    "kind": "inout",
+    "dtype": "int64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "l_extendedprice_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "l_discount_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "l_shipdate_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "o_orderdate_ptr",
+    "kind": "inout",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "o_shippriority_ptr",
+    "kind": "inout",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "rev_out_ptr",
+    "kind": "output",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "shipdate_lo",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "days of the query parameter",
+    "indexes_into": null
+  },
+  {
+    "name": "orderdate_hi",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "days of the query parameter",
+    "indexes_into": null
+  },
+  {
+    "name": "n_elements",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "rows of the joined frame",
+    "indexes_into": null
+  }
+]

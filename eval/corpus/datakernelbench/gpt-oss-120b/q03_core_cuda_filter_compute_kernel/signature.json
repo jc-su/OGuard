@@ -1,0 +1,79 @@
+[
+  {
+    "name": "l_orderkey",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "l_extendedprice",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "l_discount",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "l_shipdate",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "o_orderdate",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "o_shippriority",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "shipdate_lo",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "l_shipdate lower bound (exclusive), days since epoch",
+    "indexes_into": null
+  },
+  {
+    "name": "orderdate_hi",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "o_orderdate upper bound (exclusive), days since epoch",
+    "indexes_into": null
+  },
+  {
+    "name": "mask_out",
+    "kind": "output",
+    "dtype": "uint8",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "rev_out",
+    "kind": "output",
+    "dtype": "float64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "n",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of the joined table",
+    "indexes_into": null
+  }
+]

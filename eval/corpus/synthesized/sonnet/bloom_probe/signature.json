@@ -1,0 +1,37 @@
+[
+  {
+    "name": "keys",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "bits",
+    "kind": "input",
+    "dtype": "uint32",
+    "length": "words",
+    "indexes_into": null
+  },
+  {
+    "name": "match",
+    "kind": "output",
+    "dtype": "int8",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "n",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "[0, 2^31 - 1]",
+    "indexes_into": null
+  },
+  {
+    "name": "words",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "[1, 2^26], power of two",
+    "indexes_into": null
+  }
+]

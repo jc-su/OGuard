@@ -1,0 +1,20 @@
+The Python environment is /opgate/.venv/bin/python, which
+has numba-cuda 0.30.4 (numba 0.64: `from numba import cuda`), Triton 3.8.0
+with PyTorch 2.14, numpy, and cupy. nvcc is $HOME/miniconda3/bin/nvcc
+(CUDA 13.0). Use GPU 1 only: prefix every command that uses the GPU with
+`CUDA_VISIBLE_DEVICES=1`. A file named `numba.py` or `triton.py` in the
+working directory shadows its package: run Python tests from the model's
+directory, not a task directory, or with `python -P`, and load a task's
+source by path with importlib. Keep scratch files in /tmp/heldout3-haiku-triton/.
+
+Implement the 10 tasks of /opgate/eval/corpus/synthesized/HELDOUT3.md
+in Triton. Write each task's files in
+/opgate/eval/corpus/synthesized/haiku/<task>/, where <task> is the
+task's name: triton.py, test_triton.py, and NOTES_TRITON.md where you have
+notes. Another session writes the Numba and CUDA C++ versions and
+signature.json in the same directories at the same time; do not write or
+read those files. Test every kernel on GPU 1 as the task list says. Read
+only HELDOUT3.md and the files you write.
+
+When done, reply with the tasks you implemented and whether each kernel
+passed its tests.

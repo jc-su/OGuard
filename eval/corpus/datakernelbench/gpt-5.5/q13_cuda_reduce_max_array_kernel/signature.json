@@ -1,0 +1,23 @@
+[
+  {
+    "name": "values",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_values",
+    "indexes_into": null
+  },
+  {
+    "name": "n_values",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "entries of the previous level's block maxima",
+    "indexes_into": null
+  },
+  {
+    "name": "block_max",
+    "kind": "output",
+    "dtype": "int64",
+    "length": "(n_values + 1023) / 1024",
+    "indexes_into": null
+  }
+]

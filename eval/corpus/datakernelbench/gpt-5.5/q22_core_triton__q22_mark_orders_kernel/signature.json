@@ -1,0 +1,30 @@
+[
+  {
+    "name": "o_custkey_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_orders",
+    "indexes_into": null
+  },
+  {
+    "name": "bitmap_ptr",
+    "kind": "output",
+    "dtype": "uint8",
+    "length": "max_key + 1",
+    "indexes_into": null
+  },
+  {
+    "name": "n_orders",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "distinct customer keys of orders",
+    "indexes_into": null
+  },
+  {
+    "name": "max_key",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "rows of customer",
+    "indexes_into": null
+  }
+]

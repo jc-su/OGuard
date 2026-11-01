@@ -1,0 +1,51 @@
+[
+  {
+    "name": "totals_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "100000",
+    "indexes_into": null
+  },
+  {
+    "name": "present_ptr",
+    "kind": "input",
+    "dtype": "uint8",
+    "length": "100000",
+    "indexes_into": null
+  },
+  {
+    "name": "sorted_suppkey_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "100000",
+    "indexes_into": null
+  },
+  {
+    "name": "max_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "1",
+    "indexes_into": null
+  },
+  {
+    "name": "count_ptr",
+    "kind": "inout",
+    "dtype": "int32",
+    "length": "1",
+    "indexes_into": null
+  },
+  {
+    "name": "sel_key_ptr",
+    "kind": "output",
+    "dtype": "int64",
+    "length": "100000",
+    "indexes_into": null
+  },
+  {
+    "name": "sel_rev_ptr",
+    "kind": "output",
+    "dtype": "float64",
+    "length": "100000",
+    "indexes_into": null
+  }
+]

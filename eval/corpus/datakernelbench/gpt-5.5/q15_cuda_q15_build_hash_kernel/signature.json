@@ -1,0 +1,37 @@
+[
+  {
+    "name": "s_suppkey",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_sup",
+    "indexes_into": null
+  },
+  {
+    "name": "hash_keys",
+    "kind": "inout",
+    "dtype": "int64",
+    "length": "hash_mask + 1",
+    "indexes_into": null
+  },
+  {
+    "name": "hash_vals",
+    "kind": "output",
+    "dtype": "int64",
+    "length": "hash_mask + 1",
+    "indexes_into": null
+  },
+  {
+    "name": "n_sup",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of supplier",
+    "indexes_into": null
+  },
+  {
+    "name": "hash_mask",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "hash table capacity minus one; the capacity is the least power of two >= 2 * n_sup",
+    "indexes_into": null
+  }
+]

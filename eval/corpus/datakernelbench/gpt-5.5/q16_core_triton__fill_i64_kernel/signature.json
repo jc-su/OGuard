@@ -1,0 +1,23 @@
+[
+  {
+    "name": "out_ptr",
+    "kind": "output",
+    "dtype": "int64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "value",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "the fill value, 0 or -1",
+    "indexes_into": null
+  },
+  {
+    "name": "n_elements",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "elements to fill",
+    "indexes_into": null
+  }
+]

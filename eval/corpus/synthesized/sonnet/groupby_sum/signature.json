@@ -1,0 +1,44 @@
+[
+  {
+    "name": "group",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "value",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "table_keys",
+    "kind": "output",
+    "dtype": "int32",
+    "length": "capacity",
+    "indexes_into": null
+  },
+  {
+    "name": "table_sums",
+    "kind": "output",
+    "dtype": "float64",
+    "length": "capacity",
+    "indexes_into": null
+  },
+  {
+    "name": "capacity",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "power of two, >= 2 * distinct groups",
+    "indexes_into": null
+  },
+  {
+    "name": "n",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of group/value",
+    "indexes_into": null
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "name": "extprice",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "N",
+    "indexes_into": null
+  },
+  {
+    "name": "discount",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "N",
+    "indexes_into": null
+  },
+  {
+    "name": "supplycost",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "N",
+    "indexes_into": null
+  },
+  {
+    "name": "quantity",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "N",
+    "indexes_into": null
+  },
+  {
+    "name": "out",
+    "kind": "output",
+    "dtype": "float64",
+    "length": "N",
+    "indexes_into": null
+  },
+  {
+    "name": "N",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of the joined table",
+    "indexes_into": null
+  }
+]

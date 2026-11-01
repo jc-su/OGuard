@@ -1,0 +1,34 @@
+# q19_core_triton__q19_kernel_5
+
+`triton.py` is the kernel `_q19_kernel` of `plan.py`, a copy of `logs/kernel_plans/tpch/sf10/h100/deepseek-ai__deepseek-v4-flash/triton/core/queries/q19/round_02.py` of DataKernelBench at commit `43c361d`.
+
+## Edits
+
+- The kernel `_q19_kernel` is renamed `kernel`; the module keeps the plan's imports of `triton` and `triton.language`.
+- The `@triton.autotune` decorator is replaced by the values of this configuration, `BLOCK_SIZE = 4096`, 4 warps. The autotuner lists 16 configurations: `BLOCK_SIZE` 1024, 2048, 4096, 8192, `num_warps` 4 and 8, `num_stages` 2 and 4. The module states `CONSTANTS` and `NUM_WARPS` and no `num_stages`, and the kernel has no loop that Triton pipelines (the front end's PTX is the same for `num_stages` 2, 4, and Triton's default), so the two configurations that differ only in `num_stages` are one corpus kernel. The eight kernels are the configurations in the autotuner's order, the first without a suffix and the others `_2` to `_8`; this is number 5.
+- Added `TYPES`, the Triton type of each argument that is not a `tl.constexpr`, as the plan's values have them (a Python integer below 2^31 is `i32`, a Python float `fp32`).
+- Left out: the host code.
+- The kernel's body and parameters are the plan's.
+
+## Launch
+
+`_launch_q19`, called once by `_query_core`, launches `_q19_kernel[(cdiv(n, BLOCK_SIZE),)]` through the autotuner.
+
+## Lengths and ranges
+
+- `price_ptr` (read, length `n_elements`): a column of the joined frame, one per row; `n_elements` is `l_quantity.numel()`.
+- `discount_ptr` (read, length `n_elements`): a column of the joined frame, one per row.
+- `quantity_ptr` (read, length `n_elements`): a column of the joined frame, one per row.
+- `brand_id_ptr` (read, length `n_elements`): the brand code (12, 23, 34, or 0) of each joined row; the kernel only compares it.
+- `container_grp_ptr` (read, length `n_elements`): the container group (1, 2, 3, or 0) of each joined row; the kernel only compares it.
+- `size_ptr` (read, length `n_elements`): `p_size` of each joined row.
+- `brand12_id` (scalar): the plan's constant 12; no range.
+- `brand23_id` (scalar): the plan's constant 23; no range.
+- `brand34_id` (scalar): the plan's constant 34; no range.
+- `sm_grp` (scalar): the plan's constant 1; no range.
+- `md_grp` (scalar): the plan's constant 2; no range.
+- `lg_grp` (scalar): the plan's constant 3; no range.
+- `out_ptr` (readwrite, length `1`): `torch.zeros(1)`; the kernel adds to it with `tl.atomic_add`.
+- `n_elements` (size): `l_quantity.numel()`, below 2^31 at scale factor 10.
+
+Least values of the size symbols: `n_elements` 0. The plan launches on whatever rows its joins and filters give, which can be none.

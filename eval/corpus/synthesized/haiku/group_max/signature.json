@@ -1,0 +1,37 @@
+[
+  {
+    "name": "group",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "value",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "best",
+    "kind": "output",
+    "dtype": "int64",
+    "length": "capacity",
+    "indexes_into": null
+  },
+  {
+    "name": "n",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "[0, 2000000000]",
+    "indexes_into": null
+  },
+  {
+    "name": "capacity",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "[0, 2000000000]",
+    "indexes_into": null
+  }
+]

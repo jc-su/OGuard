@@ -1,0 +1,79 @@
+[
+  {
+    "name": "l1_orderkey",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_rows",
+    "indexes_into": null
+  },
+  {
+    "name": "l1_suppkey",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_rows",
+    "indexes_into": null
+  },
+  {
+    "name": "l1_late",
+    "kind": "input",
+    "dtype": "bool",
+    "length": "n_rows",
+    "indexes_into": null
+  },
+  {
+    "name": "supp_ids",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_rows",
+    "indexes_into": null
+  },
+  {
+    "name": "lo_orderkeys",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_orders",
+    "indexes_into": null
+  },
+  {
+    "name": "lo_distinct_supp",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_orders",
+    "indexes_into": null
+  },
+  {
+    "name": "lo_late_distinct_supp",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_orders",
+    "indexes_into": null
+  },
+  {
+    "name": "counts",
+    "kind": "inout",
+    "dtype": "uint64",
+    "length": "num_suppliers",
+    "indexes_into": null
+  },
+  {
+    "name": "n_rows",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of the nation's lineitems (l1_orderkey.numel())",
+    "indexes_into": null
+  },
+  {
+    "name": "n_orders",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of the per-order aggregate (lo_orderkeys.numel())",
+    "indexes_into": null
+  },
+  {
+    "name": "num_suppliers",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "suppliers of the nation, the length of counts",
+    "indexes_into": null
+  }
+]

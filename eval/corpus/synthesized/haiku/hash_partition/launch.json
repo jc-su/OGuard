@@ -1,0 +1,20 @@
+{
+  "numba": {
+    "shared": {
+      "constant": 0,
+      "terms": {}
+    },
+    "size_maxima": {
+      "p": 1024
+    }
+  },
+  "nvcc": {
+    "shared": {
+      "constant": 0,
+      "terms": {}
+    },
+    "size_maxima": {
+      "p": 1024
+    }
+  }
+}

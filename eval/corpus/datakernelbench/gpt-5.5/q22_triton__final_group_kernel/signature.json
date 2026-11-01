@@ -1,0 +1,72 @@
+[
+  {
+    "name": "c_custkey_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_customers",
+    "indexes_into": "bitmap_ptr"
+  },
+  {
+    "name": "cntrycode_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_customers",
+    "indexes_into": null
+  },
+  {
+    "name": "acctbal_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_customers",
+    "indexes_into": null
+  },
+  {
+    "name": "bitmap_ptr",
+    "kind": "input",
+    "dtype": "uint8",
+    "length": "max_key + 1",
+    "indexes_into": null
+  },
+  {
+    "name": "codes_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "7",
+    "indexes_into": null
+  },
+  {
+    "name": "avg_sum_count_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "2",
+    "indexes_into": null
+  },
+  {
+    "name": "out_count_f64_ptr",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "7",
+    "indexes_into": null
+  },
+  {
+    "name": "out_sum_ptr",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "7",
+    "indexes_into": null
+  },
+  {
+    "name": "n_customers",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "rows of customer",
+    "indexes_into": null
+  },
+  {
+    "name": "max_key",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "max(c_custkey); bitmap_ptr has max_key + 1 bytes",
+    "indexes_into": null
+  }
+]

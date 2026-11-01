@@ -1,0 +1,37 @@
+[
+  {
+    "name": "s_acctbal_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "p_partkey_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "n",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of the final frame",
+    "indexes_into": null
+  },
+  {
+    "name": "limit",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "[1, inf)",
+    "indexes_into": null
+  },
+  {
+    "name": "out_idx_ptr",
+    "kind": "output",
+    "dtype": "int64",
+    "length": "k",
+    "indexes_into": null
+  }
+]

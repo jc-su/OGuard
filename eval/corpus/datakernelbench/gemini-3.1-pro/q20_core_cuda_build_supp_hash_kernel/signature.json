@@ -1,0 +1,44 @@
+[
+  {
+    "name": "ps_sum_qty",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "N_ps",
+    "indexes_into": null
+  },
+  {
+    "name": "ps_availqty",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "N_ps",
+    "indexes_into": null
+  },
+  {
+    "name": "ps_suppkey",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "N_ps",
+    "indexes_into": null
+  },
+  {
+    "name": "supp_hash_set",
+    "kind": "inout",
+    "dtype": "uint64",
+    "length": "H_s",
+    "indexes_into": null
+  },
+  {
+    "name": "H_s",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "slots of supp_hash_set, a power of two of at least 1024",
+    "indexes_into": null
+  },
+  {
+    "name": "N_ps",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of the filtered partsupp",
+    "indexes_into": null
+  }
+]

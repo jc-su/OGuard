@@ -1,0 +1,51 @@
+[
+  {
+    "name": "codes",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_filtered",
+    "indexes_into": null
+  },
+  {
+    "name": "bals",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_filtered",
+    "indexes_into": null
+  },
+  {
+    "name": "n_filtered",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "kept customers",
+    "indexes_into": null
+  },
+  {
+    "name": "unique_codes",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_unique",
+    "indexes_into": null
+  },
+  {
+    "name": "numcust_out",
+    "kind": "inout",
+    "dtype": "int32",
+    "length": "n_unique",
+    "indexes_into": null
+  },
+  {
+    "name": "totacctbal_out",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "n_unique",
+    "indexes_into": null
+  },
+  {
+    "name": "n_unique",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "distinct kept country codes",
+    "indexes_into": null
+  }
+]

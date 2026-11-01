@@ -1,0 +1,100 @@
+[
+  {
+    "name": "l_quantity_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "l_extendedprice_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "l_discount_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "p_brand_id_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "p_container_grp_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "p_size_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "brand12_id",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "brand code, 12",
+    "indexes_into": null
+  },
+  {
+    "name": "brand23_id",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "brand code, 23",
+    "indexes_into": null
+  },
+  {
+    "name": "brand34_id",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "brand code, 34",
+    "indexes_into": null
+  },
+  {
+    "name": "sm_grp",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "container group, 1",
+    "indexes_into": null
+  },
+  {
+    "name": "md_grp",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "container group, 2",
+    "indexes_into": null
+  },
+  {
+    "name": "lg_grp",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "container group, 3",
+    "indexes_into": null
+  },
+  {
+    "name": "out_ptr",
+    "kind": "output",
+    "dtype": "float64",
+    "length": "(n_elements + 1023) / 1024",
+    "indexes_into": null
+  },
+  {
+    "name": "n_elements",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "rows of the joined table",
+    "indexes_into": null
+  }
+]

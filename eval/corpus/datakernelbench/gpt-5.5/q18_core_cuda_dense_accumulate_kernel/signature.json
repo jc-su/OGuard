@@ -1,0 +1,44 @@
+[
+  {
+    "name": "keys",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "qty",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "n",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of lineitem",
+    "indexes_into": null
+  },
+  {
+    "name": "sums",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "key_range",
+    "indexes_into": null
+  },
+  {
+    "name": "flags",
+    "kind": "inout",
+    "dtype": "int32",
+    "length": "key_range",
+    "indexes_into": null
+  },
+  {
+    "name": "key_range",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "largest positive order key plus one",
+    "indexes_into": null
+  }
+]

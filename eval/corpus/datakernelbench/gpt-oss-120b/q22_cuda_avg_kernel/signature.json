@@ -1,0 +1,37 @@
+[
+  {
+    "name": "bal",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "N",
+    "indexes_into": null
+  },
+  {
+    "name": "mask",
+    "kind": "input",
+    "dtype": "bool",
+    "length": "N",
+    "indexes_into": null
+  },
+  {
+    "name": "sum_out",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "1",
+    "indexes_into": null
+  },
+  {
+    "name": "cnt_out",
+    "kind": "inout",
+    "dtype": "uint64",
+    "length": "1",
+    "indexes_into": null
+  },
+  {
+    "name": "N",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of customer",
+    "indexes_into": null
+  }
+]

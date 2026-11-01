@@ -1,0 +1,107 @@
+[
+  {
+    "name": "rf_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "ls_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "qty_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "price_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "disc_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "tax_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "shipdate_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "shipdate_hi",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "l_shipdate upper bound (inclusive), days since epoch",
+    "indexes_into": null
+  },
+  {
+    "name": "out_sum_qty",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "65536",
+    "indexes_into": null
+  },
+  {
+    "name": "out_sum_base",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "65536",
+    "indexes_into": null
+  },
+  {
+    "name": "out_sum_disc_price",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "65536",
+    "indexes_into": null
+  },
+  {
+    "name": "out_sum_charge",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "65536",
+    "indexes_into": null
+  },
+  {
+    "name": "out_sum_disc",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "65536",
+    "indexes_into": null
+  },
+  {
+    "name": "out_count",
+    "kind": "inout",
+    "dtype": "int64",
+    "length": "65536",
+    "indexes_into": null
+  },
+  {
+    "name": "n_elements",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "rows of lineitem",
+    "indexes_into": null
+  }
+]

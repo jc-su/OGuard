@@ -1,0 +1,86 @@
+[
+  {
+    "name": "custkey",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "N",
+    "indexes_into": null
+  },
+  {
+    "name": "bal",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "N",
+    "indexes_into": null
+  },
+  {
+    "name": "cntrycode",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "N",
+    "indexes_into": null
+  },
+  {
+    "name": "in_mask",
+    "kind": "input",
+    "dtype": "bool",
+    "length": "N",
+    "indexes_into": null
+  },
+  {
+    "name": "avg_val",
+    "kind": "scalar",
+    "dtype": "float64",
+    "length": "average positive balance of the target codes",
+    "indexes_into": null
+  },
+  {
+    "name": "sorted_orders",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "orders_n",
+    "indexes_into": null
+  },
+  {
+    "name": "orders_n",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "distinct o_custkey values",
+    "indexes_into": null
+  },
+  {
+    "name": "target_codes",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_codes",
+    "indexes_into": null
+  },
+  {
+    "name": "n_codes",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "target country codes",
+    "indexes_into": null
+  },
+  {
+    "name": "grp_counts",
+    "kind": "inout",
+    "dtype": "uint64",
+    "length": "n_codes",
+    "indexes_into": null
+  },
+  {
+    "name": "grp_sums",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "n_codes",
+    "indexes_into": null
+  },
+  {
+    "name": "N",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of customer",
+    "indexes_into": null
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "name": "group_ids",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "supp_ids",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "out_counts",
+    "kind": "inout",
+    "dtype": "int64",
+    "length": "num_groups",
+    "indexes_into": null
+  },
+  {
+    "name": "n",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of the joined part and partsupp table (group_ids.numel())",
+    "indexes_into": null
+  },
+  {
+    "name": "num_groups",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "distinct (brand, type, size) groups, the length of out_counts",
+    "indexes_into": null
+  }
+]

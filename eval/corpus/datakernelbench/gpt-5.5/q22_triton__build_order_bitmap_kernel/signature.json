@@ -1,0 +1,30 @@
+[
+  {
+    "name": "o_custkey_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_orders",
+    "indexes_into": null
+  },
+  {
+    "name": "bitmap_ptr",
+    "kind": "output",
+    "dtype": "uint8",
+    "length": "max_key + 1",
+    "indexes_into": null
+  },
+  {
+    "name": "n_orders",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "rows of orders",
+    "indexes_into": null
+  },
+  {
+    "name": "max_key",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "max(c_custkey); bitmap_ptr has max_key + 1 bytes",
+    "indexes_into": null
+  }
+]

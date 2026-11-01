@@ -1,0 +1,72 @@
+[
+  {
+    "name": "supp",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "N",
+    "indexes_into": null
+  },
+  {
+    "name": "cust",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "N",
+    "indexes_into": null
+  },
+  {
+    "name": "shipday",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "N",
+    "indexes_into": null
+  },
+  {
+    "name": "price",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "N",
+    "indexes_into": null
+  },
+  {
+    "name": "disc",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "N",
+    "indexes_into": null
+  },
+  {
+    "name": "lo",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "l_shipdate lower bound (inclusive), days since epoch",
+    "indexes_into": null
+  },
+  {
+    "name": "hi",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "l_shipdate upper bound (inclusive), days since epoch",
+    "indexes_into": null
+  },
+  {
+    "name": "day1996_start",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "days since epoch of 1996-01-01",
+    "indexes_into": null
+  },
+  {
+    "name": "out",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "8",
+    "indexes_into": null
+  },
+  {
+    "name": "N",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of the joined table",
+    "indexes_into": null
+  }
+]

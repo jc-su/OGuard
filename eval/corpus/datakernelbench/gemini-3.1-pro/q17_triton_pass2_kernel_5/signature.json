@@ -1,0 +1,58 @@
+[
+  {
+    "name": "l_partkey_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_elements",
+    "indexes_into": "is_valid_ptr"
+  },
+  {
+    "name": "l_quantity_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "l_extendedprice_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "is_valid_ptr",
+    "kind": "input",
+    "dtype": "uint8",
+    "length": "max_pk + 1",
+    "indexes_into": null
+  },
+  {
+    "name": "threshold_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "max_pk + 1",
+    "indexes_into": null
+  },
+  {
+    "name": "out_ptr",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "1",
+    "indexes_into": null
+  },
+  {
+    "name": "max_pk",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "largest part key",
+    "indexes_into": null
+  },
+  {
+    "name": "n_elements",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "rows of lineitem",
+    "indexes_into": null
+  }
+]

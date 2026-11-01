@@ -1,0 +1,72 @@
+[
+  {
+    "name": "ck",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "bal",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "cd",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "ms",
+    "kind": "input",
+    "dtype": "bool",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "ok",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "no",
+    "indexes_into": null
+  },
+  {
+    "name": "no",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "the distinct o_custkey values",
+    "indexes_into": null
+  },
+  {
+    "name": "av",
+    "kind": "scalar",
+    "dtype": "float64",
+    "length": "the average balance",
+    "indexes_into": null
+  },
+  {
+    "name": "cnts",
+    "kind": "inout",
+    "dtype": "int64",
+    "length": "100",
+    "indexes_into": null
+  },
+  {
+    "name": "sums",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "100",
+    "indexes_into": null
+  },
+  {
+    "name": "n",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of customer",
+    "indexes_into": null
+  }
+]

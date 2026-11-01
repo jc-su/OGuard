@@ -1,0 +1,23 @@
+[
+  {
+    "name": "out_ptr",
+    "kind": "output",
+    "dtype": "int64",
+    "length": "n_out",
+    "indexes_into": null
+  },
+  {
+    "name": "n",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "[1, inf)",
+    "indexes_into": null
+  },
+  {
+    "name": "limit",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "[1, inf)",
+    "indexes_into": null
+  }
+]

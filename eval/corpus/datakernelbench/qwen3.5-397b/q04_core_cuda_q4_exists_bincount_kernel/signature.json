@@ -1,0 +1,51 @@
+[
+  {
+    "name": "filt_orderkey",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_filt_orders",
+    "indexes_into": null
+  },
+  {
+    "name": "filt_priority",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_filt_orders",
+    "indexes_into": null
+  },
+  {
+    "name": "unique_l_orderkey",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_unique_lineitems",
+    "indexes_into": null
+  },
+  {
+    "name": "n_filt_orders",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "orders in the date range (filt_orderkey.numel())",
+    "indexes_into": null
+  },
+  {
+    "name": "n_unique_lineitems",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "distinct qualifying l_orderkey values (unique_l_orderkey.numel())",
+    "indexes_into": null
+  },
+  {
+    "name": "num_priorities",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "categories of o_orderpriority, the length of priority_counts",
+    "indexes_into": null
+  },
+  {
+    "name": "priority_counts",
+    "kind": "inout",
+    "dtype": "uint64",
+    "length": "num_priorities",
+    "indexes_into": null
+  }
+]

@@ -1,0 +1,79 @@
+[
+  {
+    "name": "custkey",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "acctbal",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "cntrycode",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "in_mask",
+    "kind": "input",
+    "dtype": "bool",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "sorted_okeys",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "okeys_size",
+    "indexes_into": null
+  },
+  {
+    "name": "okeys_size",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "distinct o_custkey values",
+    "indexes_into": null
+  },
+  {
+    "name": "avg_val",
+    "kind": "scalar",
+    "dtype": "float64",
+    "length": "average positive balance of the selected countries",
+    "indexes_into": null
+  },
+  {
+    "name": "out_code",
+    "kind": "output",
+    "dtype": "int32",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "out_bal",
+    "kind": "output",
+    "dtype": "float64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "out_n",
+    "kind": "inout",
+    "dtype": "int64",
+    "length": "1",
+    "indexes_into": null
+  },
+  {
+    "name": "n",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of customer",
+    "indexes_into": null
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "name": "values",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "bounds",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "b",
+    "indexes_into": null
+  },
+  {
+    "name": "out",
+    "kind": "output",
+    "dtype": "int32",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "n",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "[0, 2^31 - 1]",
+    "indexes_into": null
+  },
+  {
+    "name": "b",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "[0, 2^31 - 1]",
+    "indexes_into": null
+  }
+]

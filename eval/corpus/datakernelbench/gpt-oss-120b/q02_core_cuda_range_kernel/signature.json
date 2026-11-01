@@ -1,0 +1,16 @@
+[
+  {
+    "name": "out",
+    "kind": "output",
+    "dtype": "int64",
+    "length": "limit",
+    "indexes_into": null
+  },
+  {
+    "name": "limit",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of the range, at most the limit parameter",
+    "indexes_into": null
+  }
+]

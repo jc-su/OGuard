@@ -1,0 +1,44 @@
+[
+  {
+    "name": "l_orderkey",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_lineitem",
+    "indexes_into": "late_bitmap"
+  },
+  {
+    "name": "l_commitdate_days",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_lineitem",
+    "indexes_into": null
+  },
+  {
+    "name": "l_receiptdate_days",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_lineitem",
+    "indexes_into": null
+  },
+  {
+    "name": "late_bitmap",
+    "kind": "output",
+    "dtype": "uint8",
+    "length": "bitmap_size",
+    "indexes_into": null
+  },
+  {
+    "name": "n_lineitem",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of lineitem",
+    "indexes_into": null
+  },
+  {
+    "name": "bitmap_size",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "max(l_orderkey) + 1, bytes of late_bitmap",
+    "indexes_into": null
+  }
+]

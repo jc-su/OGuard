@@ -1,0 +1,30 @@
+[
+  {
+    "name": "keys",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_keys",
+    "indexes_into": "bitmap"
+  },
+  {
+    "name": "bitmap",
+    "kind": "output",
+    "dtype": "uint8",
+    "length": "bitmap_size",
+    "indexes_into": null
+  },
+  {
+    "name": "n_keys",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of the European suppliers' s_suppkey",
+    "indexes_into": null
+  },
+  {
+    "name": "bitmap_size",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "max(s_suppkey, ps_suppkey) + 1, bytes of bitmap",
+    "indexes_into": null
+  }
+]

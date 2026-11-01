@@ -1,0 +1,65 @@
+[
+  {
+    "name": "keys",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "qty",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "n",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of lineitem",
+    "indexes_into": null
+  },
+  {
+    "name": "threshold",
+    "kind": "scalar",
+    "dtype": "float64",
+    "length": "quantity threshold",
+    "indexes_into": null
+  },
+  {
+    "name": "unique_offsets",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "(n + 1023) / 1024",
+    "indexes_into": null
+  },
+  {
+    "name": "big_offsets",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "(n + 1023) / 1024",
+    "indexes_into": null
+  },
+  {
+    "name": "unique_out",
+    "kind": "output",
+    "dtype": "int64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "big_keys_out",
+    "kind": "output",
+    "dtype": "int64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "big_sums_out",
+    "kind": "output",
+    "dtype": "float64",
+    "length": "n",
+    "indexes_into": null
+  }
+]

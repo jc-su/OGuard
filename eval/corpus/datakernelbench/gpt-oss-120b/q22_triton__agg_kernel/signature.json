@@ -1,0 +1,44 @@
+[
+  {
+    "name": "bal_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "code_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "mask_ptr",
+    "kind": "input",
+    "dtype": "uint8",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "out_cnt",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "100",
+    "indexes_into": null
+  },
+  {
+    "name": "out_sum",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "100",
+    "indexes_into": null
+  },
+  {
+    "name": "n_elements",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "rows of customer",
+    "indexes_into": null
+  }
+]

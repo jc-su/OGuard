@@ -1,0 +1,72 @@
+[
+  {
+    "name": "l_commitdate_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "l_receiptdate_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "l_shipdate_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "shipmode_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "o_orderpriority_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "receipt_lo",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "receipt date lower bound in days since 1970-01-01 (inclusive), from the parameter receipt_lo",
+    "indexes_into": null
+  },
+  {
+    "name": "receipt_hi",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "receipt date upper bound in days since 1970-01-01 (exclusive), from the parameter receipt_hi",
+    "indexes_into": null
+  },
+  {
+    "name": "n_elements",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "rows of l_commitdate_ptr",
+    "indexes_into": null
+  },
+  {
+    "name": "high_out_ptr",
+    "kind": "inout",
+    "dtype": "int64",
+    "length": "2",
+    "indexes_into": null
+  },
+  {
+    "name": "low_out_ptr",
+    "kind": "inout",
+    "dtype": "int64",
+    "length": "2",
+    "indexes_into": null
+  }
+]

@@ -1,0 +1,51 @@
+[
+  {
+    "name": "inv",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n",
+    "indexes_into": "sum_total"
+  },
+  {
+    "name": "volume",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "is_brazil",
+    "kind": "input",
+    "dtype": "uint8",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "sum_total",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "num_groups",
+    "indexes_into": null
+  },
+  {
+    "name": "sum_brazil",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "num_groups",
+    "indexes_into": null
+  },
+  {
+    "name": "n",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of the joined frame",
+    "indexes_into": null
+  },
+  {
+    "name": "num_groups",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "the distinct order years",
+    "indexes_into": null
+  }
+]

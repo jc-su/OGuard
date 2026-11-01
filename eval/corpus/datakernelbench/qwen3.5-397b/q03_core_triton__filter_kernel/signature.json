@@ -1,0 +1,44 @@
+[
+  {
+    "name": "l_shipdate_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "o_orderdate_ptr",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "shipdate_lo",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "exclusive lower bound of l_shipdate in epoch days",
+    "indexes_into": null
+  },
+  {
+    "name": "orderdate_hi",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "exclusive upper bound of o_orderdate in epoch days",
+    "indexes_into": null
+  },
+  {
+    "name": "out_valid_ptr",
+    "kind": "output",
+    "dtype": "int8",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "n_elements",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "rows of the joined table (l_orderkey.numel())",
+    "indexes_into": null
+  }
+]

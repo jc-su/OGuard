@@ -1,0 +1,23 @@
+[
+  {
+    "name": "unique_group_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_elements",
+    "indexes_into": "output_ptr"
+  },
+  {
+    "name": "output_ptr",
+    "kind": "inout",
+    "dtype": "int64",
+    "length": "num_groups",
+    "indexes_into": null
+  },
+  {
+    "name": "n_elements",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "the distinct (group, supplier) pairs",
+    "indexes_into": null
+  }
+]

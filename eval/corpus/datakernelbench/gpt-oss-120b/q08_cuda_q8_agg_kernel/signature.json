@@ -1,0 +1,58 @@
+[
+  {
+    "name": "years",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "N",
+    "indexes_into": null
+  },
+  {
+    "name": "volume",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "N",
+    "indexes_into": null
+  },
+  {
+    "name": "is_brazil",
+    "kind": "input",
+    "dtype": "uint8",
+    "length": "N",
+    "indexes_into": null
+  },
+  {
+    "name": "sum_total",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "num_years",
+    "indexes_into": null
+  },
+  {
+    "name": "sum_brazil",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "num_years",
+    "indexes_into": null
+  },
+  {
+    "name": "year_lo",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "first order year",
+    "indexes_into": null
+  },
+  {
+    "name": "num_years",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "years from year_lo to year_hi",
+    "indexes_into": null
+  },
+  {
+    "name": "N",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of the joined table",
+    "indexes_into": null
+  }
+]

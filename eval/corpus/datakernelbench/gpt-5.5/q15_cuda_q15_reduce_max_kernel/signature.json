@@ -1,0 +1,30 @@
+[
+  {
+    "name": "totals",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_sup",
+    "indexes_into": null
+  },
+  {
+    "name": "present",
+    "kind": "input",
+    "dtype": "uint8",
+    "length": "n_sup",
+    "indexes_into": null
+  },
+  {
+    "name": "block_max",
+    "kind": "output",
+    "dtype": "float64",
+    "length": "(n_sup + 1023) / 1024",
+    "indexes_into": null
+  },
+  {
+    "name": "n_sup",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of supplier",
+    "indexes_into": null
+  }
+]

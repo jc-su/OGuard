@@ -1,0 +1,30 @@
+[
+  {
+    "name": "qty",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n",
+    "indexes_into": null
+  },
+  {
+    "name": "group_idx",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n",
+    "indexes_into": "group_sum"
+  },
+  {
+    "name": "group_sum",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "num_groups",
+    "indexes_into": null
+  },
+  {
+    "name": "n",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of lineitem",
+    "indexes_into": null
+  }
+]

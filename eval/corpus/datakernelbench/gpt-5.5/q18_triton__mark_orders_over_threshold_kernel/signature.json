@@ -1,0 +1,44 @@
+[
+  {
+    "name": "orderkey_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_elements",
+    "indexes_into": "sum_by_key_ptr"
+  },
+  {
+    "name": "sum_by_key_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_slots",
+    "indexes_into": null
+  },
+  {
+    "name": "threshold_ptr",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "1",
+    "indexes_into": null
+  },
+  {
+    "name": "out_sum_ptr",
+    "kind": "output",
+    "dtype": "float64",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "out_keep_ptr",
+    "kind": "output",
+    "dtype": "bool",
+    "length": "n_elements",
+    "indexes_into": null
+  },
+  {
+    "name": "n_elements",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "rows of orders",
+    "indexes_into": null
+  }
+]

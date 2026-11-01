@@ -1,0 +1,6 @@
+[
+  {"name": "values", "kind": "input", "dtype": "float64", "length": "n", "indexes_into": null},
+  {"name": "mask", "kind": "input", "dtype": "int8", "length": "n", "indexes_into": null},
+  {"name": "result", "kind": "inout", "dtype": "float64", "length": "1", "indexes_into": null},
+  {"name": "n", "kind": "scalar", "dtype": "int64", "length": "rows of values", "indexes_into": null}
+]

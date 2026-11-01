@@ -1,0 +1,30 @@
+[
+  {
+    "name": "keys_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_keys",
+    "indexes_into": "flags_ptr"
+  },
+  {
+    "name": "flags_ptr",
+    "kind": "output",
+    "dtype": "int8",
+    "length": "n_flags",
+    "indexes_into": null
+  },
+  {
+    "name": "n_keys",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "number of keys",
+    "indexes_into": null
+  },
+  {
+    "name": "n_flags",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "max(keys) + 1",
+    "indexes_into": null
+  }
+]

@@ -1,0 +1,72 @@
+[
+  {
+    "name": "c_custkey",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_customers",
+    "indexes_into": null
+  },
+  {
+    "name": "c_acctbal",
+    "kind": "input",
+    "dtype": "float64",
+    "length": "n_customers",
+    "indexes_into": null
+  },
+  {
+    "name": "cntrycode",
+    "kind": "input",
+    "dtype": "int32",
+    "length": "n_customers",
+    "indexes_into": null
+  },
+  {
+    "name": "in_mask",
+    "kind": "input",
+    "dtype": "bool",
+    "length": "n_customers",
+    "indexes_into": null
+  },
+  {
+    "name": "orders_sorted",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_orders",
+    "indexes_into": null
+  },
+  {
+    "name": "n_orders",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "distinct o_custkey values (orders_sorted.numel())",
+    "indexes_into": null
+  },
+  {
+    "name": "avg_bal",
+    "kind": "scalar",
+    "dtype": "float64",
+    "length": "average balance of the selected customers",
+    "indexes_into": null
+  },
+  {
+    "name": "count_per_country",
+    "kind": "inout",
+    "dtype": "int64",
+    "length": "7",
+    "indexes_into": null
+  },
+  {
+    "name": "bal_per_country",
+    "kind": "inout",
+    "dtype": "float64",
+    "length": "7",
+    "indexes_into": null
+  },
+  {
+    "name": "n_customers",
+    "kind": "scalar",
+    "dtype": "int64",
+    "length": "rows of customer (c_custkey.numel())",
+    "indexes_into": null
+  }
+]

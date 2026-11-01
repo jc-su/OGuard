@@ -1,0 +1,1 @@
+Van Herk / Gil-Werman with segmented associative scans (blocks of w positions). Tile of 2048 outputs plus 1024 positions of context on each side, so w is limited to [1, 1024] as specified. Tested against a NumPy shift-and-max reference for w in {1,2,3,17,255,256,1000,1023,1024}.

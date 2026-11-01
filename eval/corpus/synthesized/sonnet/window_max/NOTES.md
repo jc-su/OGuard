@@ -1,0 +1,1 @@
+Numba and CUDA: for w <= 64 each thread scans its window; for w > 64 a block handles one w-sized segment with the van Herk / Gil-Werman prefix and suffix maxima in shared memory. Both launch with grid ceil(n/256) for w <= 64 and ceil(n/w) otherwise, and loop over segments, so any grid size of at least 1 is correct.

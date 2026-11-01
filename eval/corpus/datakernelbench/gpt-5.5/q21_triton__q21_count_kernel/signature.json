@@ -1,0 +1,65 @@
+[
+  {
+    "name": "cand_orderkey_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_cand",
+    "indexes_into": null
+  },
+  {
+    "name": "cand_supp_id_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_cand",
+    "indexes_into": "counts_ptr"
+  },
+  {
+    "name": "cand_late_count_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_cand",
+    "indexes_into": null
+  },
+  {
+    "name": "stat_orderkey_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_stats",
+    "indexes_into": null
+  },
+  {
+    "name": "stat_distinct_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_stats",
+    "indexes_into": null
+  },
+  {
+    "name": "stat_late_distinct_ptr",
+    "kind": "input",
+    "dtype": "int64",
+    "length": "n_stats",
+    "indexes_into": null
+  },
+  {
+    "name": "counts_ptr",
+    "kind": "inout",
+    "dtype": "int64",
+    "length": "num_suppliers",
+    "indexes_into": null
+  },
+  {
+    "name": "n_cand",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "rows of the candidate (order, supplier) pairs",
+    "indexes_into": null
+  },
+  {
+    "name": "n_stats",
+    "kind": "scalar",
+    "dtype": "int32",
+    "length": "rows of the per-order statistics",
+    "indexes_into": null
+  }
+]
